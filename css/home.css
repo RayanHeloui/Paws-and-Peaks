@@ -1,228 +1,64 @@
-/* Reset and basic setup */
-body, html {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #fcefb3;
-  color: #7b523c;
-  height: 100vh;
-  overflow: hidden;
-}
-@font-face {
-  font-family: 'NostalgicRemain';
-  src: url('../fonts/NostalgicRemain-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
 }
 
-@font-face {
-  font-family: 'NostalgicRemainItalic';
-  src: url('../fonts/NostalgicRemainItalic-Italic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
+body, html {
+  font-family: Arial, sans-serif;
+  color: #333;
+  scroll-behavior: smooth;
 }
 
-/* Container splits screen into two halves */
-.landing-container {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
+section {
+  padding: 60px 20px;
+  text-align: center;
 }
 
-/* LEFT: Logo & bone centered in left half */
-.left-pane {
-  width: 50vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;  /* Center horizontally */
-  align-items: center;      /* Center vertically */
-  position: relative;
-  background-color: #fcefb3;  /* Background if not already */
-  overflow: hidden;          /* Prevent overflow cutting */
-}
-
-/* Logo and bone wrapper */
-.logo-container {
-  position: relative;
-  width: 150px;
-  height: 150px;
-}
-
-.rotating-bone {
-  position: absolute;
-  top: 50%;
-  left: 45%;
-  width: 1000px; /* or try 200px */
-  height: 1000px;
-  transform: translate(-50%, -50%);
-  animation: rotateBone 32s linear infinite;
-  opacity: 0.25;
-  z-index: 1;
-  object-fit: contain; /* Maintains correct aspect ratio */
-}
-
-
-.logo {
-  position: absolute;
-  top: 50%;
-  left: 45%;
-  width: 65%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-}
-
-/* RIGHT: Info box on right side */
-.info-box {
+/* 🌄 Hero Section */
+.hero {
+  height: 150vh; /* Extra height for scroll effects */
+  background: linear-gradient(to bottom, #badccb, #fcefb3);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 40px;
-  background-color: #badccb;
-  border-radius: 20px 0 0 20px;
-  position: absolute;
-  top: 10vh;
-  bottom: 10vh;
-  right: 0;
-  width: 50vw;
-}
-
-.info-title {
-  align-self: flex-start;
-  margin-bottom: 20px;
-}
-
-.coming-soon {
-  font-size: 7em;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  top: -10px;
-  left: -90px;
-  text-transform: uppercase;
-}
-
-.info-subscribe {
-  justify-content: center; /* Centers the form horizontally */
-  flex: 0 0 auto; /* Prevents the form from growing or shrinking */
-  align-self: center; /* Centers the form within the container */
-  font-size: 1.2em; /* Adjust the font size as needed */
-  position: relative;
-  top: 100px; /* Moves the form 20px down */
-}
-
-.subscribe {
-  display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 15px;
 }
 
-.info-slogan {
-  position: absolute;
-  top: 535px;               /* Adjust vertical position */
-  left: -325px;              /* Adjust horizontal position */
-  width: 100%;
-  text-align: left;
-  white-space: nowrap; /* force single line */
-}
-
-.slogan {
-  font-size: 3em;          /* Increased size for more impact */
-  text-transform: uppercase;
-  margin: 0;               /* Optional: clean spacing if needed */
-}
-
-/* Email input field styling */
-
-.subscribe button {
-  width: 100%;
-  padding: 14px;
-  font-size: 1.2em;
-  background-color: #7b523c;
-  color: #000000;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.subscribe-wrapper {
+/* 🛍️ Products Title */
+.products-title {
   background-color: #f7cbd1;
-  padding: 20px 40px;
-  border-radius: 12px;
+  padding: 40px 20px;
+}
+
+/* 🧰 Product Fullscreen Sections */
+.product-fullscreen {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 120px;
-  margin-top: 100px;
-  margin-left: -20px; /* Shift 20px to the left */
-  width: 100%;         /* new line — tells it to fill the space */
-  max-width: 900px;    /* controls the largest it gets */
+  font-size: 2em;
+  color: white;
 }
 
-.subscribe-inner {
-  background-color: #fcefb3;
-  width: 100%;
-  height: 100%;
-  padding: 20px 40px;     /* Move padding here instead */
-  border-radius: 12px;    /* Match pink box corners */
-  box-sizing: border-box;
+.product-1 { background-color: #7b523c; }
+.product-2 { background-color: #e8c563; color: #333; }
+.product-3 { background-color: #badccb; color: #333; }
+
+/* 🧭 About Us Section */
+.about {
+  background-color: #fff;
+  color: #333;
+  padding: 60px 20px;
 }
 
-#subscribe-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  align-items: center;     /* centers children (input & button) horizontally */
+/* 💬 Testimonies Section */
+.testimonies {
+  background-color: #f7cbd1;
+  color: #333;
+  padding: 60px 20px;
 }
 
-#email-input {
-  width: 200%;           /* or try 250px, 280px etc */
-  max-width: 300px;     /* narrower input field */
-  padding: 5px 10px;
-  font-size: 1.1em;
-  background-color: #e8c563;     /* light yellow */
-  color: #000000;                 /* brown text for contrast */
-  border: 1px solid #e8c563;     /* optional: border in same brown */
-}
-#email-input::placeholder {
-  color: #000000;  /* black */
-}
-#subscribe-form button {
-  max-width: 500px;      /* wider fields */
-  padding: 16px 24px;    /* taller & more horizontal space */
-  font-size: 1.4em;      /* bigger text */
-}
-
-#subscribe-form button {
-  padding: 10px 20px;
-  background-color: #7b523c;     /* brown base */
-  color: #000000;                /* yellow text */
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: background-color 0.3s ease;
-  width: 100%;
-  max-width: 300px;
-}
-
-#subscribe-form button:hover {
-  background-color: #e8c563;     /* blue on hover */
-  color: #7b523c; 
-}
-
-/* Rotate bone animation */
-@keyframes rotateBone {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
-}
-/* Force all elements to use custom font */
-body, input, button, p, .slogan, .subscribe, .clickable-word {
-  font-family: 'NostalgicRemain', sans-serif;
-}
-
-h1 {
-  font-family: 'NostalgicRemainItalic', serif;
+.testimonies p {
+  margin: 10px 0;
 }
