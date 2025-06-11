@@ -96,7 +96,7 @@ body, html {
   font-size: 7em;
   margin: 0;
   padding: 0;
-  position: relative;
+  position: absolute;
   top: -40px;
   left: -100px;
   text-transform: uppercase;
@@ -121,7 +121,7 @@ body, html {
 }
 
 .info-slogan {
-  position: relative;
+  position: absolute;
   top: 380px;               /* Adjust vertical position */
   left: -30px;              /* Adjust horizontal position */
   width: 100%;
