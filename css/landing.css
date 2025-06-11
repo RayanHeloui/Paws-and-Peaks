@@ -59,11 +59,6 @@ body, html {
   z-index: 2;
 }
 
-.logo {
-  display: none;
-}
-
-
 /* RIGHT: Info box on right side */
 .info-box {
   position: absolute;
