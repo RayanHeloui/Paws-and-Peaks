@@ -124,6 +124,7 @@ body, html {
   left: 10px;              /* Adjust horizontal position */
   width: 100%;
   text-align: left;
+  white-space: nowrap; /* force single line */
 }
 
 .slogan {
