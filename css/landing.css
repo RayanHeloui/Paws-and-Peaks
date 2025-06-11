@@ -74,9 +74,10 @@ body, html {
   max-width: 400px;
   color: #7b523c;
   text-align: center;
-  height: 90%;           /* NEW: reduce vertical size */
-  margin-top: 5%;        /* NEW: shift it down slightly */
-  margin-bottom: 5%;     /* NEW: leave gap at bottom */
+  max-height: 90%;
+  height: auto;
+  margin: 40px 0; /* top & bottom spacing to show background */
+  box-sizing: border-box;
 }
 
 
@@ -144,7 +145,7 @@ body, html {
   background: url('../images/bone.gif') no-repeat center center;
   background-size: contain;
   transform: translate(-50%, -50%);
-  animation: rotateBone 16s linear infinite; /* 50% slower (8s → 16s) */
+  animation: rotateBone 32s linear infinite;
   opacity: 0.25; /* 25% visibility */
 }
 
