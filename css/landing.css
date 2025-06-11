@@ -121,34 +121,28 @@ body, html {
 }
 
 /* Orbiting Bone Ring Around Logo */
-.bone-wrapper {
+
+.bone-wrapper.single-bone {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 100%;
+  height: 100%;
   transform: translate(-50%, -50%);
-  width: 50vh;
-  height: 50vh;
-  animation: rotate 12s linear infinite;
   z-index: 1;
 }
-
 .bone {
-  width: 8vh;
-  height: 8vh;
-  background: url('../images/bone.gif') no-repeat center center;
-  background-size: contain;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform-origin: center;
-  transform: rotate(calc(var(--i) * 45deg)) translateX(20vh) rotate(calc(var(--i) * -45deg));
+  width: 100%;
+  height: 100%;
+  background: url('../images/bone.gif') no-repeat center center;
+  background-size: contain;
+  transform: translate(-50%, -50%);
+  animation: rotateBone 8s linear infinite;
 }
 
-.bone::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-}
 .landing-container {
   display: flex;
   flex-direction: row;
@@ -169,14 +163,4 @@ body, html {
 
 .right-pane {
   background-color: #badccb; /* Adjust as needed */
-}
-
-@keyframes rotate {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-  
 }
