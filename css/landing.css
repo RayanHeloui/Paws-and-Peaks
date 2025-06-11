@@ -73,38 +73,50 @@ body, html {
 
 /* RIGHT: Info box on right side */
 .info-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 40px;
+  background-color: #badccb;
+  border-radius: 20px 0 0 20px;
   position: absolute;
   top: 10vh;
   bottom: 10vh;
   right: 0;
   width: 50vw;
-  background-color: #badccb;
-  border-radius: 20px 0 0 20px;
-  padding: 40px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start; /* Align all children to the left by default */
-  color: #7b523c;
 }
 
-/* Text and form styles */
+.info-title {
+  align-self: flex-start;
+  margin-bottom: 20px;
+}
 
 .coming-soon {
   font-size: 3em;
-  margin-bottom: 20px;
-  text-align: left; /* Align the text itself */
-  align-self: flex-start; /* Push it to the left of the container */
+  margin: 0;
+  text-align: left;
 }
 
+.info-subscribe {
+  align-self: flex-start;
+  margin-bottom: 20px;
+}
 
 .subscribe {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 20px;
 }
+
+.info-slogan {
+  align-self: flex-start;
+}
+
+.slogan {
+  font-size: 1.2em;
+}
+
 
 #email-input {
   padding: 10px;
@@ -127,11 +139,6 @@ body, html {
 .subscribe button:hover {
   background-color: #5c3f2c;
 }
-
-.slogan {
-  font-size: 1.2em;
-}
-
 
 /* Rotate bone animation */
 @keyframes rotateBone {
