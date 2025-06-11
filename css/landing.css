@@ -108,7 +108,6 @@ body, html {
   justify-content: center; /* Centers the form horizontally */
   align-items: center;      /* Centers the form vertically */
   margin-top: 20px;         /* Adds space above the form */
-  margin-bottom: 20px;
 }
 
 .subscribe {
