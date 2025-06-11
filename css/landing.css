@@ -119,18 +119,16 @@ body, html {
 }
 
 .info-slogan {
-  position: absolute;
-  top: 535px;               /* Adjust vertical position */
-  left: -325px;              /* Adjust horizontal position */
+  margin-top: auto;
   width: 100%;
-  text-align: left;
-  white-space: nowrap; /* force single line */
+  text-align: center;
+  padding: 20px;
 }
 
 .slogan {
-  font-size: 3em;          /* Increased size for more impact */
+  font-size: 2em;
   text-transform: uppercase;
-  margin: 0;               /* Optional: clean spacing if needed */
+  margin: 0;
 }
 
 /* Email input field styling */
