@@ -166,7 +166,7 @@ body, html {
 
 #email-input {
   width: 200%;           /* or try 250px, 280px etc */
-  max-width: 400px;     /* narrower input field */
+  max-width: 300px;     /* narrower input field */
   padding: 5px 10px;
   font-size: 1.1em;
 }
