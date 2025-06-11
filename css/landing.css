@@ -100,7 +100,9 @@ body, html {
   top: -40px; /* Move it upwards */
   left: -100px; /* Move it toward center from the left edge */
 }
-
+.coming-soon {
+  text-transform: uppercase;
+}
 .info-subscribe {
   align-self: flex-start;
   margin-bottom: 20px;
@@ -119,7 +121,9 @@ body, html {
 .slogan {
   font-size: 1.2em;
 }
-
+.slogan {
+  text-transform: uppercase;
+}
 
 #email-input {
   padding: 10px;
@@ -142,7 +146,9 @@ body, html {
 .subscribe button:hover {
   background-color: #5c3f2c;
 }
-
+.subscribe button {
+  text-transform: uppercase;
+}
 /* Rotate bone animation */
 @keyframes rotateBone {
   from { transform: translate(-50%, -50%) rotate(0deg); }
