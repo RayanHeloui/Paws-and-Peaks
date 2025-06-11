@@ -114,10 +114,8 @@ body, html {
 .subscribe {
   display: flex;
   flex-direction: column;
-  align-items: center;      /* Centers form elements horizontally */
-  gap: 15px;                /* Adds space between input and button */
-  width: 80%;               /* Adjusts the form width */
-  max-width: 400px;         /* Sets a maximum width for larger screens */
+  align-items: center;
+  gap: 15px;
 }
 
 .info-slogan {
@@ -150,28 +148,24 @@ body, html {
 
 .subscribe-wrapper {
   background-color: #f7cbd1;
-  padding: 20px;
-  display: inline-block;
-  border-radius: 10px;
-  text-align: center;
-  max-width: 100%;
-  width: fit-content;
-  margin: 100px auto 0 auto; /* instead of position:absolute */
+  padding: 40px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center; /* centers content horizontally */
+  align-items: center;     /* centers content vertically */
+  min-height: 200px;       /* ensures there's height to center within */
 }
 
 #subscribe-form {
   display: flex;
-  flex-direction: row; /* Or column for stacked layout */
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap; /* Wrap on smaller screens */
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;     /* centers children (input & button) horizontally */
 }
+
 #email-input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  min-width: 250px;
+  width: 100%;
+  max-width: 300px;
 }
 
 #subscribe-form button {
@@ -183,6 +177,8 @@ body, html {
   cursor: pointer;
   text-transform: uppercase;
   transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 300px;
 }
 
 #subscribe-form button:hover {
@@ -190,9 +186,6 @@ body, html {
 }
 .subscribe button:hover {
   background-color: #5c3f2c;
-}
-.subscribe button {
-  text-transform: uppercase;
 }
 /* Rotate bone animation */
 @keyframes rotateBone {
