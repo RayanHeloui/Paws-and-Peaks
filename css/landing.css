@@ -156,19 +156,19 @@ body, html {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 .subscribe-wrapper {
   background-color: #f7cbd1;
   padding: 20px;
   display: inline-block; /* Shrink-wrap to content */
-  justify-content: center;
-  align-items: center;
-  border-radius: 0;
-  position: relative;
-  position: relative;
-  top: -20px;
-  left: -20px;
-  text-align: center;    /* You can increase this for more width */
+  position: absolute;
+  top: 200px; /* Adjust as needed to position vertically */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  box-sizing: border-box; /* Ensures padding doesn't increase width */
 }
+
 
 
 .subscribe button:hover {
