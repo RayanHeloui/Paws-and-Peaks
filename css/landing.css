@@ -120,8 +120,8 @@ body, html {
 
 .info-slogan {
   position: absolute;
-  top: 600px;               /* Adjust vertical position */
-  left: 500px;              /* Adjust horizontal position */
+  top: 800px;               /* Adjust vertical position */
+  left: 1000px;              /* Adjust horizontal position */
   width: 100%;
   text-align: left;
   white-space: nowrap; /* force single line */
