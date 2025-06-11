@@ -104,14 +104,20 @@ body, html {
   text-transform: uppercase;
 }
 .info-subscribe {
-  align-self: flex-start;
+  display: flex;
+  justify-content: center; /* Centers the form horizontally */
+  align-items: center;      /* Centers the form vertically */
+  margin-top: 20px;         /* Adds space above the form */
   margin-bottom: 20px;
 }
 
 .subscribe {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;      /* Centers form elements horizontally */
+  gap: 15px;                /* Adds space between input and button */
+  width: 80%;               /* Adjusts the form width */
+  max-width: 400px;         /* Sets a maximum width for larger screens */
 }
 
 .info-slogan {
@@ -128,16 +134,20 @@ body, html {
   margin: 0;               /* Optional: clean spacing if needed */
 }
 
+/* Email input field styling */
 #email-input {
-  padding: 10px;
-  font-size: 1em;
+  width: 100%;
+  padding: 14px;
+  font-size: 1.2em;
   border: none;
   border-radius: 6px;
+  box-sizing: border-box;
 }
 
 .subscribe button {
-  padding: 10px;
-  font-size: 1em;
+  width: 100%;
+  padding: 14px;
+  font-size: 1.2em;
   background-color: #7b523c;
   color: #fcefb3;
   border: none;
