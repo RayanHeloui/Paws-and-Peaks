@@ -148,12 +148,12 @@ body, html {
 
 .subscribe-wrapper {
   background-color: #f7cbd1;
-  padding: 40px;
+  padding: 20px 40px; /* 20px top/bottom, 40px left/right */
   border-radius: 12px;
   display: flex;
   justify-content: center; /* centers content horizontally */
   align-items: center;     /* centers content vertically */
-  min-height: 200px;       /* ensures there's height to center within */
+  min-height: 120px;       /* ensures there's height to center within */
 }
 
 #subscribe-form {
@@ -163,9 +163,12 @@ body, html {
   align-items: center;     /* centers children (input & button) horizontally */
 }
 
-#email-input {
+#email-input,
+#subscribe-form button {
   width: 100%;
-  max-width: 300px;
+  max-width: 400px;
+  padding: 12px 16px;
+  font-size: 1em;
 }
 
 #subscribe-form button {
