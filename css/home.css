@@ -24,6 +24,20 @@ section {
   justify-content: center;
   align-items: center;
 }
+.hero-images {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-img {
+  width: 150px;
+  height: auto;
+  transition: transform 0.2s ease-out;
+  position: relative;
+}
 
 /* 🛍️ Products Title */
 .products-title {
