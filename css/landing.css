@@ -1,3 +1,18 @@
+@font-face {
+  font-family: 'NostalgicRegular';
+  src: url('../fonts/NostalgicRemain-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'NostalgicItalic';
+  src: url('../fonts/NostalgicRemainItalic-Italic.ttf') format('truetype');
+}
+
+body {
+  font-family: 'NostalgicRegular', sans-serif;
+}
+
+
 /* Reset and basic setup */
 body, html {
   margin: 0;
