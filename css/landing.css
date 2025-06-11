@@ -93,11 +93,11 @@ body, html {
 }
 
 .coming-soon {
-  font-size: 5em;
+  font-size: 7em;
   margin: 0;
   padding: 0;
   position: relative;
-  top: -50px; /* Move it upwards */
+  top: -40px; /* Move it upwards */
   left: -100px; /* Move it toward center from the left edge */
 }
 
