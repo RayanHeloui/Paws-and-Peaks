@@ -136,13 +136,15 @@ body, html {
 
 /* Email input field styling */
 #email-input {
-  width: 100%;
+  width: 120%; /* Increase from 100% */
+  margin-left: -50%; /* Pull leftward to keep it centered */
   padding: 14px;
   font-size: 1.2em;
   border: none;
   border-radius: 6px;
   box-sizing: border-box;
 }
+
 
 .subscribe button {
   width: 100%;
