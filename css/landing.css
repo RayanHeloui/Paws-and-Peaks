@@ -154,6 +154,7 @@ body, html {
   justify-content: center; /* centers content horizontally */
   align-items: center;     /* centers content vertically */
   min-height: 120px;       /* ensures there's height to center within */
+  margin-top: 100px; /* Adjust this value as needed */
 }
 
 #subscribe-form {
