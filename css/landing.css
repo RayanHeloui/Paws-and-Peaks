@@ -115,14 +115,17 @@ body, html {
 }
 
 .info-slogan {
-  align-self: flex-start;
+  position: relative;
+  top: -200px;               /* Adjust vertical position */
+  left: 30px;              /* Adjust horizontal position */
+  width: 100%;
+  text-align: left;
 }
 
 .slogan {
-  font-size: 1.2em;
-}
-.slogan {
+  font-size: 4em;          /* Increased size for more impact */
   text-transform: uppercase;
+  margin: 0;               /* Optional: clean spacing if needed */
 }
 
 #email-input {
