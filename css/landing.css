@@ -174,7 +174,7 @@ body, html {
   padding: 5px 10px;
   font-size: 1.1em;
   background-color: #fcefb3;     /* light yellow */
-  color: #7b523c;                /* brown text for contrast */
+  color: #000000;                 /* brown text for contrast */
   border: 1px solid #7b523c;     /* optional: border in same brown */
 }
 #email-input::placeholder {
