@@ -60,7 +60,7 @@ body, html {
   max-width: 400px;
   width: 100%;
   height: 80vh;       /* Covers ~80% of the viewport height */
-  margin: 10vh 0;     /* Leaves 10% space top & bottom */
+  margin: 20vh 0;     /* Leaves 10% space top & bottom */
   text-align: center;
   display: flex;
   flex-direction: column;
