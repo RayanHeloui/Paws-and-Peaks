@@ -139,7 +139,7 @@ body, html {
   padding: 14px;
   font-size: 1.2em;
   background-color: #7b523c;
-  color: #fcefb3;
+  color: #000000;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -173,9 +173,9 @@ body, html {
   max-width: 300px;     /* narrower input field */
   padding: 5px 10px;
   font-size: 1.1em;
-  background-color: #fcefb3;     /* light yellow */
+  background-color: #e8c563;     /* light yellow */
   color: #000000;                 /* brown text for contrast */
-  border: 1px solid #7b523c;     /* optional: border in same brown */
+  border: 1px solid #e8c563;     /* optional: border in same brown */
 }
 #email-input::placeholder {
   color: #000000;  /* black */
@@ -189,7 +189,7 @@ body, html {
 #subscribe-form button {
   padding: 10px 20px;
   background-color: #7b523c;     /* brown base */
-  color: #fcefb3;                /* yellow text */
+  color: #000000;                /* yellow text */
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -200,7 +200,7 @@ body, html {
 }
 
 #subscribe-form button:hover {
-  background-color: #badccb;     /* blue on hover */
+  background-color: #e8c563;     /* blue on hover */
   color: #7b523c; 
 }
 
