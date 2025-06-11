@@ -163,9 +163,13 @@ body, html {
   justify-content: center;
   align-items: center;
   border-radius: 0;
-  width: fit-content;
-  margin: 0 auto;
+  position: relative;
+  top: -20px;
+  left: -20px;
+  width: 170%;          /* Takes full width of the parent */
+  max-width: 500px;     /* You can increase this for more width */
 }
+
 
 .subscribe button:hover {
   background-color: #5c3f2c;
