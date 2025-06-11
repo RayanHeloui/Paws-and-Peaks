@@ -120,12 +120,12 @@ body, html {
 
 .info-slogan {
   position: absolute;
-  bottom: 10px;  /* distance from the bottom */
+  bottom:-5px;  /* distance from the bottom */
   left: 10px;    /* distance from the left */;
 }
 
 .slogan {
-  font-size: 5em;         /* Make it smaller */
+  font-size: 4em;         /* Make it smaller */
   text-transform: uppercase;
   margin: 0;
 }
