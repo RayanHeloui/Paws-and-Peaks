@@ -108,7 +108,7 @@ body, html {
   align-self: center; /* Centers the form within the container */
   font-size: 1.2em; /* Adjust the font size as needed */
   position: relative;
-  top: 20px; /* Moves the form 20px down */
+  top: 100px; /* Moves the form 20px down */
 }
 
 .subscribe {
