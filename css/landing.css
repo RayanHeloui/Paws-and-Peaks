@@ -177,6 +177,9 @@ body, html {
   color: #7b523c;                /* brown text for contrast */
   border: 1px solid #7b523c;     /* optional: border in same brown */
 }
+#email-input::placeholder {
+  color: #000000;  /* black */
+}
 #subscribe-form button {
   max-width: 500px;      /* wider fields */
   padding: 16px 24px;    /* taller & more horizontal space */
