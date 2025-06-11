@@ -116,7 +116,7 @@ body, html {
 
 .info-slogan {
   position: relative;
-  top: -200px;               /* Adjust vertical position */
+  top: 300px;               /* Adjust vertical position */
   left: 30px;              /* Adjust horizontal position */
   width: 100%;
   text-align: left;
