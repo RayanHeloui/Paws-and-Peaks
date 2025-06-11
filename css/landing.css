@@ -164,7 +164,12 @@ body, html {
   align-items: center;     /* centers children (input & button) horizontally */
 }
 
-#email-input,
+#email-input {
+  width: 80%;           /* or try 250px, 280px etc */
+  max-width: 280px;     /* narrower input field */
+  padding: 12px 16px;
+  font-size: 1.1em;
+}
 #subscribe-form button {
   max-width: 500px;      /* wider fields */
   padding: 16px 24px;    /* taller & more horizontal space */
