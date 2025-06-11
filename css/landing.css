@@ -80,7 +80,7 @@ body, html {
   padding: 40px;
   background-color: #badccb;
   border-radius: 20px 0 0 20px;
-  position: absolute;
+  position: relative;
   top: 10vh;
   bottom: 10vh;
   right: 0;
@@ -119,11 +119,9 @@ body, html {
 }
 
 .info-slogan {
-  margin-top: auto;
-  width: 100%;
-  text-align: left;         /* Align text to the left */
-  padding: 0 2px 2px 2px; /* top, right, bottom, left padding */
-  box-sizing: border-box;
+  position: absolute;
+  bottom: 20px;  /* distance from the bottom */
+  left: 30px;    /* distance from the left */;
 }
 
 .slogan {
