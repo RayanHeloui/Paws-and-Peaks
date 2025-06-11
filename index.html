@@ -39,6 +39,25 @@
     </p>
   </div>
 </div>
+<form id="access-form">
+  <input type="text" id="user-input" placeholder="Enter your name" required />
+  <button type="submit">Enter</button>
+</form>
+
+<script>
+  document.getElementById('access-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const input = document.getElementById('user-input').value.trim().toLowerCase();
+
+    // Allow access for George or Flick
+    if (input === 'george' || input === 'flick') {
+      window.location.href = 'home.html';
+    } else {
+      alert('Access denied. Name not recognized.');
+    }
+  });
+</script>
 
   <script src="js/script.js" defer></script>
 </body>
