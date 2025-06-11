@@ -159,15 +159,15 @@ body, html {
 .subscribe-wrapper {
   background-color: #f7cbd1;
   padding: 20px;
-  display: flex;
+  display: inline-block; /* Shrink-wrap to content */
   justify-content: center;
   align-items: center;
   border-radius: 0;
   position: relative;
+  position: relative;
   top: -20px;
   left: -20px;
-  width: 170%;          /* Takes full width of the parent */
-  max-width: 500px;     /* You can increase this for more width */
+  text-align: center;    /* You can increase this for more width */
 }
 
 
