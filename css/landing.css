@@ -80,7 +80,7 @@ body, html {
   padding: 40px;
   background-color: #badccb;
   border-radius: 20px 0 0 20px;
-  position: relative;
+  position: absolute;
   top: 10vh;
   bottom: 10vh;
   right: 0;
