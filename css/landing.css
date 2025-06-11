@@ -14,13 +14,10 @@ body, html {
   align-items: center;
 }
 
-/* Container holding the two sides */
-.landing-container {
-  display: flex;
-  width: 90%;
-  max-width: 1200px;
-  height: 80vh;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+.logo-container {
+  position: relative;
+  height: 50vh; /* Half the viewport height */
+  aspect-ratio: 1 / 1;
 }
 
 /* Left Side: Logo and rotating bone */
@@ -43,8 +40,7 @@ body, html {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 250px;
-  height: 250px;
+  height: 100%;
   transform: translate(-50%, -50%);
   animation: rotateBone 8s linear infinite;
   z-index: 1;
@@ -54,7 +50,7 @@ body, html {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 120px;
+  height: 65%; /* Slightly smaller than bone */
   transform: translate(-50%, -50%);
   z-index: 2;
 }
