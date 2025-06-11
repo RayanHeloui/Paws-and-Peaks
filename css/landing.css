@@ -1,30 +1,30 @@
-@font-face {
-  font-family: 'NostalgicRegular';
-  src: url('../fonts/NostalgicRemain-Regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'NostalgicItalic';
-  src: url('../fonts/NostalgicRemainItalic-Italic.ttf') format('truetype');
-}
-
-body {
-  font-family: 'NostalgicRegular', sans-serif;
-}
-
-
 /* Reset and basic setup */
 body, html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
   background-color: #fcefb3;
   color: #7b523c;
   height: 100vh;
   overflow: hidden;
 }
+@font-face {
+  font-family: 'NostalgicRemain';
+  src: url('../fonts/NostalgicRemain-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: 'NostalgicRemainItalic';
+  src: url('../fonts/NostalgicRemainItalic-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+h1 {
+  font-family: 'NostalgicRemainItalic', serif;
+}
 /* Container splits screen into two halves */
 .landing-container {
   display: flex;
