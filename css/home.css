@@ -62,3 +62,21 @@ section {
 .testimonies p {
   margin: 10px 0;
 }
+
+.hero-title {
+  font-size: 3rem;
+  transition: transform 0.2s ease-out;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  transition: opacity 0.2s ease-out;
+  margin-top: 20px;
+}
+
+.hero-image {
+  margin-top: 40px;
+  width: 150px;
+  height: auto;
+  transition: transform 0.2s ease-out;
+}
