@@ -159,11 +159,13 @@ body, html {
   width: 100%;         /* new line — tells it to fill the space */
   max-width: 900px;    /* controls the largest it gets */
 }
+
 .subscribe-inner {
-  background-color: #fcefb3;         /* Inner box color (yellow) */
+  background-color: #fcefb3;
   width: 100%;
   height: 100%;
-  border-radius: 8px;
+  padding: 20px 40px;     /* Move padding here instead */
+  border-radius: 12px;    /* Match pink box corners */
   box-sizing: border-box;
 }
 
