@@ -173,6 +173,9 @@ body, html {
   max-width: 300px;     /* narrower input field */
   padding: 5px 10px;
   font-size: 1.1em;
+  background-color: #fcefb3;     /* light yellow */
+  color: #7b523c;                /* brown text for contrast */
+  border: 1px solid #7b523c;     /* optional: border in same brown */
 }
 #subscribe-form button {
   max-width: 500px;      /* wider fields */
@@ -182,8 +185,8 @@ body, html {
 
 #subscribe-form button {
   padding: 10px 20px;
-  background-color: #ff6699;
-  color: white;
+  background-color: #7b523c;     /* brown base */
+  color: #fcefb3;                /* yellow text */
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -194,11 +197,10 @@ body, html {
 }
 
 #subscribe-form button:hover {
-  background-color: #e05588;
+  background-color: #badccb;     /* blue on hover */
+  color: #7b523c; 
 }
-.subscribe button:hover {
-  background-color: #5c3f2c;
-}
+
 /* Rotate bone animation */
 @keyframes rotateBone {
   from { transform: translate(-50%, -50%) rotate(0deg); }
