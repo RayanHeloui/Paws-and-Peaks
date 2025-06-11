@@ -120,15 +120,15 @@ body, html {
 
 .info-slogan {
   position: absolute;
-  top: 500px;               /* Adjust vertical position */
-  left: 10px;              /* Adjust horizontal position */
+  top: 700px;               /* Adjust vertical position */
+  left: -500px;              /* Adjust horizontal position */
   width: 100%;
   text-align: left;
   white-space: nowrap; /* force single line */
 }
 
 .slogan {
-  font-size: 2em;          /* Increased size for more impact */
+  font-size: 3em;          /* Increased size for more impact */
   text-transform: uppercase;
   margin: 0;               /* Optional: clean spacing if needed */
 }
