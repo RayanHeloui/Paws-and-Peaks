@@ -156,6 +156,16 @@ body, html {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+.subscribe-wrapper {
+  background-color: #f7cbd1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+  width: fit-content;
+  margin: 0 auto;
+}
 
 .subscribe button:hover {
   background-color: #5c3f2c;
