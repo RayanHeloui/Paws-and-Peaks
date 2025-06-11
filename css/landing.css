@@ -104,9 +104,10 @@ body, html {
   text-transform: uppercase;
 }
 .info-subscribe {
-  display: flex;
   justify-content: center; /* Centers the form horizontally */
-  align-items: center;      /* Centers the form vertically */
+  flex: 0 0 auto; /* Prevents the form from growing or shrinking */
+  align-self: center; /* Centers the form within the container */
+  font-size: 1.2em; /* Adjust the font size as needed */
   margin-top: 20px;         /* Adds space above the form */
 }
 
