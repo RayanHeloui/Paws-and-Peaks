@@ -55,18 +55,19 @@ body, html {
 /* Info box styling */
 .info-box {
   background-color: #badccb;
-  width: 100%;
-  max-width: none;         /* Remove max cap */
-  height: 80vh;            /* Takes 80% of the screen height */
-  margin: 10vh 0;          /* Leaves 10% space at top & bottom */
+  width: 50vw;             /* Only half the screen */
+  height: 80vh;            /* Leaves top & bottom space */
+  margin: 10vh 0;          /* Leaves 10% yellow top & bottom */
   padding: 40px;
-  border-radius: 20px 0 0 20px;  /* Rounded only on the left side */
+  border-radius: 20px 0 0 20px;  /* Only round the left edge */
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  align-self: stretch;
 }
+
 
 .coming-soon {
   font-size: 2.5em;
