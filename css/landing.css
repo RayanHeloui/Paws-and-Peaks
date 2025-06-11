@@ -136,8 +136,7 @@ body, html {
 
 /* Email input field styling */
 #email-input {
-  width: 120%; /* Increase from 100% */
-  margin-left: -50%; /* Pull leftward to keep it centered */
+  width: 200%; /* Increase from 100% */
   padding: 14px;
   font-size: 1.2em;
   border: none;
