@@ -10,9 +10,11 @@
 
   <!-- 🌄 HERO SECTION -->
   <section class="hero">
-    <h1>Welcome to Paws and Peaks</h1>
-    <p>Explore adventure kits crafted for you and your furry friend.</p>
-  </section>
+  <h1 class="hero-title">Welcome to Our Store</h1>
+  <p class="hero-subtitle">Discover something unique.</p>
+  <img src="https://via.placeholder.com/150" class="hero-image" alt="Hero Object">
+</section>
+
 
   <!-- 🛍️ PRODUCTS TITLE -->
   <section class="products-title">
@@ -46,5 +48,24 @@
     <p>"Stylish and super functional." – Leila</p>
   </section>
 
+<script>
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const hero = document.querySelector('.hero');
+    const title = document.querySelector('.hero-title');
+    const subtitle = document.querySelector('.hero-subtitle');
+    const image = document.querySelector('.hero-image');
+
+    const maxScroll = hero.offsetHeight;
+
+    // % scrolled through hero
+    const scrollRatio = Math.min(scrollY / maxScroll, 1);
+
+    title.style.transform = `translateY(${scrollRatio * -100}px)`;
+    subtitle.style.opacity = 1 - scrollRatio;
+    image.style.transform = `scale(${1 + scrollRatio * 0.5}) rotate(${scrollRatio * 15}deg)`;
+  });
+</script>
+  
 </body>
 </html>
