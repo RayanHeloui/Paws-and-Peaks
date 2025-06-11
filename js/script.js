@@ -1,4 +1,4 @@
-"document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const subscribeForm = document.getElementById('subscribe-form');
   const emailInput = document.getElementById('email-input');
 
@@ -14,11 +14,10 @@
     }
 
     if (allowedEmails.includes(email)) {
-      window.location.href = 'home.html';
+      window.location.href = 'html/home.html';
     } else {
-      alert("Thanks for subscribing! We’ll keep you posted.");
+      alert("Thanks for subscribing! 🐾 We'll be in touch soon.");
       emailInput.value = '';
     }
   });
 });
-" 
