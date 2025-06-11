@@ -155,6 +155,7 @@ body, html {
   align-items: center;     /* centers content vertically */
   min-height: 120px;       /* ensures there's height to center within */
   margin-top: 100px; /* Adjust this value as needed */
+  max-width: 900px;   /* or try 700px, 800px as needed */
 }
 
 #subscribe-form {
