@@ -4,31 +4,33 @@ body, html {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Arial', sans-serif;
-  background-color: #fcefb3; /* Soft yellow background */
-  color: #7b523c; /* Text color */
+  background-color: #fcefb3;
+  color: #7b523c;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Container splits screen into two halves */
+.landing-container {
+  display: flex;
+  width: 100vw;
   height: 100vh;
 }
 
-/* Container to hold logo and info box */
-.landing-container {
+/* LEFT: Logo & bone centered in left half */
+.left-pane {
+  width: 50vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  gap: 80px; /* was 50px; increased spacing */
+  position: relative;
 }
 
-/* Logo and rotating bone */
-.logo-section {
+/* Logo and bone wrapper */
+.logo-container {
   position: relative;
   width: 200px;
   height: 200px;
-}
-
-.logo-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
 }
 
 .rotating-bone {
@@ -38,8 +40,8 @@ body, html {
   width: 200%;
   height: 200%;
   transform: translate(-50%, -50%);
-  animation: rotateBone 16s linear infinite; /* Slower rotation */
-  opacity: 0.25; /* 25% opacity */
+  animation: rotateBone 32s linear infinite;
+  opacity: 0.25;
   z-index: 1;
 }
 
@@ -52,15 +54,15 @@ body, html {
   z-index: 2;
 }
 
-/* Info box styling */
+/* RIGHT: Info box on right side */
 .info-box {
   position: absolute;
-  top: 10vh;               /* Leaves 10% space at top */
-  bottom: 10vh;            /* Leaves 10% space at bottom */
-  right: 0;                /* Anchors to the right side of screen */
-  width: 50vw;             /* 50% of the viewport width */
+  top: 10vh;
+  bottom: 10vh;
+  right: 0;
+  width: 50vw;
   background-color: #badccb;
-  border-radius: 20px 0 0 20px; /* Only left corners rounded */
+  border-radius: 20px 0 0 20px;
   padding: 40px;
   text-align: center;
   display: flex;
@@ -70,6 +72,7 @@ body, html {
   color: #7b523c;
 }
 
+/* Text and form styles */
 .coming-soon {
   font-size: 2.5em;
   margin-bottom: 20px;
@@ -108,13 +111,8 @@ body, html {
   font-size: 1.2em;
 }
 
-.clickable-word {
-  font-weight: bold;
-  text-decoration: underline;
-  cursor: pointer;
-}
 
-/* Rotation animation */
+/* Rotate bone animation */
 @keyframes rotateBone {
   from { transform: translate(-50%, -50%) rotate(0deg); }
   to { transform: translate(-50%, -50%) rotate(360deg); }
