@@ -40,8 +40,8 @@ body, html {
   position: absolute;
   top: 50%;
   left: 45%;
-  width: 400px; /* or try 200px */
-  height: 400px;
+  width: 800px; /* or try 200px */
+  height: 800px;
   transform: translate(-50%, -50%);
   animation: rotateBone 32s linear infinite;
   opacity: 0.25;
