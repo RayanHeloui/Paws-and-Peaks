@@ -85,15 +85,19 @@ body, html {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Align all children to the left by default */
   color: #7b523c;
 }
 
 /* Text and form styles */
+
 .coming-soon {
-  font-size: 2.5em;
+  font-size: 3em;
   margin-bottom: 20px;
+  text-align: left; /* Align the text itself */
+  align-self: flex-start; /* Push it to the left of the container */
 }
+
 
 .subscribe {
   display: flex;
