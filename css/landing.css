@@ -135,15 +135,6 @@ body, html {
 }
 
 /* Email input field styling */
-#email-input {
-  width: 200%; /* Increase from 100% */
-  padding: 14px;
-  font-size: 1.2em;
-  border: none;
-  border-radius: 6px;
-  box-sizing: border-box;
-}
-
 
 .subscribe button {
   width: 100%;
@@ -160,17 +151,43 @@ body, html {
 .subscribe-wrapper {
   background-color: #f7cbd1;
   padding: 20px;
-  display: inline-block; /* Shrink-wrap to content */
-  position: absolute;
-  top: 200px; /* Adjust as needed to position vertically */
-  left: 50%;
-  transform: translateX(-50%);
+  display: inline-block;
+  border-radius: 10px;
   text-align: center;
-  box-sizing: border-box; /* Ensures padding doesn't increase width */
+  max-width: 100%;
+  width: fit-content;
+  margin: 100px auto 0 auto; /* instead of position:absolute */
 }
 
+#subscribe-form {
+  display: flex;
+  flex-direction: row; /* Or column for stacked layout */
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Wrap on smaller screens */
+}
+#email-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 250px;
+}
 
+#subscribe-form button {
+  padding: 10px 20px;
+  background-color: #ff6699;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
 
+#subscribe-form button:hover {
+  background-color: #e05588;
+}
 .subscribe button:hover {
   background-color: #5c3f2c;
 }
