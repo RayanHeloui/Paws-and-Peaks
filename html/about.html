@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Paws and Peaks</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ✅ Shared Header Container -->
+  <div id="header-container"></div>
+
+  <!-- 🐾 About Hero Section -->
+  <section id="about" class="hero about-hero">
+    <h1>About Paws and Peaks 🐾⛰️</h1>
+    <p>We’re a passionate team dedicated to connecting pets and nature. Whether it’s dog-friendly trails, cozy mountain gear, or feel-good stories — we’re here for all the four-legged adventurers and their humans!</p>
+    <p>Founded in 2025, Paws and Peaks began as a hike and a dream... and now it's a lifestyle 🏞️🐶</p>
+  </section>
+
+  <!-- 🧑‍🤝‍🧑 Meet the Team Section -->
+  <section class="team">
+    <h2>Meet Our Pack</h2>
+    <div class="team-member">
+      <img src="https://placekitten.com/160/160" alt="Ray the Trailblazer" />
+      <h3>Ray the Trailblazer</h3>
+      <p>Founder, dog dad, and head treat tester.</p>
+    </div>
+    <div class="team-member">
+      <img src="https://placekitten.com/161/161" alt="Mila the Mountain Pup" />
+      <h3>Mila the Mountain Pup</h3>
+      <p>Brand mascot, pro sniffer, and squirrel chaser.</p>
+    </div>
+  </section>
+
+  <!-- 🔁 Load Shared Header -->
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header-container').innerHTML = html;
+      });
+  </script>
+
+  <!-- 🔁 Site Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>

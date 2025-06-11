@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Adventure Bundle</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ✅ Shared Header -->
+  <div id="header-container"></div>
+
+  <!-- 🧭 Product Info -->
+  <main class="product-detail">
+    <h1>Adventure Bundle</h1>
+    <img src="https://placekitten.com/300/300" alt="Adventure Bundle" />
+    <p>Includes Camping Kit, First Aid Kit, and Pro Explorer Kit.</p>
+    <p><strong>Price:</strong> $79.99</p>
+    <button onclick="addToCart(104, 'Adventure Bundle', 79.99)">Add to Cart</button>
+    <span id="indicator-104" class="cart-indicator"></span>
+  </main>
+
+  <!-- 🔁 Shared Scripts -->
+  <script>
+    // Load shared header
+    fetch('header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header-container').innerHTML = html;
+      });
+  </script>
+  <script src="script.js"></script>
+
+</body>
+</html>

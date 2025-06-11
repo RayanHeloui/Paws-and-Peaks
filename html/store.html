@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop - Paws and Peaks</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ✅ Shared Header (loads via JS) -->
+  <div id="header-container"></div>
+
+  <!-- 🛒 Cart Toggle Button -->
+  <button id="cart-toggle">Cart</button>
+
+  <!-- 🛒 Slide-In Cart Panel -->
+  <div id="cart-panel" class="cart-panel">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button id="cart-close">×</button>
+    </div>
+    <div class="cart-content">
+      <!-- Cart items will be dynamically inserted here -->
+    </div>
+  </div>
+
+  <!-- 🛍️ Store Section -->
+  <section class="store-section">
+    <h1>Shop Our Gear 🏕️🐾</h1>
+    <div class="product-grid" id="product-container">
+      <!-- Products will load here -->
+    </div>
+  </section>
+
+  <!-- 🔁 Shared Scripts -->
+  <script src="script.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Load shared header
+      fetch('header.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('header-container').innerHTML = html;
+        });
+
+      // Load products
+      const container = document.getElementById('product-container');
+      const products = JSON.parse(localStorage.getItem('products')) || [];
+
+      if (products.length === 0) {
+        container.innerHTML = "<p>No products available at the moment.</p>";
+        return;
+      }
+
+      products.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+          <img src="${product.image}" alt="${product.name}" />
+          <h3>${product.name}</h3>
+          <p>$${product.price.toFixed(2)}</p>
+          <p>${product.description}</p>
+          <button class="add-to-cart">Add to Cart</button>
+        `;
+        container.appendChild(card);
+      });
+
+      // Cart functionality
+      const cartToggle = document.getElementById('cart-toggle');
+      const cartPanel = document.getElementById('cart-panel');
+      const cartClose = document.getElementById('cart-close');
+
+      cartToggle.addEventListener('click', () => {
+        cartPanel.classList.add('open');
+      });
+
+      cartClose.addEventListener('click', () => {
+        cartPanel.classList.remove('open');
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!cartPanel.contains(event.target) && !cartToggle.contains(event.target)) {
+          cartPanel.classList.remove('open');
+        }
+      });
+
+      // Add to Cart functionality
+      const cartContent = document.querySelector('.cart-content');
+      container.addEventListener('click', (event) => {
+        if (event.target.classList.contains('add-to-cart')) {
+          const productCard = event.target.closest('.product-card');
+          const productName = productCard.querySelector('h3').textContent;
+          const productPrice = productCard.querySelector('p').textContent;
+          const cartItem = document.createElement('div');
+          cartItem.textContent = `${productName} - ${productPrice}`;
+          cartContent.appendChild(cartItem);
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

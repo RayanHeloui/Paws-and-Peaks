@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camping Kit</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ✅ Shared Header -->
+  <div id="header-container"></div>
+
+  <!-- 🏕️ Product Details -->
+  <main class="product-detail">
+    <h1>Camping Kit</h1>
+    <img src="https://placekitten.com/200/200" alt="Camping Kit" />
+    <p>All-in-one kit for cozy outdoor adventures with your pup.</p>
+    <p><strong>Price:</strong> $29.99</p>
+    <button onclick="addToCart(101, 'Camping Kit', 29.99)">Add to Cart</button>
+    <span id="indicator-101" class="cart-indicator"></span>
+  </main>
+
+  <!-- 🔁 Load Shared Header + Script -->
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header-container').innerHTML = html;
+      });
+  </script>
+  <script src="script.js"></script>
+
+</body>
+</html>

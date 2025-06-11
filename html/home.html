@@ -1,0 +1,88 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Paws and Peaks</title>
+      <link rel="stylesheet" href="style.css" />
+      <link rel="stylesheet" href="style.css" />
+      <script src="script.js"></script>
+      <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    </head>
+    <body>
+
+      <!-- ✅ Shared Header (loads via JS) -->
+      <div id="header-container"></div>
+
+      <!-- 🏞 Hero Section with Background Logo and Product Images -->
+      <section id="hero" class="hero-section">
+        <div class="hero-background-logo">
+          <img src="Paws and Peaks Logo Master Trans.png" alt="Background Logo">
+        </div>
+        <div class="hero-products">
+          <div class="product-card fade-in">
+            <img src="https://placekitten.com/200/200" alt="Camping Kit">
+          </div>
+          <div class="product-card fade-in">
+            <img src="https://placekitten.com/201/200" alt="First Aid Kit">
+          </div>
+          <div class="product-card fade-in">
+            <img src="https://placekitten.com/202/200" alt="Pro Explorer Kit">
+          </div>
+        </div>
+      </section>
+
+      <!-- ℹ️ About Section -->
+      <section id="about" class="content-section">
+        <h2>About Us</h2>
+        <p>Tell your customers why your products are awesome!</p>
+      </section>
+
+      <!-- ✉️ Contact Section -->
+      <section id="contact" class="content-section">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:contact@pawsandpeaks.com">contact@pawsandpeaks.com</a></p>
+      </section>
+
+      <!-- 💬 Chatbot Widget -->
+      <div id="chatbot-container">
+        <div id="chatbot-header">💬 Chat with us!</div>
+        <div id="chatbot-body">
+          <div id="chatbot-messages"></div>
+          <input type="text" id="chatbot-input" placeholder="Ask a question..." />
+        </div>
+      </div>
+
+      <!-- 🔁 Load Shared Header -->
+      <script>
+        fetch('header.html')
+          .then(res => res.text())
+          .then(html => {
+            document.getElementById('header-container').innerHTML = html;
+          });
+      </script>
+
+      <!-- 🔁 External Scripts -->
+      <script src="script.js"></script>
+      <script src="chatbot.js"></script>
+
+      <!-- 🔁 Intersection Observer Animation -->
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+              }
+            });
+          }, {
+            threshold: 0.5
+          });
+
+          document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+          });
+        });
+      </script>
+    </body>
+    </html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Track Your Order | Paws and Peaks</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ✅ Shared Header -->
+  <div id="header-container"></div>
+
+  <main class="track-order">
+    <h1>🚚 Track Your Order</h1>
+    <form id="trackForm">
+      <input type="text" id="orderIdInput" placeholder="Enter your Order ID" required />
+      <button type="submit">Track</button>
+    </form>
+    <div id="orderResult"></div>
+  </main>
+
+  <!-- 🔁 Shared Scripts -->
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      loadHeader();
+
+      document.getElementById('trackForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const orderId = document.getElementById('orderIdInput').value.trim();
+        const orders = JSON.parse(localStorage.getItem('orders')) || [];
+        const result = document.getElementById('orderResult');
+
+        const found = orders.find(o => o.id === orderId);
+        if (found) {
+          result.innerHTML = `
+            <p><strong>Status:</strong> ${found.status}</p>
+            <p><strong>Item:</strong> ${found.item}</p>
+            <p><strong>Date:</strong> ${found.date}</p>
+          `;
+        } else {
+          result.innerHTML = `<p>Order not found. Please check your ID.</p>`;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

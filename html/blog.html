@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Paws and Peaks</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 🔁 Header -->
+  <div id="header-container"></div>
+
+  <main>
+    <h1>🐾 Our Blog</h1>
+    <div id="blog-posts"></div>
+  </main>
+
+  <!-- 💬 Chatbot Widget -->
+  <div id="chatbot-container">
+    <div id="chatbot-header">💬 Chat with us!</div>
+    <div id="chatbot-body">
+      <div id="chatbot-messages"></div>
+      <input type="text" id="chatbot-input" placeholder="Ask a question..." />
+    </div>
+  </div>
+
+  <!-- 🔁 Scripts -->
+  <script>
+    // 🧠 Inject Shared Header
+    fetch('header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header-container').innerHTML = html;
+      });
+  </script>
+  <script src="script.js"></script>
+  <script src="chatbot.js"></script>
+
+  <!-- 📝 Blog Rendering -->
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+      const container = document.getElementById('blog-posts');
+
+      if (!container) return;
+
+      if (blogPosts.length === 0) {
+        container.innerHTML = `<p>No blog posts yet. Check back soon!</p>`;
+        return;
+      }
+
+      blogPosts.forEach(post => {
+        const postDiv = document.createElement('div');
+        postDiv.className = "blog-post";
+        postDiv.innerHTML = `
+          <h2>${post.title}</h2>
+          <p class="date">${post.date}</p>
+          <p>${post.content}</p>
+          <hr />
+        `;
+        container.appendChild(postDiv);
+      });
+    });
+  </script>
+
+</body>
+</html>

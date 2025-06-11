@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Orders - Paws and Peaks</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ✅ Shared Header -->
+  <div id="header-container"></div>
+
+  <main class="order-history">
+    <h1>Your Order History</h1>
+    <div id="orders-container"></div>
+  </main>
+
+  <!-- 🔁 Shared Script -->
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      loadHeader();
+
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      const container = document.getElementById('orders-container');
+
+      if (!currentUser) {
+        container.innerHTML = "<p>Please log in to view your order history.</p>";
+        return;
+      }
+
+      const orders = JSON.parse(localStorage.getItem(`orders_${currentUser.username}`)) || [];
+      if (orders.length === 0) {
+        container.innerHTML = "<p>No orders yet! Start shopping 🛍️</p>";
+        return;
+      }
+
+      orders.forEach((order, index) => {
+        const div = document.createElement('div');
+        div.className = "order-card";
+        div.innerHTML = `
+          <h3>Order #${index + 1} <small>${new Date(order.date).toLocaleString()}</small></h3>
+          <ul>
+            ${order.items.map(item => `
+              <li>${item.name} - $${item.price.toFixed(2)} x ${item.quantity}</li>
+            `).join('')}
+          </ul>
+        `;
+        container.appendChild(div);
+      });
+    });
+  </script>
+
+</body>
+</html>

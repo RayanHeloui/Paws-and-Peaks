@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Account Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ✅ Shared Header -->
+  <div id="header-container"></div>
+
+  <!-- 🧾 User Dashboard -->
+  <main class="dashboard">
+    <h1>Welcome to Your Dashboard 🧾</h1>
+    <div id="dashboard-content">
+      <p id="welcome-msg"></p>
+
+      <h2>Your Recent Orders</h2>
+      <ul id="order-list"></ul>
+
+      <button onclick="logout()">Logout</button>
+    </div>
+  </main>
+
+  <!-- 💬 Chatbot Widget -->
+  <div id="chatbot-container">
+    <div id="chatbot-header">💬 Chat with us!</div>
+    <div id="chatbot-body">
+      <div id="chatbot-messages"></div>
+      <input type="text" id="chatbot-input" placeholder="Ask a question..." />
+    </div>
+  </div>
+
+  <!-- 🔁 Load Header -->
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header-container').innerHTML = html;
+      });
+  </script>
+
+  <!-- 🔁 Dashboard Scripts -->
+  <script src="chatbot.js"></script>
+  <script src="auth.js"></script>
+  <script>
+    const user = JSON.parse(localStorage.getItem('currentUser'));
+    if (!user) {
+      alert("You're not logged in!");
+      window.location.href = 'account.html';
+    } else {
+      document.getElementById('welcome-msg').textContent = `Hi, ${user.username}! Thanks for shopping with us 🐾`;
+    }
+
+    const orders = [
+      { id: 'A1001', item: 'Dog Hiking Harness', date: '2025-06-03' },
+      { id: 'A1002', item: 'Trail Treats Bundle', date: '2025-06-05' }
+    ];
+
+    const orderList = document.getElementById('order-list');
+    orders.forEach(order => {
+      const li = document.createElement('li');
+      li.textContent = `Order #${order.id} — ${order.item} (📦 ${order.date})`;
+      orderList.appendChild(li);
+    });
+  </script>
+</body>
+</html>
