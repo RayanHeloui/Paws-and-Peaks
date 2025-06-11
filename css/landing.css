@@ -148,15 +148,17 @@ body, html {
 
 .subscribe-wrapper {
   background-color: #f7cbd1;
-  padding: 20px 40px; /* 20px top/bottom, 40px left/right */
+  padding: 20px 40px;
   border-radius: 12px;
   display: flex;
-  justify-content: center; /* centers content horizontally */
-  align-items: center;     /* centers content vertically */
-  min-height: 120px;       /* ensures there's height to center within */
-  margin-top: 100px; /* Adjust this value as needed */
-  max-width: 900px;   /* or try 700px, 800px as needed */
+  justify-content: center;
+  align-items: center;
+  min-height: 120px;
+  margin-top: 100px;
+  width: 100%;         /* new line — tells it to fill the space */
+  max-width: 900px;    /* controls the largest it gets */
 }
+
 
 #subscribe-form {
   display: flex;
