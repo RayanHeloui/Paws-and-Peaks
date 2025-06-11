@@ -97,18 +97,18 @@ body, html {
   margin: 0;
   padding: 0;
   position: relative;
-  top: -40px; /* Move it upwards */
-  left: -100px; /* Move it toward center from the left edge */
-}
-.coming-soon {
+  top: -40px;
+  left: -100px;
   text-transform: uppercase;
 }
+
 .info-subscribe {
   justify-content: center; /* Centers the form horizontally */
   flex: 0 0 auto; /* Prevents the form from growing or shrinking */
   align-self: center; /* Centers the form within the container */
   font-size: 1.2em; /* Adjust the font size as needed */
-  margin-top: 20px;         /* Adds space above the form */
+  position: relative;
+  top: 20px; /* Moves the form 20px down */
 }
 
 .subscribe {
