@@ -17,47 +17,37 @@
     </div>
 
     <!-- Information Box -->
-    
-<div class="info-box">
-  <div class="info-title">
-    <h1 class="coming-soon">Coming Soon</h1>
+    <div class="info-box">
+      <div class="info-title">
+        <h1 class="coming-soon">Coming Soon</h1>
+      </div>
+
+      <div class="info-subscribe">
+        <div class="subscribe-wrapper">
+          <div class="subscribe-inner">
+            <form id="subscribe-form" class="subscribe">
+              <input type="text" id="email-input" placeholder="Enter your name" required />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-<div class="info-subscribe">
-<div class="subscribe-wrapper">
-  <div class="subscribe-inner">
-    <form id="subscribe-form" class="subscribe">
-      <input type="email" id="email-input" placeholder="Enter your email" required />
-      <button type="submit">Subscribe</button>
-    </form>
-  </div>
-</div>
+  <!-- Access logic -->
+  <script>
+    document.getElementById('subscribe-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const input = document.getElementById('email-input').value.trim().toLowerCase();
 
-  <div class="info-slogan">
-    <p class="slogan">
-      Their <span class="clickable-word">adventure</span> starts with <span class="clickable-word">you</span>!!
-    </p>
-  </div>
-</div>
-<form id="access-form">
-  <input type="text" id="user-input" placeholder="Enter your name" required />
-  <button type="submit">Enter</button>
-</form>
-
-<script>
-  document.getElementById('access-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const input = document.getElementById('user-input').value.trim().toLowerCase();
-
-    // Allow access for George or Flick
-    if (input === 'george' || input === 'flick') {
-      window.location.href = 'home.html';
-    } else {
-      alert('Access denied. Name not recognized.');
-    }
-  });
-</script>
+      if (input === 'george' || input === 'flick') {
+        window.location.href = 'home.html';
+      } else {
+        alert('Access denied.');
+      }
+    });
+  </script>
 
   <script src="js/script.js" defer></script>
 </body>
