@@ -4,14 +4,15 @@ body, html {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Arial', sans-serif;
+  color: #7b523c; /* Set default text color */
 }
-
 .landing-body {
-  background-color: #f5f5f5;
+  background-color: #fcefb3; /* Updated background */
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #7b523c; /* All base text color */
 }
 
 .logo-container {
@@ -70,12 +71,12 @@ body, html {
 }
 
 .info-box {
-  background-color: #1E90FF; /* Replace with final hex code */
+  background-color: #badccb; /* Soft minty blue */
   padding: 40px;
   border-radius: 12px;
   width: 100%;
   max-width: 400px;
-  color: white;
+  color: #7b523c; /* Ensure text in box is same color */
   text-align: center;
 }
 
@@ -101,8 +102,8 @@ body, html {
 .subscribe button {
   padding: 10px;
   font-size: 1em;
-  background-color: white;
-  color: #1E90FF;
+  background-color: #7b523c;
+  color: #fcefb3;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -110,7 +111,7 @@ body, html {
 }
 
 .subscribe button:hover {
-  background-color: #cce5ff;
+  background-color: #5c3f2c;
 }
 
 .slogan {
@@ -121,4 +122,31 @@ body, html {
   font-weight: bold;
   text-decoration: underline;
   cursor: pointer;
+}
+
+/* Orbiting Bone Ring Around Logo */
+.bone-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vh;
+  height: 50vh;
+  animation: rotate 12s linear infinite;
+  z-index: 1;
+}
+
+.bone::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
