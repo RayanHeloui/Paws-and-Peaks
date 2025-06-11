@@ -39,19 +39,21 @@ body, html {
 .rotating-bone {
   position: absolute;
   top: 50%;
-  left: 50%;
-  width: 200%;
-  height: 200%;
+  left: 45%;
+  width: 150px; /* or try 200px */
+  height: 150px;
   transform: translate(-50%, -50%);
   animation: rotateBone 32s linear infinite;
   opacity: 0.25;
   z-index: 1;
+  object-fit: contain; /* Maintains correct aspect ratio */
 }
+
 
 .logo {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 45%;
   width: 65%;
   transform: translate(-50%, -50%);
   z-index: 2;
