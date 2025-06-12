@@ -265,17 +265,20 @@ body, input, button, p, .slogan, .subscribe, .clickable-word {
   outline: 1px dashed red; /* temporary debug aid */
 }
 
-.thank-you {
-  font-size: 1.2rem;
-  color: #2e2e2e;
+.thank-you-box {
+  background-color: #ffc0cb;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: #333;
   text-align: center;
-  margin-top: 1rem;
-  animation: fadeIn 0.8s ease-in-out;
+  animation: fadeIn 0.5s ease-in-out;
+  margin-top: 10px;
 }
 
 @keyframes fadeIn {
   from { opacity: 0; }
-  to   { opacity: 1; }
+  to { opacity: 1; }
 }
 
 
