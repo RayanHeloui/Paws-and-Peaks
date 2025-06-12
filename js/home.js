@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const imgRight = document.querySelector('.img-right');
 
   if (heroSection && imgLeft && imgCenter && imgRight) {
+  const start = heroSection.offsetTop;
   const end = start + heroSection.offsetHeight * 0.25;
 
   window.addEventListener('scroll', () => {
