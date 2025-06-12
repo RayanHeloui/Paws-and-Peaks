@@ -20,11 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
       imgCenter.style.transform = `translate(${lerp(-75, -200, progress)}px, ${lerp(0, 20, progress)}px)`;
       imgRight.style.transform = `translate(${lerp(300, -200, progress)}px, ${lerp(-300, 0, progress)}px)`;
 
-      // Optional: fade in
-      const opacity = lerp(0.3, 1, progress);
-      imgLeft.style.opacity = opacity;
-      imgCenter.style.opacity = opacity;
-      imgRight.style.opacity = opacity;
     });
   }
 
