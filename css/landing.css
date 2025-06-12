@@ -37,7 +37,7 @@ body, html {
 /* Logo and bone wrapper */
 .logo-container {
   position: relative;
-  width: 300%;
+  width: 500%;
   max-width: 300px;
   aspect-ratio: 1 / 1;
   display: flex;
@@ -48,7 +48,7 @@ body, html {
 .rotating-bone {
   position: absolute;
   top: 50%;
-  left: 100%;
+  left: -80%;
   width: 300%;
   height: 300%;
   transform: translate(-50%, -50%);
