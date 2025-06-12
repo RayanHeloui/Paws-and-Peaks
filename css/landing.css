@@ -65,10 +65,35 @@ body, html {
   height: auto;
   object-fit: contain;
     position: relative;
-  left: -3vw; /* Shift left */
-  top: -3vh;  /* Shift upward */
+  left: -4vw; /* Shift left */
+  top: -4vh;  /* Shift upward */
+}
+@media (max-width: 1024px) {
+  .logo {
+    width: 85vw;
+    max-width: 800px;
+    left: -3vw;
+    top: -3vh;
+  }
 }
 
+@media (max-width: 768px) {
+  .logo {
+    width: 75vw;
+    max-width: 600px;
+    left: -2vw;
+    top: -2vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 65vw;
+    max-width: 450px;
+    left: -1vw;
+    top: -1vh;
+  }
+}
 .landing-container {
   display: flex;
   width: 100vw;
