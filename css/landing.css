@@ -25,7 +25,7 @@ body, html {
 /* Container splits screen into two halves */
 .logo-container {
   position: relative;
-  width: 300px; /* fixed size to help with precise alignment */
+  width: 400px; /* fixed size to help with precise alignment */
   height: 300px;
   display: flex;
   justify-content: center;
@@ -60,9 +60,9 @@ body, html {
 .rotating-bone {
   position: absolute;
   top: 50%;
-  left: 50%;
-  width: 250%;
-  height: 250%;
+  left: 60%;
+  width: 300%;
+  height: 300%;
   transform: translate(-50%, -50%);
   object-fit: contain;
   opacity: 0.2;
