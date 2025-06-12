@@ -41,24 +41,6 @@
     <p>Paws and Peaks offers curated kits to make outdoor adventures safe and unforgettable for pets and their people.</p>
   </section>
 
-<script>
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const hero = document.querySelector('.hero');
-    const imgLeft = document.querySelector('.img-left');
-    const imgCenter = document.querySelector('.img-center');
-    const imgRight = document.querySelector('.img-right');
-
-    const maxScroll = hero.offsetHeight;
-    const scrollRatio = Math.min(scrollY / maxScroll, 1);
-
-    // Animate left and right images to move toward center and scale up
-    imgLeft.style.transform = `translateX(${scrollRatio * 80}px) scale(${1 + scrollRatio * 0.2})`;
-    imgRight.style.transform = `translateX(${-scrollRatio * 80}px) scale(${1 + scrollRatio * 0.2})`;
-
-    // Center image scales up
-    imgCenter.style.transform = `scale(${1 + scrollRatio * 0.3})`;
-  });
 </script>
   <!-- 💬 TESTIMONIES SECTION -->
   <section class="testimonies">
