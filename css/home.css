@@ -31,9 +31,8 @@ section {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  padding: 40px 0;
+  margin-top: -25vh; /* Pulls the images up into the initial view */
 }
-
 .hero-img {
   width: 150px;
   height: auto;
