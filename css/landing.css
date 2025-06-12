@@ -60,7 +60,7 @@ body, html {
 }*/
 
 .logo {
-  width: 100vw;           /* Bigger = wider */
+  width: 95vw;           /* Bigger = wider */
   max-width: 1000px;      /* Allow larger sizes on big screens */
   height: auto;
   object-fit: contain;
