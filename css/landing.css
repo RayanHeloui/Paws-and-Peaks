@@ -55,21 +55,25 @@ body, html {
 .rotating-bone {
   position: absolute;
   top: 50%;
-  left: 25vw;
-  width: 50vw;
-  height: auto;
+  left: 20vw; /* center the bone 20% from the screen’s left */
+  width: 60vw;
+  max-width: 600px;
   transform: translate(-50%, -50%);
+  object-fit: contain;
   opacity: 0.2;
+  animation: rotateBone 64s linear infinite;
   z-index: 1;
 }
 
 
-/* 🐾 Logo centered over bone */
 .logo {
-  position: relative;
-  width: 30vw;   /* Responsive to screen size */
-   left: -25vw; /* 💡 same shift */
+  position: absolute;
+  top: 50%;
+  left: 20vw; /* ⬅ must match bone’s left value */
+  width: 25vw;
+  max-width: 300px;
   height: auto;
+  transform: translate(-50%, -50%);
   object-fit: contain;
   z-index: 2;
 }
