@@ -7,7 +7,10 @@ body, html {
   color: #7b523c;
   height: 100vh;
   overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
 @font-face {
   font-family: 'NostalgicRemain';
   src: url('../fonts/NostalgicRemain-Regular.ttf') format('truetype');
@@ -22,7 +25,7 @@ body, html {
   font-style: italic;
 }
 
-/* LEFT: Logo & bone centered in left half */
+/* LEFT: Logo centered in left half */
 .left-pane {
   width: 55vw;
   height: 100vh;
@@ -32,7 +35,7 @@ body, html {
   background-color: #fcefb3;
   position: relative;
   overflow: hidden;
-  padding: 0;         /* ✅ ensure no internal padding */
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -40,46 +43,29 @@ body, html {
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 0;         /* ✅ prevent constraint */
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.logo {
+  width: 30vw;
+  max-width: 300px;
+  height: auto;
+  display: block;
+  position: relative;
+  object-fit: contain;
+  z-index: 2;
+}
+
+/* RIGHT: Info box */
 .landing-container {
   display: flex;
   width: 100vw;
   height: 100vh;
 }
 
-.rotating-bone {
-  position: absolute;
-  top: 50%;
-  left: 20vw; /* center the bone 20% from the screen’s left */
-  width: 60vw;
-  max-width: 600px;
-  transform: translate(-50%, -50%);
-  object-fit: contain;
-  opacity: 0.2;
-  animation: rotateBone 64s linear infinite;
-  z-index: 1;
-}
-
-
-.logo {
-  position: absolute;
-  top: 50%;
-  left: 20vw; /* ⬅ must match bone’s left value */
-  width: 25vw;
-  max-width: 300px;
-  height: auto;
-  transform: translate(-50%, -50%);
-  object-fit: contain;
-  z-index: 2;
-}
-
-
-/* RIGHT: Info box on right side */
 .info-box {
   display: flex;
   flex-direction: column;
@@ -112,44 +98,13 @@ body, html {
 }
 
 .info-subscribe {
-  justify-content: center; /* Centers the form horizontally */
-  flex: 0 0 auto; /* Prevents the form from growing or shrinking */
-  align-self: center; /* Centers the form within the container */
-  font-size: 1.2em; /* Adjust the font size as needed */
+  justify-content: center;
+  flex: 0 0 auto;
+  align-self: center;
+  font-size: 1.2em;
   position: relative;
-  top: 100px; /* Moves the form 20px down */
+  top: 100px;
 }
-
-.subscribe {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
-.subscribe input[type="text"] {
-  padding: 10px;
-  font-size: 1.2vw;
-  width: 20vw;
-  min-width: 180px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.info-slogan {
-  position: absolute;
-  bottom:-5px;  /* distance from the bottom */
-  left: 10px;    /* distance from the left */
-}
-
-.slogan {
-  font-size: 3.5em;         /* Make it smaller */
-  text-transform: uppercase;
-  margin: 0;
-  margin-top: 20px;
-  text-align: left;
-}
-
-/* Email input field styling */
 
 .subscribe-wrapper {
   background-color: #f7cbd1;
@@ -160,17 +115,17 @@ body, html {
   align-items: center;
   min-height: 120px;
   margin-top: 100px;
-  margin-left: -20px; /* Shift 20px to the left */
-  width: 100%;         /* new line — tells it to fill the space */
-  max-width: 900px;    /* controls the largest it gets */
+  margin-left: -20px;
+  width: 100%;
+  max-width: 900px;
 }
 
 .subscribe-inner {
   background-color: #fcefb3;
   width: 100%;
   height: 100%;
-  padding: 20px 40px;     /* Move padding here instead */
-  border-radius: 12px;    /* Match pink box corners */
+  padding: 20px 40px;
+  border-radius: 12px;
   box-sizing: border-box;
 }
 
@@ -178,21 +133,21 @@ body, html {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  align-items: center;     /* centers children (input & button) horizontally */
+  align-items: center;
 }
 
 #email-input {
-  width: 100%;           /* or try 250px, 280px etc */
-  max-width: 300px;     /* narrower input field */
+  width: 100%;
+  max-width: 300px;
   padding: 5px 10px;
   font-size: 1.1em;
-  background-color: #e8c563;     /* light yellow */
-  color: #000000;                 /* brown text for contrast */
-  border: 1px solid #e8c563;     /* optional: border in same brown */
+  background-color: #e8c563;
+  color: #000000;
+  border: 1px solid #e8c563;
 }
 
 #email-input::placeholder {
-  color: #000000;  /* black */
+  color: #000000;
 }
 
 .subscribe button,
@@ -209,27 +164,32 @@ body, html {
   transition: background-color 0.3s ease;
 }
 
-
 #subscribe-form button:hover {
-  background-color: #e8c563;     /* blue on hover */
-  color: #7b523c; 
+  background-color: #e8c563;
+  color: #7b523c;
 }
 
-/* Rotate bone animation */
-@keyframes rotateBone {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
+.info-slogan {
+  position: absolute;
+  bottom: -5px;
+  left: 10px;
 }
-/* Force all elements to use custom font */
+
+.slogan {
+  font-size: 3.5em;
+  text-transform: uppercase;
+  margin: 0;
+  margin-top: 20px;
+  text-align: left;
+}
+
+/* Custom font globally */
 body, input, button, p, .slogan, .subscribe, .clickable-word {
   font-family: 'NostalgicRemain', sans-serif;
 }
-/* 📱 Mobile Tweak (smallest screens only) */
-@media (max-width: 480px) {
-  .rotating-bone {
-    width: 10vw;
-  }
 
+/* Mobile Tweaks */
+@media (max-width: 480px) {
   .logo {
     max-width: 40vw;
   }
@@ -258,13 +218,7 @@ body, input, button, p, .slogan, .subscribe, .clickable-word {
   }
 }
 
-.left-pane,
-.logo-container,
-.logo,
-.rotating-bone {
-  outline: 1px dashed red; /* temporary debug aid */
-}
-
+/* Thank you message box */
 .thank-you-box {
   background-color: #ffc0cb;
   padding: 1rem;
@@ -281,7 +235,7 @@ body, input, button, p, .slogan, .subscribe, .clickable-word {
   to { opacity: 1; }
 }
 
-
+/* Heading with italic font */
 h1 {
   font-family: 'NostalgicRemainItalic', serif;
 }
