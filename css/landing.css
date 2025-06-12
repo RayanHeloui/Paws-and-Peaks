@@ -65,15 +65,15 @@ body, html {
   height: auto;
   object-fit: contain;
     position: relative;
-  left: -4vw; /* Shift left */
-  top: -4vh;  /* Shift upward */
+  left: -2vw; /* Shift left */
+  top: -2vh;  /* Shift upward */
 }
 @media (max-width: 1024px) {
   .logo {
     width: 85vw;
     max-width: 800px;
-    left: -3vw;
-    top: -3vh;
+    left: -2vw;
+    top: -2vh;
   }
 }
 
@@ -81,8 +81,8 @@ body, html {
   .logo {
     width: 75vw;
     max-width: 600px;
-    left: -2vw;
-    top: -2vh;
+    left: -1vw;
+    top: -1vh;
   }
 }
 
