@@ -59,7 +59,8 @@ body, html {
   align-items: center;
   overflow: visible; /* Ensures child elements are not clipped */
 }
-.rotating-bone {
+
+/*.rotating-bone {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -70,13 +71,14 @@ body, html {
   opacity: 0.2;
   animation: rotateBone 64s linear infinite;
   z-index: 1;
-}
+}*/
+
 .logo {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 25vw;
-  max-width: 300px;
+  width: 40vw;            /* ⬆️ increase size */
+  max-width: 400px;       /* ⬆️ allow more width */
   height: auto;
   transform: translate(-50%, -50%);
   object-fit: contain;
