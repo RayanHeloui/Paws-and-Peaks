@@ -3,7 +3,7 @@ body, html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
- background-color: #f9e79b;  /* a bit deeper */
+background-color: #f9e79b; /* ← or try #fff2b0 */
   color: #7b523c;
   height: 100vh;
   overflow: hidden;
