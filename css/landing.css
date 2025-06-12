@@ -61,7 +61,7 @@ body, html {
 /* 🐾 Logo centered over bone */
 .logo {
   position: relative;
-  width: 40vw;   /* Responsive to screen size */
+  width: 30vw;   /* Responsive to screen size */
   height: auto;
   object-fit: contain;
   z-index: 2;
