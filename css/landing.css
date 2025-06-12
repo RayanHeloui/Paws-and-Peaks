@@ -32,7 +32,7 @@ background-color: #f9e79b; /* ← or try #fff2b0 */
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fcefb3;
+  background-color: #f9e79b;
   position: relative;
   overflow: visible; /* Changed from hidden to visible */
   padding: 0;
