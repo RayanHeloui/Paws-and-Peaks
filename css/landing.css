@@ -35,29 +35,15 @@ body, html {
   align-items: center;
   background-color: #e8c563;
   position: relative;
-  overflow: visible; /* Changed from hidden to visible */
-  padding: 0;
-  box-sizing: border-box;
+  overflow: visible;
 }
 
 .logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: auto;
-  height: auto;
-  overflow: visible;
-  position: relative;
-}
-.logo-container {
-  position: relative;
   width: 100%;
   height: 100%;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: visible; /* Ensures child elements are not clipped */
 }
 
 /*.rotating-bone {
@@ -77,17 +63,15 @@ body, html {
   width: 40vw;
   max-width: 400px;
   height: auto;
-  display: block;
   object-fit: contain;
-  position: relative;
-  z-index: 2;
 }
-/* RIGHT: Info box */
 .landing-container {
   display: flex;
   width: 100vw;
   height: 100vh;
 }
+
+/* RIGHT: Info box */
 
 .info-box {
   display: flex;
