@@ -51,7 +51,7 @@ body, html {
   left: 50%;
   width: 300%;
   height: 300%;
-  transform: translate(-50%, -50%);
+  transform: translate(-60%, -50%);
   object-fit: contain;
   opacity: 0.2;
   animation: rotateBone 32s linear infinite;
