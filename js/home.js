@@ -8,18 +8,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const start = heroSection.offsetTop;
     const end = start + heroSection.offsetHeight;
 
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
 
-      // Calculate scroll progress (0 → 1)
-      let progress = (scrollY - start) / (end - start);
-      progress = Math.max(0, Math.min(progress, 1));
+  let progress = (scrollY - start) / (end - start);
+  progress = Math.max(0, Math.min(progress, 1));
 
-      // Animate positions
-      imgLeft.style.transform = `translate(${lerp(-300, -200, progress)}px, ${lerp(300, 40, progress)}px)`;
-      imgCenter.style.transform = `translate(${lerp(-75, -200, progress)}px, ${lerp(0, 20, progress)}px)`;
-      imgRight.style.transform = `translate(${lerp(300, -200, progress)}px, ${lerp(-300, 0, progress)}px)`;
-    });
+  // 🧪 DEBUG: Log everything
+  console.log({
+    scrollY,
+    start,
+    end,
+    progress
+  });
+
+  imgLeft.style.transform = `translate(${lerp(-300, -200, progress)}px, ${lerp(300, 40, progress)}px)`;
+  imgCenter.style.transform = `translate(${lerp(-75, -200, progress)}px, ${lerp(0, 20, progress)}px)`;
+  imgRight.style.transform = `translate(${lerp(300, -200, progress)}px, ${lerp(-300, 0, progress)}px)`;
+});
   }
 
   function lerp(start, end, t) {
