@@ -65,8 +65,8 @@ body, html {
   height: auto;
   object-fit: contain;
     position: relative;
-  left: -5vw; /* Shift left */
-  top: -5vh;  /* Shift upward */
+  left: -3vw; /* Shift left */
+  top: -3vh;  /* Shift upward */
 }
 
 .landing-container {
