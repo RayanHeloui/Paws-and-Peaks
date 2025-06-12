@@ -38,9 +38,10 @@ section {
   object-fit: cover;
   border-radius: 50%;
   position: absolute;
-  transition: transform 0.8s ease, opacity 0.8s ease;
-  opacity: 0;
+  transition: transform 0.8s ease; /* keep transform only */
+  opacity: 1; /* ✅ Always visible */
 }
+
 
 /* 🎯 Initial scattered positions */
 .img-left {
