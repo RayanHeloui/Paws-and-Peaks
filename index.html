@@ -39,22 +39,6 @@
     <p class="slogan">Their Adventure, Start with you!</p>
   </div>
 </div>
-
-
-  <!-- Access logic -->
-<script>
-  document.getElementById('subscribe-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const input = document.getElementById('email-input').value.trim().toLowerCase();
-
-    if (input === 'george@pap.com.au' || input === 'flick@pap.com.au') {
-      window.location.href = 'home.html';
-    } else {
-      window.location.href = 'thank-you.html';
-    }
-  });
-</script>
-
   <script src="js/script.js" defer></script>
 </body>
 </html>
