@@ -265,6 +265,19 @@ body, input, button, p, .slogan, .subscribe, .clickable-word {
   outline: 1px dashed red; /* temporary debug aid */
 }
 
+.thank-you {
+  font-size: 1.2rem;
+  color: #2e2e2e;
+  text-align: center;
+  margin-top: 1rem;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 
 h1 {
   font-family: 'NostalgicRemainItalic', serif;
