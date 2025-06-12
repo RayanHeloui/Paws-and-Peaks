@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const subscribeForm = document.getElementById('subscribe-form');
   const emailInput = document.getElementById('email-input');
-  const allowedEmails = ['nas@pawsandpeaks.com.au', 'rayan@pawsandpeaks.com.au'];
+  
+  const allowedEmails = ['rayan@pap.admin', 'nas@pap.admin'];
 
   subscribeForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -15,7 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (allowedEmails.includes(email)) {
       window.location.href = 'html/home.html';
     } else {
-      document.querySelector('.info-subscribe').innerHTML = "<p class='thank-you'>Thanks for subscribing! 🐾 We'll be in touch soon.</p>";
+      const subscribeWrapper = document.querySelector('.subscribe-wrapper');
+      subscribeWrapper.innerHTML = "<p class='thank-you'>Thanks for subscribing! 🐾 We'll be in touch soon.</p>";
     }
   });
 });
