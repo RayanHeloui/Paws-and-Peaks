@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const subscribeForm = document.getElementById('subscribe-form');
   const emailInput = document.getElementById('email-input');
-  
   const allowedEmails = ['rayan@pap.admin', 'nas@pap.admin'];
 
   subscribeForm.addEventListener('submit', (e) => {
@@ -14,11 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (allowedEmails.includes(email)) {
-      window.location.href = 'home.html'; // ✔️ Correct relative path now
+      window.location.href = 'home.html'; // Dev-only redirect
     } else {
       const subscribeWrapper = document.querySelector('.subscribe-wrapper');
       subscribeWrapper.innerHTML = `
-        <p class="thank-you">Thanks for subscribing! 🐾 We'll be in touch soon.</p>
+        <div class="thank-you-box">Thanks for subscribing! 🐾</div>
       `;
     }
   });
