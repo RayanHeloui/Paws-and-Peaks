@@ -45,7 +45,7 @@ section {
 
 /* 🎯 Initial scattered positions */
 .img-left {
-  transform: translate(-300px, 300px); /* bottom-left */
+  transform: translate(-400px, 300px); /* bottom-left */
   z-index: 1;
 }
 
