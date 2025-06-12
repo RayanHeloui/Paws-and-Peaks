@@ -86,36 +86,38 @@ section {
   object-fit: cover;
   border-radius: 50%;
   position: absolute;
-  transition: transform 0.7s ease, opacity 0.7s ease;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  opacity: 0;
 }
 
-/* Initial positions */
+/* 🎯 Initial scattered positions */
 .img-left {
-  transform: translateX(-200px);
+  transform: translate(-300px, 300px); /* bottom-left */
   z-index: 1;
 }
 
 .img-center {
-  transform: translateX(0);
+  transform: translate(-75px, 0); /* middle */
   z-index: 2;
 }
 
 .img-right {
-  transform: translateX(200px);
+  transform: translate(300px, -300px); /* top-right */
   z-index: 3;
 }
 
-/* Stacked positions */
+/*Final stacked position on the left-center */
 .hero-images.stack .img-left {
-  transform: translateY(40px);
+  transform: translate(-200px, 40px);
+  opacity: 1;
 }
-
 .hero-images.stack .img-center {
-  transform: translateY(20px);
+  transform: translate(-200px, 20px);
+  opacity: 1;
 }
-
 .hero-images.stack .img-right {
-  transform: translateY(0);
+  transform: translate(-200px, 0);
+  opacity: 1;
 }
 
 /* Other page sections */
