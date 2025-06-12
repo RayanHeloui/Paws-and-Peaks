@@ -60,8 +60,8 @@ body, html {
 }*/
 
 .logo {
-  width: 80vw;           /* Bigger = wider */
-  max-width: 800px;      /* Allow larger sizes on big screens */
+  width: 100vw;           /* Bigger = wider */
+  max-width: 1000px;      /* Allow larger sizes on big screens */
   height: auto;
   object-fit: contain;
 }
