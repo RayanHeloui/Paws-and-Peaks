@@ -14,9 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (allowedEmails.includes(email)) {
-      window.location.href = 'html/home.html';
+      window.location.href = 'home.html'; // ✔️ Correct relative path now
     } else {
-      // Clear form and display a thank-you message instead of redirecting
       const subscribeWrapper = document.querySelector('.subscribe-wrapper');
       subscribeWrapper.innerHTML = `
         <p class="thank-you">Thanks for subscribing! 🐾 We'll be in touch soon.</p>
