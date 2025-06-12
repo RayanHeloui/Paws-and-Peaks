@@ -5,10 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const imgRight = document.querySelector('.img-right');
 
   if (heroSection && imgLeft && imgCenter && imgRight) {
-    const start = heroSection.offsetTop;
-    const end = start + heroSection.offsetHeight;
+  const end = start + heroSection.offsetHeight * 0.25;
 
-window.addEventListener('scroll', () => {
+  window.addEventListener('scroll', () => {
   const scrollY = window.scrollY;
 
   let progress = (scrollY - start) / (end - start);
