@@ -61,8 +61,8 @@ body, html {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 200%;
-  height: 200%;
+  width: 250%;
+  height: 250%;
   transform: translate(-50%, -50%);
   object-fit: contain;
   opacity: 0.2;
@@ -143,7 +143,7 @@ body, html {
 }
 
 .slogan {
-  font-size: 4em;         /* Make it smaller */
+  font-size: 3em;         /* Make it smaller */
   text-transform: uppercase;
   margin: 0;
   margin-top: 20px;
