@@ -37,7 +37,7 @@ body, html {
 /* Logo and bone wrapper */
 .logo-container {
   position: relative;
-  width: 500%;
+  width: 300%;
   max-width: 300px;
   aspect-ratio: 1 / 1;
   display: flex;
@@ -51,10 +51,10 @@ body, html {
   left: 50%;
   width: 300%;
   height: 300%;
-  transform: translate(-60%, -50%);
+  transform: translate(-80%, -50%);
   object-fit: contain;
   opacity: 0.2;
-  animation: rotateBone 32s linear infinite;
+  animation: rotateBone 64s linear infinite;
   z-index: 1;
 }
 
