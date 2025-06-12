@@ -61,11 +61,11 @@ body, html {
   position: absolute;
   top: 50%;
   left: 45%;
-  width: 1000px; /* or try 200px */
+  width: 80px; /* or try 200px */
   max-width: 80px;
-  height: 1000px;
+  height: auto;
   transform: translate(-50%, -50%);
-  animation: rotateBone 32s linear infinite;
+  animation: rotateBone 64s linear infinite;
   opacity: 0.25;
   z-index: 1;
   object-fit: contain; /* Maintains correct aspect ratio */
@@ -73,7 +73,7 @@ body, html {
 
 
 .logo {
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 45%;
   width: 65%;
@@ -210,24 +210,20 @@ body, html {
 #email-input::placeholder {
   color: #000000;  /* black */
 }
-#subscribe-form button {
-  max-width: 500px;      /* wider fields */
-  padding: 16px 24px;    /* taller & more horizontal space */
-  font-size: 1.4em;      /* bigger text */
-}
 
 #subscribe-form button {
-  padding: 10px 20px;
-  background-color: #7b523c;     /* brown base */
-  color: #000000;                /* yellow text */
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: background-color 0.3s ease;
   width: 100%;
   max-width: 300px;
+  padding: 14px 20px;
+  font-size: 1.2em;
+  background-color: #7b523c;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
+
 
 #subscribe-form button:hover {
   background-color: #e8c563;     /* blue on hover */
@@ -253,13 +249,18 @@ body, input, button, p, .slogan, .subscribe, .clickable-word {
     max-width: 40vw;
   }
 
+@media (max-width: 768px) {
   .coming-soon {
     font-size: 5vw;
+    top: 0;
+    left: 0;
   }
 
   .slogan {
-    font-size: 3vw;
+    font-size: 2.5vw;
+    bottom: 10px;
   }
+}
 
   .subscribe input,
   .subscribe button {
