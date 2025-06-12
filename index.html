@@ -9,6 +9,7 @@
 <body class="landing-body">
 <div class="landing-container">
   <div class="logo-section">
+    <div class="info-box">
     <div class="left-pane">
       <div class="logo-container">
         <img src="images/bone.gif" alt="Rotating Bone" class="rotating-bone" />
@@ -28,7 +29,7 @@
     <div class="subscribe-wrapper">
       <div class="subscribe-inner">
         <form id="subscribe-form" class="subscribe">
-          <input type="text" id="email-input" placeholder="Enter your email" required />
+          <input type="email" id="email-input" placeholder="Enter your email" required />
           <button type="submit">Subscribe</button>
         </form>
       </div>
@@ -48,7 +49,7 @@
       e.preventDefault();
       const input = document.getElementById('email-input').value.trim().toLowerCase();
 
-      if (input === 'george' || input === 'flick') {
+      if (input === 'george@pap.com.au' || input === 'flick@pap.com.au') {
         window.location.href = 'home.html';
       } else {
         alert('Access denied.');
