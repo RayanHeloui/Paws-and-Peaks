@@ -22,18 +22,6 @@ body, html {
   font-style: italic;
 }
 
-/* Container splits screen into two halves */
-.logo-container {
-  position: relative;
-  width: 400px; /* fixed size to help with precise alignment */
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-
 /* LEFT: Logo & bone centered in left half */
 .left-pane {
   width: 50vw;
@@ -49,7 +37,7 @@ body, html {
 /* Logo and bone wrapper */
 .logo-container {
   position: relative;
-  width: 100%;
+  width: 300%;
   max-width: 300px;
   aspect-ratio: 1 / 1;
   display: flex;
@@ -60,7 +48,7 @@ body, html {
 .rotating-bone {
   position: absolute;
   top: 50%;
-  left: 60%;
+  left: 100%;
   width: 300%;
   height: 300%;
   transform: translate(-50%, -50%);
