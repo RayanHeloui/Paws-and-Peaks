@@ -3,7 +3,7 @@ body, html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #f9e79b;  /* ✅ darker yellow */
+  background-color: #f5c71a;  /* ✅ darker yellow */
   color: #7b523c;             /* ✅ brown (same as button) */
   height: 100vh;
   overflow: hidden;
