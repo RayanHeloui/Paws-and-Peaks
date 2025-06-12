@@ -60,11 +60,12 @@ body, html {
 }*/
 
 .logo {
-  width: 40vw;
-  max-width: 400px;
+  width: 50vw;           /* Bigger = wider */
+  max-width: 500px;      /* Allow larger sizes on big screens */
   height: auto;
   object-fit: contain;
 }
+
 .landing-container {
   display: flex;
   width: 100vw;
