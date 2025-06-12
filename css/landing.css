@@ -30,37 +30,32 @@ body, html {
   width: 55vw;
   height: 100vh;
   display: flex;
-  justify-content: center;   /* ✅ horizontal center */
-  align-items: center;       /* ✅ vertical center */
+  justify-content: center;
+  align-items: center;
   background-color: #fcefb3;
+  overflow: visible;
   position: relative;
-  overflow: visible;         /* ✅ prevent cutting the GIF */
-  padding: 0;
-  box-sizing: border-box;
 }
 
 
 .logo-container {
-  position: relative;
-  width: auto;
-  height: auto;
-  overflow: visible;
-  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  position: relative;
 }
 
 .logo {
-  width: 30vw;
-  max-width: 300px;
-  height: auto;
+  max-width: 100%;
+  max-height: 90vh;
   display: block;
-  position: relative;
+  margin: 0 auto;
+  position: static;
   object-fit: contain;
-  z-index: 2;
 }
-
 /* RIGHT: Info box */
 .landing-container {
   display: flex;
