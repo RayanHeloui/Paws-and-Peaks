@@ -64,6 +64,9 @@ body, html {
   max-width: 1000px;      /* Allow larger sizes on big screens */
   height: auto;
   object-fit: contain;
+    position: relative;
+  left: -5vw; /* Shift left */
+  top: -5vh;  /* Shift upward */
 }
 
 .landing-container {
