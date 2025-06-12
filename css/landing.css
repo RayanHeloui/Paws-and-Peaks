@@ -31,12 +31,7 @@ body, html {
   box-sizing: border-box;
 }
 
-/* 📌 Fixed Position Left Pane */
-.logo-section .left-pane {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-}
+
 
 /* LEFT: Logo & bone centered in left half */
 .left-pane {
@@ -138,7 +133,7 @@ body, html {
 .info-slogan {
   position: absolute;
   bottom:-5px;  /* distance from the bottom */
-  left: 10px;    /* distance from the left */;
+  left: 10px;    /* distance from the left */
 }
 
 .slogan {
@@ -150,19 +145,6 @@ body, html {
 }
 
 /* Email input field styling */
-
-.subscribe button {
-  width: 100%;
-  padding: 14px;
-  font-size: 1.2em;
-  background-color: #7b523c;
-  color: #000000;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  min-width: 100px;
-  transition: background-color 0.3s ease;
-}
 
 .subscribe-wrapper {
   background-color: #f7cbd1;
@@ -195,7 +177,7 @@ body, html {
 }
 
 #email-input {
-  width: 200%;           /* or try 250px, 280px etc */
+  width: 100%;           /* or try 250px, 280px etc */
   max-width: 300px;     /* narrower input field */
   padding: 5px 10px;
   font-size: 1.1em;
@@ -203,10 +185,12 @@ body, html {
   color: #000000;                 /* brown text for contrast */
   border: 1px solid #e8c563;     /* optional: border in same brown */
 }
+
 #email-input::placeholder {
   color: #000000;  /* black */
 }
 
+.subscribe button,
 #subscribe-form button {
   width: 100%;
   max-width: 300px;
@@ -245,6 +229,17 @@ body, input, button, p, .slogan, .subscribe, .clickable-word {
     max-width: 40vw;
   }
 
+  .subscribe input,
+  .subscribe button {
+    font-size: 3.5vw;
+  }
+
+  input,
+  button {
+    font-size: 4vw;
+  }
+}
+
 @media (max-width: 768px) {
   .coming-soon {
     font-size: 5vw;
@@ -258,11 +253,7 @@ body, input, button, p, .slogan, .subscribe, .clickable-word {
   }
 }
 
-  .subscribe input,
-  .subscribe button {
-    font-size: 3.5vw;
-  }
-}
+
 
 h1 {
   font-family: 'NostalgicRemainItalic', serif;
