@@ -3,13 +3,14 @@ body, html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-background-color: #f9e79b; /* ← or try #fff2b0 */
-  color: #f9e79b;
+  background-color: #f9e79b;  /* ✅ darker yellow */
+  color: #7b523c;             /* ✅ brown (same as button) */
   height: 100vh;
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 
 @font-face {
   font-family: 'NostalgicRemain';
