@@ -1,49 +1,3 @@
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paws and Peaks - Stack Scroll Hero</title>
-  <link rel="stylesheet" href="css/home.css" />
-</head>
-<body>
-
-  <!-- 🌄 HERO SECTION -->
-  <section class="hero">
-    <div class="hero-images">
-      <img src="https://picsum.photos/150?random=1" class="hero-img img-left" alt="Placeholder Left">
-      <img src="https://picsum.photos/150?random=2" class="hero-img img-center" alt="Placeholder Center">
-      <img src="https://picsum.photos/150?random=3" class="hero-img img-right" alt="Placeholder Right">
-    </div>
-  </section>
-
-  <!-- 🛍️ PRODUCTS TITLE -->
-  <section class="products-title">
-    <h2>Our Products</h2>
-  </section>
-
-  <!-- 🧰 PRODUCT FULLSCREEN SECTIONS -->
-  <section class="product-fullscreen product-1">
-    <h2>First Aid Kit</h2>
-  </section>
-  <section class="product-fullscreen product-2">
-    <h2>Camping Kit</h2>
-  </section>
-  <section class="product-fullscreen product-3">
-    <h2>Pro Kit</h2>
-  </section>
-
-  <!-- 🧭 ABOUT SECTION -->
-  <section class="about">
-    <h2>About Us</h2>
-    <p>Paws and Peaks offers curated kits to make outdoor adventures safe and unforgettable for pets and their people.</p>
-  </section>
-
-  <!-- 💬 TESTIMONIALS SECTION -->
-  <section class="testimonies">
-    <h2>Testimonials</h2>
-    <p>"Life saver on our last hike!" – Emma</p>
-    <p>"Our pup loves the camping gear!" – Jason</p>
-    <p>"Stylish and super functional." – Leila</p>
-  </section>
 * {
   margin: 0;
   padding: 0;
@@ -104,7 +58,7 @@ section {
   z-index: 3;
 }
 
-/*Final stacked position on the left-center */
+/* 🎯 Final stacked position on the left-center */
 .hero-images.stack .img-left {
   transform: translate(-200px, 40px);
   opacity: 1;
@@ -118,12 +72,13 @@ section {
   opacity: 1;
 }
 
-/* Other page sections */
+/* 🛍️ Products Title Section */
 .products-title {
   background-color: #f7cbd1;
   padding: 40px 20px;
 }
 
+/* 🧰 Product Fullscreen Sections */
 .product-fullscreen {
   height: 100vh;
   display: flex;
@@ -137,12 +92,14 @@ section {
 .product-2 { background-color: #e8c563; color: #333; }
 .product-3 { background-color: #badccb; color: #333; }
 
+/* 🧭 About Section */
 .about {
   background-color: #fff;
   color: #333;
   padding: 60px 20px;
 }
 
+/* 💬 Testimonies Section */
 .testimonies {
   background-color: #f7cbd1;
   color: #333;
