@@ -7,9 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
   if (heroImages && imgLeft && imgCenter && imgRight) {
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
-      const start = heroImages.offsetTop;
-      const end = start + window.innerHeight * 0.5; // smaller scroll range = faster animation
-
+      const start = heroImages.offsetTop - window.innerHeight * 0.2;
+      const end = start + window.innerHeight;
 
       // Progress: 0 (start) to 1 (fully scrolled through hero section)
       let progress = (scrollY - start) / (end - start);
