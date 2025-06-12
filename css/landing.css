@@ -24,7 +24,7 @@ body, html {
 
 /* LEFT: Logo & bone centered in left half */
 .left-pane {
-  width: 50vw;
+  width: 55vw;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -44,6 +44,12 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.landing-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
 }
 
 .rotating-bone {
@@ -82,7 +88,7 @@ body, html {
   top: 10vh;
   bottom: 10vh;
   right: 0;
-  width: 50vw;
+  width: 45vw;
 }
 
 .info-title {
