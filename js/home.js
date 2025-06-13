@@ -5,9 +5,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const imgRight = document.querySelector('.img-right');
 
   if (heroSection && imgLeft && imgCenter && imgRight) {
+    // 👇 Add this so the image starts visually aligned with JS
+    imgLeft.style.transform = `translate(0px, 170px)`;
+
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
-
       const start = heroSection.offsetTop;
       const end = start + heroSection.offsetHeight * 0.25;
 
@@ -17,11 +19,11 @@ document.addEventListener("DOMContentLoaded", function () {
       imgLeft.style.transform = `translate(${lerp(0, 0, progress)}px, ${lerp(170, -150, progress)}px)`;
       imgCenter.style.transform = `translate(-50%, -50%) scale(${lerp(1, 0.9, progress)})`;
       imgRight.style.transform = `translate(${lerp(0, -100, progress)}px, ${lerp(0, 100, progress)}px)`;
-    }); // ✅ End scroll listener
-  } // ✅ End if block
+    });
+  }
 });
 
-// ✅ lerp outside DOMContentLoaded
+// ✅ Helper function
 function lerp(start, end, t) {
   return start + (end - start) * t;
 }
