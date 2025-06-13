@@ -5,27 +5,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const imgRight = document.querySelector('.img-right');
 
   if (heroSection && imgLeft && imgCenter && imgRight) {
-  const start = heroSection.offsetTop;
-  const end = start + heroSection.offsetHeight * 0.25;
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
 
-  window.addEventListener('scroll', () => {
-  const scrollY = window.scrollY;
+      // Move start & end inside to recalc on resize
+      const start = heroSection.offsetTop;
+      const end = start + heroSection.offsetHeight * 0.25;
 
-  let progress = (scrollY - start) / (end - start);
-  progress = Math.max(0, Math.min(progress, 1));
+      let progress = (scrollY - start) / (end - start);
+      progress = Math.max(0, Math.min(progress, 1));
 
-  // 🧪 DEBUG: Log everything
-  console.log({
-    scrollY,
-    start,
-    end,
-    progress
-  });
-
-  imgLeft.style.transform = `translate(${lerp(-300, -200, progress)}px, ${lerp(300, 40, progress)}px)`;
-  imgCenter.style.transform = `translate(${lerp(-75, -200, progress)}px, ${lerp(0, 20, progress)}px)`;
-  imgRight.style.transform = `translate(${lerp(300, -200, progress)}px, ${lerp(-300, 0, progress)}px)`;
-});
+      // 🎯 Apply scroll-driven transform
+      imgLeft.style.transform = `translate(${lerp(-300, -200, progress)}px, ${lerp(300, 40, progress)}px)`;
+      imgCenter.style.transform = `translate(${lerp(-75, -200, progress)}px, ${lerp(0, 20, progress)}px)`;
+      imgRight.style.transform = `translate(${lerp(300, -200, progress)}px, ${lerp(-300, 0, progress)}px)`;
+    });
   }
 
   function lerp(start, end, t) {
