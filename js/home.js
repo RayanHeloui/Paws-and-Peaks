@@ -8,21 +8,20 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
 
-      // Move start & end inside to recalc on resize
       const start = heroSection.offsetTop;
       const end = start + heroSection.offsetHeight * 0.25;
 
       let progress = (scrollY - start) / (end - start);
       progress = Math.max(0, Math.min(progress, 1));
 
-imgRight.style.transform = `translate(${lerp(0, -100, progress)}px, ${lerp(0, 100, progress)}px)`;
-imgCenter.style.transform = `translate(-50%, -50%) scale(${lerp(1, 0.9, progress)})`; // slight shrink if you want
-imgRight.style.transform = `translate(${lerp(0, -100, progress)}px, ${lerp(0, 100, progress)}px)`;
+      imgLeft.style.transform = `translate(${lerp(0, 100, progress)}px, ${lerp(0, -100, progress)}px)`;
+      imgCenter.style.transform = `translate(-50%, -50%) scale(${lerp(1, 0.9, progress)})`;
+      imgRight.style.transform = `translate(${lerp(0, -100, progress)}px, ${lerp(0, 100, progress)}px)`;
+    }); // ✅ End scroll listener
+  } // ✅ End if block
+});
 
-  }
-
+// ✅ lerp outside DOMContentLoaded
 function lerp(start, end, t) {
   return start + (end - start) * t;
 }
-
-});
