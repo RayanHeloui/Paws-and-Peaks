@@ -5,9 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const imgRight = document.querySelector('.img-right');
 
   if (heroSection && imgLeft && imgCenter && imgRight) {
-    // 👇 Add this so the image starts visually aligned with JS
-    imgLeft.style.transform = `translate(0px, 170px)`;
-
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
       const start = heroSection.offsetTop;
@@ -23,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// ✅ Helper function
 function lerp(start, end, t) {
   return start + (end - start) * t;
 }
