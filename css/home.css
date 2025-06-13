@@ -45,32 +45,15 @@ section {
 
 /* 🎯 Initial scattered positions */
 .img-left {
-  transform: translate(-750px, 300px); /* bottom-left */
   z-index: 1;
 }
 
 .img-center {
-  transform: translate(0px, 0); /* middle */
   z-index: 2;
 }
 
 .img-right {
-  transform: translate(750px, -400px); /* top-right */
   z-index: 3;
-}
-
-/* 🎯 Final stacked position on the left-center */
-.hero-images.stack .img-left {
-  transform: translate(-200px, 40px);
-  opacity: 1;
-}
-.hero-images.stack .img-center {
-  transform: translate(-200px, 20px);
-  opacity: 1;
-}
-.hero-images.stack .img-right {
-  transform: translate(-200px, 0);
-  opacity: 1;
 }
 
 /* 🛍️ Products Title Section */
