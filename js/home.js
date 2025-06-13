@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
       progress = Math.max(0, Math.min(progress, 1));
 
       imgLeft.style.transform = `translate(${lerp(0, 300, progress)}px, ${lerp(170, -60, progress)}px)`;
-      imgCenter.style.transform = `translate(-50%, -50%) scale(${lerp(1, 0.9, progress)})`;
+      imgCenter.style.transform = `translate(${lerp(-50, 70, progress)}%, ${lerp(-60, 30, progress)}%)`;
       imgRight.style.transform = `translate(${lerp(0, -100, progress)}px, ${lerp(0, 100, progress)}px)`;
     });
   }
