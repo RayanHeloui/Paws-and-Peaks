@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
       let progress = (scrollY - start) / (end - start);
       progress = Math.max(0, Math.min(progress, 1));
 
-imgLeft.style.transform = `translate(${lerp(0, 100, progress)}px, ${lerp(0, -100, progress)}px)`;
+imgRight.style.transform = `translate(${lerp(0, -100, progress)}px, ${lerp(0, 100, progress)}px)`;
 imgCenter.style.transform = `translate(-50%, -50%) scale(${lerp(1, 0.9, progress)})`; // slight shrink if you want
 imgRight.style.transform = `translate(${lerp(0, -100, progress)}px, ${lerp(0, 100, progress)}px)`;
 
