@@ -27,9 +27,6 @@ section {
   position: sticky;
   top: 25vh;
   height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .hero-img {
@@ -38,8 +35,6 @@ section {
   object-fit: cover;
   border-radius: 50%;
   position: absolute;
-  transition: transform 0.8s ease; /* keep transform only */
-  opacity: 1; /* ✅ Always visible */
 }
 
 
