@@ -43,17 +43,25 @@ section {
 }
 
 
-/* 🎯 Initial scattered positions */
 .img-left {
+  left: 0;
+  bottom: 0;
   z-index: 1;
+  transform: translate(0, 0); /* base position */
 }
 
 .img-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* centered */
   z-index: 2;
 }
 
 .img-right {
+  top: 0;
+  right: 0;
   z-index: 3;
+  transform: translate(0, 0); /* base position */
 }
 
 /* 🛍️ Products Title Section */
