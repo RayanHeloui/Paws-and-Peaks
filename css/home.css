@@ -41,7 +41,7 @@ section {
 
 .img-left {
   left: 0;
-  top: 85%;
+  top: 60%;
   transform: translate(0, 0);
   position: absolute;
   z-index: 1;
