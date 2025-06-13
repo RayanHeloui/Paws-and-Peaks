@@ -50,12 +50,12 @@ section {
 }
 
 .img-center {
-  transform: translate(10px, 0); /* middle */
+  transform: translate(0px, 0); /* middle */
   z-index: 2;
 }
 
 .img-right {
-  transform: translate(300px, -300px); /* top-right */
+  transform: translate(750px, -400px); /* top-right */
   z-index: 3;
 }
 
