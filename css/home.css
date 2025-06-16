@@ -40,13 +40,11 @@ section {
 
 
 .img-left {
-  left: 0;
   position: absolute;
+  top: 700px; /* Adjust as needed */
+  left: 100px; /* Adjust as needed */
   z-index: 1;
-  transform: translate(0px, 170px); /* Initial position */
 }
-
-
 
 .img-center {
   top: 50%;
