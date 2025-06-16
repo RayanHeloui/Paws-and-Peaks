@@ -5,12 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const imgRight = document.querySelector('.img-right');
 
   if (heroSection && imgLeft && imgCenter && imgRight) {
-    // Set initial transform based on scroll start
-    const initialProgress = 0;
-    imgLeft.style.transform = `translate(${lerp(100, 300, initialProgress)}px, ${lerp(700, 400, initialProgress)}px)`;
-    imgCenter.style.transform = `translate(${lerp(-50, 70, initialProgress)}%, ${lerp(-60, 30, initialProgress)}%)`;
-    imgRight.style.transform = `translate(${lerp(0, -100, initialProgress)}px, ${lerp(0, 100, initialProgress)}px)`;
-
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
       const start = heroSection.offsetTop;
@@ -19,7 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
       let progress = (scrollY - start) / (end - start);
       progress = Math.max(0, Math.min(progress, 1));
 
-      imgLeft.style.transform = `translate(${lerp(100, 300, progress)}px, ${lerp(700, 400, progress)}px)`;
+      imgLeft.style.left = `${lerp(100, 300, progress)}px`;
+      imgLeft.style.top = `${lerp(700, 400, progress)}px`;
+
       imgCenter.style.transform = `translate(${lerp(-50, 70, progress)}%, ${lerp(-60, 30, progress)}%)`;
       imgRight.style.transform = `translate(${lerp(0, -100, progress)}px, ${lerp(0, 100, progress)}px)`;
     });
