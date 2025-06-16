@@ -3,11 +3,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const imgLeft = document.querySelector('.img-left');
   const imgCenter = document.querySelector('.img-center');
   const imgRight = document.querySelector('.img-right');
-  const initialProgress = 0;
-  imgLeft.style.transform = `translate(${lerp(0, 300, initialProgress)}px, ${lerp(170, -60, initialProgress)}px)`;
 
-  
   if (heroSection && imgLeft && imgCenter && imgRight) {
+    // Set initial transform based on scroll start
+    const initialProgress = 0;
+    imgLeft.style.transform = `translate(${lerp(0, 300, initialProgress)}px, ${lerp(170, -60, initialProgress)}px)`;
+    imgCenter.style.transform = `translate(${lerp(-50, 70, initialProgress)}%, ${lerp(-60, 30, initialProgress)}%)`;
+    imgRight.style.transform = `translate(${lerp(0, -100, initialProgress)}px, ${lerp(0, 100, initialProgress)}px)`;
+
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
       const start = heroSection.offsetTop;
