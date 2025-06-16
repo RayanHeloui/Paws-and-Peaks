@@ -34,8 +34,25 @@ section {
   object-fit: cover;
   border-radius: 50%;
   position: absolute;
-  transform: translate(0, 0); /* default */
   transition: transform 0.1s linear;
+}
+.img-left {
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.img-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.img-right {
+  top: 0;
+  right: 0;
+  z-index: 3;
 }
 
 /* 🛍️ Products Title Section */
