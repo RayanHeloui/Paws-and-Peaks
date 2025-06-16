@@ -40,9 +40,10 @@ section {
 
 
 .img-left {
-  top: 60%;
   left: 0;
-  position: absolute; 
+  position: absolute;
+  z-index: 1;
+  transform: translate(0px, 170px); /* Initial position */
 }
 
 
