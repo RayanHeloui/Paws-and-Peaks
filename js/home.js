@@ -5,8 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const imgRight = document.querySelector(".img-right");
 
   window.addEventListener("scroll", () => {
-    const rect = hero.getBoundingClientRect();
-    const scrollProgress = Math.min(Math.max(1 - rect.top / window.innerHeight, 0), 1);
+const rect = hero.getBoundingClientRect();
+const progress = Math.min(Math.max(-rect.top / window.innerHeight, 0), 1);
+
 
     // Animate to final positions
     imgLeft.style.transform = `translate(${scrollProgress * 200}px, ${scrollProgress * -150}px)`;
