@@ -37,7 +37,7 @@ body {
 .main-header,
 .top-bar {
   width: 100%;
-  padding: 30; /* Remove unnecessary padding */
+  padding: 50; /* Remove unnecessary padding */
   margin: 0;
 }
 
