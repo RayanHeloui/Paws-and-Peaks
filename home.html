@@ -4,39 +4,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hero Animation</title>
- <link rel="stylesheet" href="css/home.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/header.css">
 </head>
 <body>
 
-<section class="hero">
-  <div class="hero-images">
-    <img src="images/bone.png" class="hero-img img-left" alt="Bone Left">
-    <img src="images/bone.png" class="hero-img img-center" alt="Bone Center">
-    <img src="images/bone.png" class="hero-img img-right" alt="Bone Right">
+  <!-- 🔥 HEADER CONTAINER -->
+  <div id="header-container"></div>
 
-    <!-- ✅ Moved inside sticky container -->
-    <div class="hero-slogan">
-      <h2>
-        <span class="slogan-word" id="word1">Preparedness</span>
-        <span class="slogan-word" id="word2">is no longer optional,</span>
-        <span class="slogan-word" id="word3">it's part of</span>
-        <span class="slogan-word" id="word4">responsible pet ownership</span>
-      </h2>
+  <section class="hero">
+    <div class="hero-images">
+      <img src="images/bone.png" class="hero-img img-left" alt="Bone Left">
+      <img src="images/bone.png" class="hero-img img-center" alt="Bone Center">
+      <img src="images/bone.png" class="hero-img img-right" alt="Bone Right">
+
+      <div class="hero-slogan">
+        <h2>
+          <span class="slogan-word" id="word1">Preparedness</span>
+          <span class="slogan-word" id="word2">is no longer optional,</span>
+          <span class="slogan-word" id="word3">it's part of</span>
+          <span class="slogan-word" id="word4">responsible pet ownership</span>
+        </h2>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <section class="filler">
     <h2>Next Content Section</h2>
   </section>
 
-  
-  <!-- 🛍️ PRODUCTS TITLE -->
   <section class="products-title">
     <h2>Our Products</h2>
   </section>
 
-  <!-- 🧰 PRODUCT FULLSCREEN SECTIONS -->
   <section class="product-fullscreen product-1">
     <h2>First Aid Kit</h2>
   </section>
@@ -47,13 +49,11 @@
     <h2>Pro Kit</h2>
   </section>
 
-  <!-- 🧭 ABOUT SECTION -->
   <section class="about">
     <h2>About Us</h2>
     <p>Paws and Peaks offers curated kits to make outdoor adventures safe and unforgettable for pets and their people.</p>
   </section>
 
-  <!-- 💬 TESTIMONIALS SECTION -->
   <section class="testimonies">
     <h2>Testimonials</h2>
     <p>"Life saver on our last hike!" – Emma</p>
@@ -61,6 +61,18 @@
     <p>"Stylish and super functional." – Leila</p>
   </section>
 
- <script src="js/home.js"></script>
+  <!-- Scripts -->
+  <script src="js/home.js"></script>
+  <script src="js/header.js" defer></script>
+
+  <!-- ✅ LOAD HEADER HTML -->
+  <script>
+    fetch('html/header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+      });
+  </script>
+
 </body>
 </html>
