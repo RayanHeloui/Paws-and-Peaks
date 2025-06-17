@@ -25,13 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
     imgCenter.style.transform = `translate(${progress * -567}px, ${progress * 50}px)`;
     imgRight.style.transform = `translate(${progress * -1250}px, ${progress * 445}px)`;
 
-    // Show slogan only while hero is in view
-    if (rect.bottom > 0 && rect.top < windowHeight) {
-      sloganSection.classList.add('visible');
-    } else {
-      sloganSection.classList.remove('visible');
-    }
-
+  // Slogan becomes visible only after bones are done
+  if (scrollProgress >= 1.05 && rect.bottom > 0 && rect.top < windowHeight) {
+    sloganSection.classList.add('visible');
+  } else {
+    sloganSection.classList.remove('visible');
+  }
     // Trigger each block at separate scroll slices (1.2, 1.6, 2.0, 2.4)
     const thresholds = [1.2, 1.6, 2.0, 2.4];
     blocks.forEach((block, index) => {
