@@ -52,6 +52,71 @@ body {
   top: 5%;
   right: 5%;
 }
+.product-fullscreen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.product-1 { background: #b68973; }
+.product-2 { background: #3f826d; }
+.product-3 { background: #4464ad; }
+
+.mission {
+  padding: 60px 20px;
+  background: #f7f7f7;
+  text-align: center;
+}
+
+.mission h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.testimonials {
+  position: relative;
+  background: #222;
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.testimonial-slider {
+  overflow: hidden;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.testimonial-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+.testimonial-track div {
+  min-width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.slider-btn.prev { left: 20px; }
+.slider-btn.next { right: 20px; }
+
 
 /* 🐾 SLOGAN SECTION */
 .hero-slogan {
