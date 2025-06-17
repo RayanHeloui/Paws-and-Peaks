@@ -24,18 +24,29 @@ body {
 }
 
 .hero-slogan {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding-right: 5%;
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
   opacity: 0;
   transition: opacity 0.6s ease;
   pointer-events: none; /* Optional: prevents accidental hovers */
   z-index: 5; /* stays above the images */
+  text-align: right;
+  max-width: 40%;
 }
+.hero-slogan.visible {
+  opacity: 1;
+}
+.hero-slogan span {
+  display: block;
+  opacity: 0.3;
+  transition: opacity 0.4s ease;
+}
+.hero-slogan span.active {
+  opacity: 1;
+}
+
 .img-left {
   left: 5%;
   bottom: 5%;
