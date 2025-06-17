@@ -16,7 +16,7 @@ window.addEventListener("scroll", () => {
   const rect = hero.getBoundingClientRect();
   const progress = Math.min(Math.max(-rect.top / window.innerHeight, 0), 1);
 
-  imgLeft.style.transform = `translate(${progress * 247}px, ${progress * 222}px)`;
+  imgLeft.style.transform = `translate(${progress * 247}px, ${progress * -222}px)`;
   imgCenter.style.transform = `translate(${progress * -567}px, ${progress * 50}px)`;
   imgRight.style.transform = `translate(${progress * -1250}px, ${progress * 445}px)`;
 });
