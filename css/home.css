@@ -10,7 +10,7 @@ body {
 }
 @font-face {
   font-family: 'NostalgicRemain';
-  src: url('NostalgicRemain-Regular.ttf') format('truetype');
+   src: url('../NostalgicRemain-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
