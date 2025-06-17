@@ -12,14 +12,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const rightY = document.getElementById('rightY');
 
   // 🎯 Transform on scroll
-  window.addEventListener("scroll", () => {
-    const rect = hero.getBoundingClientRect();
-    const progress = Math.min(Math.max(-rect.top / window.innerHeight, 0), 1);
+window.addEventListener("scroll", () => {
+  const rect = hero.getBoundingClientRect();
+  const progress = Math.min(Math.max(-rect.top / window.innerHeight, 0), 1);
 
-    imgLeft.style.transform = `translate(${progress * parseFloat(leftX.value)}px, ${progress * parseFloat(leftY.value)}px)`;
-    imgCenter.style.transform = `translate(${progress * parseFloat(centerX.value)}px, ${progress * parseFloat(centerY.value)}px)`;
-    imgRight.style.transform = `translate(${progress * parseFloat(rightX.value)}px, ${progress * parseFloat(rightY.value)}px)`;
-  });
+  imgLeft.style.transform = `translate(${progress * 247}px, ${progress * 222}px)`;
+  imgCenter.style.transform = `translate(${progress * -567}px, ${progress * 50}px)`;
+  imgRight.style.transform = `translate(${progress * -1250}px, ${progress * 445}px)`;
+});
+
 
   // ✅ Live label updater
   const updateLabel = (slider, label) => {
