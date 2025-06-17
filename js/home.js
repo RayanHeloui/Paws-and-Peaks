@@ -19,4 +19,17 @@ document.addEventListener("DOMContentLoaded", () => {
     imgCenter.style.transform = `translate(${progress * parseFloat(centerX.value)}px, ${progress * parseFloat(centerY.value)}px)`;
     imgRight.style.transform = `translate(${progress * parseFloat(rightX.value)}px, ${progress * parseFloat(rightY.value)}px)`;
   });
+  const updateLabel = (slider, label) => {
+  label.textContent = slider.value;
+  slider.addEventListener('input', () => label.textContent = slider.value);
+};
+
+// Attach listeners to all sliders
+updateLabel(leftX, document.getElementById('leftXVal'));
+updateLabel(leftY, document.getElementById('leftYVal'));
+updateLabel(centerX, document.getElementById('centerXVal'));
+updateLabel(centerY, document.getElementById('centerYVal'));
+updateLabel(rightX, document.getElementById('rightXVal'));
+updateLabel(rightY, document.getElementById('rightYVal'));
+
 });
