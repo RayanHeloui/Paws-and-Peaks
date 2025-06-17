@@ -15,7 +15,7 @@ body {
 .top-bar {
   background: #f4f4f4;
   font-size: 14px;
-  padding: 10px 0;
+  padding: 15px 0;
 }
 
 .top-left, .top-right {
@@ -37,7 +37,7 @@ body {
 .main-header,
 .top-bar {
   width: 100%;
-  padding: 0; /* Remove unnecessary padding */
+  padding: 30; /* Remove unnecessary padding */
   margin: 0;
 }
 
