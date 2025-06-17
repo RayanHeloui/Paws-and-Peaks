@@ -5,40 +5,39 @@ document.addEventListener("DOMContentLoaded", () => {
   const imgRight = document.querySelector(".img-right");
 
   const sloganSection = document.querySelector('.hero-slogan');
-  const words = [
+  const blocks = [
     document.getElementById('word1'),
     document.getElementById('word2'),
     document.getElementById('word3'),
     document.getElementById('word4')
   ];
-  let sloganActivated = false;
 
   window.addEventListener("scroll", () => {
     const rect = hero.getBoundingClientRect();
-    const progress = Math.min(Math.max(-rect.top / window.innerHeight, 0), 1);
+    const fullProgress = Math.min(Math.max(-rect.top / window.innerHeight, 0), 2);
+    const progress = Math.min(fullProgress, 1);
 
     // Animate bones
     imgLeft.style.transform = `translate(${progress * 247}px, ${progress * -222}px)`;
     imgCenter.style.transform = `translate(${progress * -567}px, ${progress * 50}px)`;
     imgRight.style.transform = `translate(${progress * -1250}px, ${progress * 445}px)`;
 
-    // Show slogan after bone animation finishes
-    if (progress >= 1 && !sloganActivated) {
-      sloganActivated = true;
+    // Show slogan
+    if (fullProgress >= 1) {
       sloganSection.classList.add('visible');
-
-      words.forEach((word, index) => {
-        setTimeout(() => {
-          word.classList.add('active');
-        }, index * 300);
-      });
-    }
-
-    // Reset if scrolling back up
-    if (progress < 1 && sloganActivated) {
-      sloganActivated = false;
+    } else {
       sloganSection.classList.remove('visible');
-      words.forEach(word => word.classList.remove('active'));
     }
+
+    // Animate each slogan block by scroll phase (1.0–2.0)
+    const scrollSlogan = fullProgress - 1;
+    const thresholds = [0.05, 0.3, 0.55, 0.8];
+    blocks.forEach((block, index) => {
+      if (scrollSlogan >= thresholds[index]) {
+        block.classList.add('active');
+      } else {
+        block.classList.remove('active');
+      }
+    });
   });
 });
