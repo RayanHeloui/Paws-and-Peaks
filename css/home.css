@@ -50,7 +50,7 @@ body {
 
 /* 🐾 SLOGAN SECTION */
 .hero-slogan {
-  position: fixed;
+  position: absolute;
   top: 50%;
   right: 5%;
   transform: translateY(-50%);
