@@ -66,19 +66,20 @@ body {
   color: #000;
 }
 
-/* Navigation Links */
-.nav-links a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  padding: 12px 0; /* Helps stretch the header vertically */
+.nav-icons {
+  display: flex;
+  align-items: center;
 }
 
-/* Icon Links */
 .nav-icons a {
   margin-left: 20px;
-  color: #333;
   font-size: 18px;
-  padding: 12px 0; /* Adds vertical spacing */
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
+
+.nav-icons a:hover {
+  color: #000;
+}
+
