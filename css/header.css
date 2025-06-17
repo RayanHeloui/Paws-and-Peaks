@@ -58,6 +58,7 @@ body {
   font-family: 'NostalgicRemain', sans-serif;
   font-size: 24px;
   font-weight: bold;
+  letter-spacing: 1.5px; /* ⬅️ Adjust this value to space letters */
 }
 
 .logo-text a {
