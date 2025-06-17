@@ -1,39 +1,33 @@
-<header class="main-header">
-  <!-- LEFT: Brand -->
-  <div class="header-left">
-    <a href="index.html" class="logo-link">
-      <span class="brand-text">Paws and Peaks</span>
-    </a>
-  </div>
-
-  <!-- CENTER: Navigation -->
-  <nav class="nav-center">
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="store.html">Shop</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="account.html">Account</a></li>
-      <li><a href="about.html">About Us</a></li>
-    </ul>
-  </nav>
-
-  <!-- RIGHT: Search + Cart -->
-  <div class="header-right">
-    <form class="search-bar" action="search.html" method="GET">
-      <input type="text" name="query" placeholder="Search..." />
-      <button type="submit">Search</button>
-    </form>
-    <button id="cart-toggle" class="cart-button" aria-label="Open cart">🛒</button>
-  </div>
-
-  <!-- Slide-In Cart Panel (Just one!) -->
-  <div id="cart-panel" class="cart-panel">
-    <div class="cart-header">
-      <span style="font-size: 1.5rem;">🛒</span>
-      <button id="cart-close">×</button>
+<!-- Top Utility Bar -->
+<div class="top-bar">
+  <div class="container">
+    <div class="top-left">
+      <span>AU | EN</span>
     </div>
-    <div class="cart-content">
-      <!-- Cart items will be dynamically inserted here -->
+    <div class="top-right">
+      <a href="#">Support</a>
+      <a href="#">Account</a>
+      <a href="#">Blog</a>
+    </div>
+  </div>
+</div>
+
+<!-- Main Navigation Bar -->
+<header class="main-header">
+  <div class="container">
+    <nav class="nav-links-left">
+      <a href="#">Home</a>
+      <a href="#">Store</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
+    </nav>
+    <div class="logo-text">
+      <a href="#">Paws and Peaks</a>
+    </div>
+    <div class="nav-icons">
+      <a href="#"><i class="fas fa-search"></i></a>
+      <a href="#"><i class="fas fa-shopping-cart"></i></a>
+      <a href="#"><i class="fas fa-user"></i></a>
     </div>
   </div>
 </header>
