@@ -14,8 +14,3 @@ document.addEventListener("DOMContentLoaded", () => {
     imgRight.style.transform = `translate(${scrollProgress * -250}px, ${scrollProgress * 150}px)`;
   });
 });
-
-
-function lerp(start, end, t) {
-  return start + (end - start) * t;
-}
