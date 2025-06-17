@@ -1,24 +1,18 @@
+/* Reset and Font */
 body {
   margin: 0;
   font-family: 'YourCustomFont', sans-serif;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
+/* Top Utility Bar */
 .top-bar {
   background: #f4f4f4;
   font-size: 14px;
   padding: 15px 0;
 }
 
-.top-left, .top-right {
+.top-left,
+.top-right {
   display: flex;
   align-items: center;
 }
@@ -33,25 +27,27 @@ body {
   text-decoration: none;
 }
 
-/* Stretch the header full width */
-.main-header,
-.top-bar {
+/* Main Header */
+.main-header {
   width: 100%;
-  padding: 50; /* Remove unnecessary padding */
-  margin: 0;
+  padding: 40px 0;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
-/* Container now stretches to screen edges */
+/* Shared Layout Container */
 .container {
-  max-width: none;
   width: 100%;
-  padding: 0 40px; /* Optional spacing inside */
+  padding: 0 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* Logo on left now */
+/* Logo Text */
 .logo-text {
   font-size: 24px;
   font-weight: bold;
@@ -62,16 +58,19 @@ body {
   color: #000;
 }
 
-/* Nav and icons */
+/* Navigation Links */
 .nav-links a {
   margin: 0 15px;
   text-decoration: none;
   color: #333;
   font-weight: 500;
+  padding: 12px 0; /* Helps stretch the header vertically */
 }
 
+/* Icon Links */
 .nav-icons a {
   margin-left: 20px;
   color: #333;
   font-size: 18px;
+  padding: 12px 0; /* Adds vertical spacing */
 }
