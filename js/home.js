@@ -1,29 +1,22 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const heroSection = document.querySelector('.hero');
   const imgLeft = document.querySelector('.img-left');
   const imgCenter = document.querySelector('.img-center');
   const imgRight = document.querySelector('.img-right');
 
-  if (heroSection && imgLeft && imgCenter && imgRight) {
-    // Initial positions for all three using transform
-    imgLeft.style.transform = `translate(0px, 0px)`;
-    imgCenter.style.transform = `translate(0px, 0px)`;
-    imgRight.style.transform = `translate(0px, 0px)`;
+  const startY = heroSection.offsetTop;
+  const endY = startY + window.innerHeight;
 
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      const start = heroSection.offsetTop;
-      const end = start + heroSection.offsetHeight * 0.25;
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    let progress = (scrollY - startY) / (endY - startY);
+    progress = Math.max(0, Math.min(progress, 1)); // Clamp between 0 and 1
 
-      let progress = (scrollY - start) / (end - start);
-      progress = Math.max(0, Math.min(progress, 1));
-
-      // 📦 Scroll-based transforms
-      imgLeft.style.transform = `translate(${lerp(0, 200, progress)}px, ${lerp(0, -100, progress)}px)`;
-      imgCenter.style.transform = `translate(${lerp(0, -100, progress)}px, ${lerp(0, 50, progress)}px)`;
-      imgRight.style.transform = `translate(${lerp(0, -150, progress)}px, ${lerp(0, 100, progress)}px)`;
-    });
-  }
+    // Bone trajectories based on your screenshot
+    imgLeft.style.transform = `translate(${lerp(0, 300, progress)}px, ${lerp(0, -200, progress)}px)`;
+    imgCenter.style.transform = `translate(${lerp(0, 100, progress)}px, ${lerp(0, 100, progress)}px)`;
+    imgRight.style.transform = `translate(${lerp(0, -350, progress)}px, ${lerp(0, 200, progress)}px)`;
+  });
 });
 
 function lerp(start, end, t) {
