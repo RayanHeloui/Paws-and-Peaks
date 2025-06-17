@@ -41,4 +41,42 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+  // Sample 10 testimonials
+const testimonials = [
+  "Paws and Peaks saved our trip! – Emily",
+  "Stylish, practical, and pup-approved. – Raj",
+  "I won’t hike without our kit anymore. – Tasha",
+  "The Pro Kit is the real deal. – Michael",
+  "Camping with confidence now! – Zoe",
+  "My dog’s first aid kit is better than mine 😂 – Chris",
+  "Beautiful design and smart packaging. – Lena",
+  "Quick delivery and amazing service. – Jordan",
+  "Preparedness never looked this cute. – Sarah",
+  "A must-have for weekend warriors. – Dean"
+];
+
+const track = document.querySelector('.testimonial-track');
+
+testimonials.forEach(text => {
+  const slide = document.createElement('div');
+  slide.textContent = text;
+  track.appendChild(slide);
+});
+
+let index = 0;
+
+function updateSlider() {
+  track.style.transform = `translateX(-${index * 100}%)`;
+}
+
+document.querySelector('.next').addEventListener('click', () => {
+  index = (index + 1) % testimonials.length;
+  updateSlider();
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+  index = (index - 1 + testimonials.length) % testimonials.length;
+  updateSlider();
+});
+
 });
