@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
     imgCenter.style.transform = `translate(${progress * -567}px, ${progress * 50}px)`;
     imgRight.style.transform = `translate(${progress * -1250}px, ${progress * 445}px)`;
 
-    // Show slogan after bones are done
-    if (scrollProgress >= 1) {
+    // Show slogan only while hero is in view
+    if (rect.bottom > 0 && rect.top < windowHeight) {
       sloganSection.classList.add('visible');
     } else {
       sloganSection.classList.remove('visible');
