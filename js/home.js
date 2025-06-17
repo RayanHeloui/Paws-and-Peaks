@@ -4,9 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const imgCenter = document.querySelector(".img-center");
   const imgRight = document.querySelector(".img-right");
 
-  // Tweak panel values
   const leftX = document.getElementById('leftX');
   const leftY = document.getElementById('leftY');
+  const centerX = document.getElementById('centerX');
+  const centerY = document.getElementById('centerY');
   const rightX = document.getElementById('rightX');
   const rightY = document.getElementById('rightY');
 
@@ -14,13 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const rect = hero.getBoundingClientRect();
     const progress = Math.min(Math.max(-rect.top / window.innerHeight, 0), 1);
 
-    const lX = parseFloat(leftX.value);
-    const lY = parseFloat(leftY.value);
-    const rX = parseFloat(rightX.value);
-    const rY = parseFloat(rightY.value);
-
-    imgLeft.style.transform = `translate(${progress * lX}px, ${progress * lY}px)`;
-    imgCenter.style.transform = `translate(0px, 0px)`; // static for now
-    imgRight.style.transform = `translate(${progress * rX}px, ${progress * rY}px)`;
+    imgLeft.style.transform = `translate(${progress * parseFloat(leftX.value)}px, ${progress * parseFloat(leftY.value)}px)`;
+    imgCenter.style.transform = `translate(${progress * parseFloat(centerX.value)}px, ${progress * parseFloat(centerY.value)}px)`;
+    imgRight.style.transform = `translate(${progress * parseFloat(rightX.value)}px, ${progress * parseFloat(rightY.value)}px)`;
   });
 });
