@@ -3,6 +3,12 @@ body {
   margin: 0;
   font-family: 'YourCustomFont', sans-serif;
 }
+@font-face {
+  font-family: 'NostalgicRemain';
+  src: url('../NostalgicRemain-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* Top Utility Bar */
 .top-bar {
@@ -49,6 +55,7 @@ body {
 
 /* Logo Text */
 .logo-text {
+  font-family: 'NostalgicRemain', sans-serif;
   font-size: 24px;
   font-weight: bold;
 }
