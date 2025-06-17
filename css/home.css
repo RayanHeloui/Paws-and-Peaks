@@ -294,3 +294,99 @@ body {
 .testimonies p {
   margin: 10px 0;
 }
+/* 📦 REFINED Product Layout (Screenshot Style) */
+.product-layout {
+  background: #fff4c5; /* soft yellow like your screenshot */
+  padding: 60px 0;
+}
+
+.product-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.product-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.product-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  font-family: 'NostalgicRemain', sans-serif;
+  color: #000;
+}
+
+.product-subtitle {
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Layout split left-right */
+.product-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.product-image {
+  flex: 0 0 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-image img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  background: lightblue;
+  border-radius: 12px;
+}
+
+.product-caption {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-family: 'NostalgicRemain', sans-serif;
+  color: #222;
+}
+
+/* Right side */
+.product-info {
+  flex: 0 0 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.product-text {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* Buttons */
+.product-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn.learn-more {
+  background: #bde3e0;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #000;
+  font-family: 'NostalgicRemain', sans-serif;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn.learn-more:hover {
+  background: #a5d3cf;
+}
