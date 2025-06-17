@@ -1,23 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const heroSection = document.querySelector('.hero');
-  const imgLeft = document.querySelector('.img-left');
-  const imgCenter = document.querySelector('.img-center');
-  const imgRight = document.querySelector('.img-right');
+  const hero = document.querySelector(".hero");
+  const imgLeft = document.querySelector(".img-left");
+  const imgCenter = document.querySelector(".img-center");
+  const imgRight = document.querySelector(".img-right");
 
-  const startY = heroSection.offsetTop;
-  const endY = startY + window.innerHeight;
+  window.addEventListener("scroll", () => {
+    const rect = hero.getBoundingClientRect();
+    const scrollProgress = Math.min(Math.max(1 - rect.top / window.innerHeight, 0), 1);
 
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    let progress = (scrollY - startY) / (endY - startY);
-    progress = Math.max(0, Math.min(progress, 1)); // Clamp between 0 and 1
-
-    // Bone trajectories based on your screenshot
-    imgLeft.style.transform = `translate(${lerp(0, 300, progress)}px, ${lerp(0, -200, progress)}px)`;
-    imgCenter.style.transform = `translate(${lerp(0, 100, progress)}px, ${lerp(0, 100, progress)}px)`;
-    imgRight.style.transform = `translate(${lerp(0, -350, progress)}px, ${lerp(0, 200, progress)}px)`;
+    // Animate to final positions
+    imgLeft.style.transform = `translate(${scrollProgress * 200}px, ${scrollProgress * -150}px)`;
+    imgCenter.style.transform = `translate(${scrollProgress * -50}px, ${scrollProgress * 100}px)`;
+    imgRight.style.transform = `translate(${scrollProgress * -250}px, ${scrollProgress * 150}px)`;
   });
 });
+
 
 function lerp(start, end, t) {
   return start + (end - start) * t;
