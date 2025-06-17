@@ -23,15 +23,19 @@ body {
   overflow: hidden;
 }
 
-.hero-img {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  object-fit: contain; /* or cover if you want clipping */
-  will-change: transform;
-  transition: transform 0.1s ease-out;
+.hero-slogan {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 5%;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none; /* Optional: prevents accidental hovers */
+  z-index: 5; /* stays above the images */
 }
-
 .img-left {
   left: 5%;
   bottom: 5%;
