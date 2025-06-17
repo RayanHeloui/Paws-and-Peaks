@@ -56,6 +56,33 @@ body {
   font-size: 2rem;
 }
 
+/* TESTING CODE ONLY*/
+.hero-img {
+  border: 2px dashed rgba(0,0,0,0.2);
+}
+#tweak-panel {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #fff;
+  padding: 10px 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-family: sans-serif;
+  font-size: 14px;
+  z-index: 9999;
+  border-radius: 8px;
+}
+
+#tweak-panel label {
+  display: block;
+  margin: 8px 0;
+}
+
+#tweak-panel input[type="range"] {
+  width: 100%;
+}
+
+
 /* 🛍️ Products Title Section */
 .products-title {
   background-color: #f7cbd1;
