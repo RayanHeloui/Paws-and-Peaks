@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const rightX = document.getElementById('rightX');
   const rightY = document.getElementById('rightY');
 
+  // 🎯 Transform on scroll
   window.addEventListener("scroll", () => {
     const rect = hero.getBoundingClientRect();
     const progress = Math.min(Math.max(-rect.top / window.innerHeight, 0), 1);
@@ -19,17 +20,25 @@ document.addEventListener("DOMContentLoaded", () => {
     imgCenter.style.transform = `translate(${progress * parseFloat(centerX.value)}px, ${progress * parseFloat(centerY.value)}px)`;
     imgRight.style.transform = `translate(${progress * parseFloat(rightX.value)}px, ${progress * parseFloat(rightY.value)}px)`;
   });
+
+  // ✅ Live label updater
   const updateLabel = (slider, label) => {
-  label.textContent = slider.value;
-  slider.addEventListener('input', () => label.textContent = slider.value);
-};
+    label.textContent = slider.value;
 
-// Attach listeners to all sliders
-updateLabel(leftX, document.getElementById('leftXVal'));
-updateLabel(leftY, document.getElementById('leftYVal'));
-updateLabel(centerX, document.getElementById('centerXVal'));
-updateLabel(centerY, document.getElementById('centerYVal'));
-updateLabel(rightX, document.getElementById('rightXVal'));
-updateLabel(rightY, document.getElementById('rightYVal'));
+    slider.addEventListener('input', () => {
+      label.textContent = slider.value;
+    });
 
+    slider.addEventListener('change', () => {
+      label.textContent = slider.value;
+    });
+  };
+
+  // 🔁 Attach to all sliders
+  updateLabel(leftX, document.getElementById('leftXVal'));
+  updateLabel(leftY, document.getElementById('leftYVal'));
+  updateLabel(centerX, document.getElementById('centerXVal'));
+  updateLabel(centerY, document.getElementById('centerYVal'));
+  updateLabel(rightX, document.getElementById('rightXVal'));
+  updateLabel(rightY, document.getElementById('rightYVal'));
 });
