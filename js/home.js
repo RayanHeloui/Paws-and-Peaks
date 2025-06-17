@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const progress = Math.min(Math.max(-rect.top / window.innerHeight, 0), 1);
 
     // Animate to final positions
-    imgLeft.style.transform = `translate(${progress * 200}px, ${progress * -150}px)`;
-    imgCenter.style.transform = `translate(${progress * -50}px, ${progress * 100}px)`;
-    imgRight.style.transform = `translate(${progress * -250}px, ${progress * 150}px)`;
+    imgLeft.style.transform = `translate(${progress * 400}px, ${progress * -100}px)`;
+    imgCenter.style.transform = `translate(${progress * 0}px, ${progress * 0}px)`;
+    imgRight.style.transform = `translate(${progress * -400}px, ${progress * 100}px)`;
   });
 });
 
