@@ -82,4 +82,30 @@ body {
 .nav-icons a:hover {
   color: #000;
 }
+/* Popup base style */
+.header-popups {
+  position: relative;
+  z-index: 1000;
+}
+
+.popup {
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 12px;
+  min-width: 200px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.hidden {
+  display: none;
+}
+
+#search-popup input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #aaa;
+}
 
