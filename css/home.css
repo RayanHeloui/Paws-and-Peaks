@@ -8,7 +8,12 @@ body {
   font-family: sans-serif;
   background: #fff;
 }
-
+@font-face {
+  font-family: 'NostalgicRemain';
+  src: url('NostalgicRemain-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 /* 🦴 HERO SECTION */
 .hero {
   height: 400vh;
@@ -50,6 +55,7 @@ body {
 
 /* 🐾 SLOGAN SECTION */
 .hero-slogan {
+  font-family: 'NostalgicRemain', sans-serif;
   position: absolute;
   top: 50%;
   right: 5%;
