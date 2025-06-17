@@ -59,7 +59,7 @@ body {
   pointer-events: none;
   z-index: 5;
   text-align: right;
-  max-width: 40%;
+  max-width: 50%;
 }
 
 .hero-slogan.visible {
@@ -67,7 +67,7 @@ body {
 }
 
 .hero-slogan h2 {
-  font-size: clamp(1.8rem, 2.8vw + 1rem, 3.2rem);
+  font-size: clamp(1.2rem, 2vw + 0.8rem, 2.4rem);;
   font-weight: 600;
   color: #aaa;
   display: flex;
