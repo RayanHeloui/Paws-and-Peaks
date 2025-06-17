@@ -1,1 +1,69 @@
+body {
+  margin: 0;
+  font-family: 'YourCustomFont', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar {
+  background: #f4f4f4;
+  font-size: 14px;
+  padding: 10px 0;
+}
+
+.top-left, .top-right {
+  display: flex;
+  align-items: center;
+}
+
+.top-left span {
+  margin-right: 20px;
+}
+
+.top-right a {
+  margin-left: 20px;
+  color: #333;
+  text-decoration: none;
+}
+
+.main-header {
+  background: #fff;
+  padding: 15px 0;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.nav-links-left a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: bold;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.logo-text a {
+  text-decoration: none;
+  color: #000;
+}
+
+.nav-icons a {
+  margin-left: 20px;
+  color: #333;
+  font-size: 18px;
+}
 
