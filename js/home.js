@@ -77,6 +77,11 @@ document.querySelector('.next').addEventListener('click', () => {
 document.querySelector('.prev').addEventListener('click', () => {
   index = (index - 1 + testimonials.length) % testimonials.length;
   updateSlider();
+  
 });
+setInterval(() => {
+  index = (index + 1) % testimonials.length;
+  updateSlider();
+}, 5000); // every 5 seconds
 
 });
