@@ -75,7 +75,7 @@ body {
 .hero-slogan h2 {
  font-size: clamp(1.6rem, 3vw + 1rem, 3.5rem);
   font-weight: 600;
-  color: #aaa;
+  color: #7b523c;
   display: flex;
   flex-direction: column;
   gap: 12px;
