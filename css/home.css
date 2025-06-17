@@ -70,16 +70,16 @@ body {
   border-bottom: 1px solid #eee;
 }
 
-.product-section:nth-of-type(1) {
-  background-color: #f7cbd1; /* First Aid Kit */
+.first-aid-kit {
+  background-color: #f7cbd1;
 }
 
-.product-section:nth-of-type(2) {
-  background-color: #badccb; /* Camping Kit */
+.camping-kit {
+  background-color: #badccb;
 }
 
-.product-section:nth-of-type(3) {
-  background-color: #b4dce3; /* Pro Kit */
+.pro-kit {
+  background-color: #b4dce3;
 }
 
 .product-header {
