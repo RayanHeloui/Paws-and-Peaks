@@ -80,6 +80,9 @@
   border-radius: 12px;
 }
 
+.icon-wrapper {
+  position: relative; /* <-- this is the key fix */
+}
 
 .popup {
   background: #fff;
