@@ -74,7 +74,7 @@ body {
 .product-block {
   width: 100vw; /* full viewport width */
   margin: 2px 0; /* small gap top and bottom */
-  padding: 40px 0; /* vertical padding inside the block */
+  padding: 80px 0; /* vertical padding inside the block */
   background-color: var(--accent); /* this gets overridden */
   box-sizing: border-box;
   margin-left: calc(-1 * (100vw - 100%)/2); /* removes side margin caused by centered container */
