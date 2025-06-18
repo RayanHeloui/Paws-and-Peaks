@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Show after 1.5 seconds
   setTimeout(() => {
     popup.classList.remove("hidden");
-  }, 300);
+  }, 700);
 
   // Close popup on click
   closeBtn.addEventListener("click", () => {
