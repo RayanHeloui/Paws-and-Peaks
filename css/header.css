@@ -1,52 +1,31 @@
-/* Reset and Font */
-body {
-  margin: 0;
-  font-family: 'YourCustomFont', sans-serif;
-}
-@font-face {
-  font-family: 'NostalgicRemain';
-  src: url('../NostalgicRemain-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 /* Top Utility Bar */
 .top-bar {
-  background: #f4f4f4;
+  background: var(--accent); /* soft blush pink */
   font-size: 14px;
-  padding: 15px 0;
-}
-
-.top-left,
-.top-right {
-  display: flex;
-  align-items: center;
-}
-
-.top-left span {
-  margin-right: 20px;
-}
-
-.top-right a {
-  margin-left: 20px;
-  color: #333;
-  text-decoration: none;
+  padding: 12px 0;
+  border-bottom: 1px solid #eab3be; /* slightly darker pink */
+  border-radius: 0 0 12px 12px; /* soft bottom curve */
 }
 
 /* Main Header */
 .main-header {
-  width: 100%;
-  padding: 20px 0;
-  background: #fff;
-  border-bottom: 1px solid #ddd;
+  width: 100vw;
+  background: var(--main-bg); /* pastel yellow */
+  border: 1px solid #e8db9d; /* slightly darker yellow border */
+  border-radius: 0 0 24px 24px;
+  padding: 24px 0;
   position: sticky;
   top: 0;
   z-index: 999;
+  margin-left: calc(-1 * (100vw - 100%) / 2);
+  box-sizing: border-box;
 }
 
 /* Shared Layout Container */
 .container {
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0 40px;
   display: flex;
   justify-content: space-between;
@@ -58,14 +37,15 @@ body {
   font-family: 'NostalgicRemain', sans-serif;
   font-size: 24px;
   font-weight: bold;
-  letter-spacing: 1.5px; /* ⬅️ Adjust this value to space letters */
+  letter-spacing: 0.1em;
 }
 
 .logo-text a {
   text-decoration: none;
-  color: #000;
+  color: var(--neutral-dark); /* deep brown */
 }
 
+/* Nav Icons */
 .nav-icons {
   display: flex;
   align-items: center;
@@ -74,7 +54,7 @@ body {
 .nav-icons a {
   margin-left: 20px;
   font-size: 18px;
-  color: #333;
+  color: var(--neutral-dark);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -82,7 +62,8 @@ body {
 .nav-icons a:hover {
   color: #000;
 }
-/* Popup base style */
+
+/* Popup Styling */
 .header-popups {
   position: relative;
   z-index: 1000;
@@ -92,20 +73,17 @@ body {
   position: absolute;
   top: 100%;
   right: 20px;
-  background: white;
+  background: #fff;
   border: 1px solid #ccc;
   padding: 12px;
   min-width: 200px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.hidden {
-  display: none;
+  border-radius: 12px;
 }
 
 #search-popup input {
   width: 100%;
   padding: 8px;
   border: 1px solid #aaa;
+  border-radius: 6px;
 }
-
