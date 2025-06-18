@@ -1,35 +1,26 @@
 console.log("Header loaded!");
 
-document.addEventListener('click', function (e) {
-  const searchBtn = document.getElementById('search-btn');
-  const cartBtn = document.getElementById('cart-btn');
-  const accountBtn = document.getElementById('account-btn');
+document.addEventListener("click", function (e) {
+  const iconWrappers = document.querySelectorAll(".icon-wrapper");
+  let clickedInsidePopup = false;
 
-  const searchPopup = document.getElementById('search-popup');
-  const cartPopup = document.getElementById('cart-popup');
-  const accountPopup = document.getElementById('account-popup');
+  iconWrappers.forEach(wrapper => {
+    const icon = wrapper.querySelector("a");
+    const popup = wrapper.querySelector(".popup");
 
-  const isClickInsidePopup =
-    searchPopup.contains(e.target) ||
-    cartPopup.contains(e.target) ||
-    accountPopup.contains(e.target);
+    if (icon.contains(e.target)) {
+      // Hide all popups first
+      document.querySelectorAll(".popup").forEach(p => p.classList.add("hidden"));
+      // Toggle current popup
+      popup.classList.toggle("hidden");
+      clickedInsidePopup = true;
+    } else if (popup.contains(e.target)) {
+      clickedInsidePopup = true;
+    }
+  });
 
-  const hideAll = () => {
-    searchPopup.classList.add('hidden');
-    cartPopup.classList.add('hidden');
-    accountPopup.classList.add('hidden');
-  };
-
-  if (searchBtn.contains(e.target)) {
-    hideAll();
-    searchPopup.classList.toggle('hidden');
-  } else if (cartBtn.contains(e.target)) {
-    hideAll();
-    cartPopup.classList.toggle('hidden');
-  } else if (accountBtn.contains(e.target)) {
-    hideAll();
-    accountPopup.classList.toggle('hidden');
-  } else if (!isClickInsidePopup) {
-    hideAll();
+  // Clicked outside all popups and icons
+  if (!clickedInsidePopup) {
+    document.querySelectorAll(".popup").forEach(p => p.classList.add("hidden"));
   }
 });
