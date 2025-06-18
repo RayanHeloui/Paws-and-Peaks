@@ -105,6 +105,7 @@ body {
   margin-bottom: 10px;
   font-family: 'NostalgicRemain', sans-serif;
   color: var(--heading);
+  letter-spacing: 0.05em; /* or 0.1em for more space */
 }
 
 .product-subtitle {
