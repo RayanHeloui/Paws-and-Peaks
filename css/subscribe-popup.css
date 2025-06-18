@@ -1,0 +1,67 @@
+.subscribe-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 16px;
+  padding: 40px 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+.subscribe-popup.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+.popup-content {
+  background: var(--accent); /* blush pink */
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content h2 {
+  font-family: 'NostalgicRemain', sans-serif;
+  margin-bottom: 10px;
+  color: var(--neutral-dark);
+}
+
+.popup-content input {
+  width: 80%;
+  padding: 10px;
+  margin: 12px 0;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+}
+
+.popup-content button {
+  background: var(--neutral-dark); /* deep brown */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: #333;
+  cursor: pointer;
+}
