@@ -82,9 +82,13 @@
 
 .icon-wrapper {
   position: relative; /* <-- this is the key fix */
+  display: inline-block; /* Prevent it from stretching */
 }
 
 .popup {
+  position: absolute;
+  top: 100%;
+  left: 0;
   background: #fff;
   border: 1px solid #ccc;
   padding: 12px;
@@ -92,11 +96,13 @@
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   border-radius: 12px;
   transition: opacity 0.3s ease, transform 0.3s ease;
-  
+
   opacity: 0;
   transform: translateY(-10px);
   pointer-events: none;
+  z-index: 1000; /* make sure it's above other elements */
 }
+
 
 
 .popup:not(.hidden) {
