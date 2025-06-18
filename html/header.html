@@ -18,27 +18,27 @@
       <a href="html/about.html">About Us</a>
       <a href="html/contact.html">Contact Us</a>
     </nav>
+
     <div class="nav-icons">
-      <a href="#"><i class="fas fa-search"></i></a>
-      <a href="#"><i class="fas fa-shopping-cart"></i></a>
-      <a href="#"><i class="fas fa-user"></i></a>
+      <div class="icon-wrapper">
+        <a href="#"><i class="fas fa-search"></i></a>
+        <div id="search-popup" class="popup hidden">
+          <input type="text" placeholder="Search..." />
+        </div>
+      </div>
+      <div class="icon-wrapper">
+        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+        <div id="cart-popup" class="popup hidden">
+          <p>Your cart is empty</p>
+        </div>
+      </div>
+      <div class="icon-wrapper">
+        <a href="#"><i class="fas fa-user"></i></a>
+        <div id="account-popup" class="popup hidden">
+          <p><a href="html/login.html">Login</a></p>
+          <p><a href="html/signup.html">Sign Up</a></p>
+        </div>
+      </div>
     </div>
   </div>
 </header>
-
-<!-- Just under </header> -->
-<div class="header-popups">
-  <div id="search-popup" class="popup hidden">
-    <input type="text" placeholder="Search..." />
-  </div>
-  <div id="cart-popup" class="popup hidden">
-    <p>Your cart is empty</p>
-  </div>
-<div id="account-popup" class="popup hidden">
-  <p><a href="html/login.html">Login</a></p>
-  <p><a href="html/signup.html">Sign Up</a></p>
-</div>
-
-</div>
-
-
