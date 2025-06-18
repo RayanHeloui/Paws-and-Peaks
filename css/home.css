@@ -78,21 +78,25 @@ body {
   background-color: var(--accent); /* this gets overridden */
   box-sizing: border-box;
   margin-left: calc(-1 * (100vw - 100%)/2); /* removes side margin caused by centered container */
-    border-radius: 24px; /* ⬅️ Add this line */
+    border-radius: 50px; /* ⬅️ Add this line */
   overflow: hidden;    /* ⬅️ Optional: hides overflow from images inside */
+  border: 1px solid transparent; /* default fallback */
 }
 
 /* Specific kit background colors */
 .first-aid-kit {
   background-color: var(--accent); /* blush pink */
+  border-color: #eab3be; /* slightly darker pink */
 }
 
 .camping-kit {
   background-color: var(--secondary); /* mint green */
+  border-color: #a2c1bb; /* slightly darker mint */
 }
 
 .pro-kit {
   background-color: #b4dce3; /* blue tone from your palette */
+  border-color: #9cced6;
 }
 
 
