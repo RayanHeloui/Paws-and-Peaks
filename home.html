@@ -16,16 +16,26 @@
 <body>
 
   <!-- 🔔 Subscribe Popup Container -->
-<script>
-  fetch('html/subscribe-popup.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('subscribe-container').innerHTML = html;
-      const script = document.createElement('script');
-      script.src = 'js/subscribe-popup.js';
-      document.body.appendChild(script);
-    });
-</script>
+  <div id="subscribe-container"></div>
+
+  <script>
+    fetch('html/subscribe-popup.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('subscribe-container').innerHTML = html;
+
+        const script = document.createElement('script');
+        script.src = 'js/subscribe-popup.js';
+
+        script.onload = () => {
+          if (typeof initSubscribePopup === 'function') {
+            initSubscribePopup();
+          }
+        };
+
+        document.body.appendChild(script);
+      });
+  </script>
 
 
   <!-- 🔥 HEADER CONTAINER -->
