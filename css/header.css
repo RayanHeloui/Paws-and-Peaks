@@ -10,8 +10,8 @@
 /* Main Header */
 .main-header {
   width: 100vw;
-  background: var(--main-bg); /* pastel yellow */
-  border: 1px solid #e8db9d; /* slightly darker yellow border */
+  background: #badccb; /* mint green */
+  border: 1px solid #9ebfb6; /* slightly darker mint border */
   border-radius: 0 0 24px 24px;
   padding: 24px 0;
   position: sticky;
