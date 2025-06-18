@@ -115,7 +115,7 @@ body {
 .product-content {
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* ⬅️ aligns items to the top instead of center */
+  align-items: center; /* ⬅️ aligns items to the top instead of center */
   gap: 40px;
   max-width: 100px;
   margin: 0 auto;
@@ -137,6 +137,7 @@ body {
 }
 
 .product-details {
+  margin-top: -30px;  /* this pulls the text block upward */
   max-width: 500px;
   text-align: right;
   display: flex;
@@ -145,7 +146,8 @@ body {
   align-items: flex-end;
   height: 100%;
   padding-right: 20px;
-  margin-top: -100px; /* adjust as needed */
+    padding-top: 0;
+  transform: translateY(-20px); /* smooth and reliable nudge upward */
 }
 
 .product-details p {
