@@ -117,7 +117,7 @@ body {
   justify-content: center;
   align-items: center; /* ⬅️ aligns items to the top instead of center */
   gap: 40px;
-  max-width: 100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
