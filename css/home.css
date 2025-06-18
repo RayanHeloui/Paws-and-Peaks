@@ -145,7 +145,7 @@ body {
   align-items: flex-end;
   height: 100%;
   padding-right: 20px;
-  margin-top: -30px; /* adjust as needed */
+  margin-top: -100px; /* adjust as needed */
 }
 
 .product-details p {
