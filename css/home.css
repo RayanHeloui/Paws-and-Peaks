@@ -81,15 +81,15 @@ body {
 }
 
 .first-aid-kit {
-  background-color: #f7cbd1;
+  background-color: transparent;
 }
 
 .camping-kit {
-  background-color: #badccb;
+ background-color: transparent;
 }
 
 .pro-kit {
-  background-color: #b4dce3;
+ background-color: transparent;
 }
 
 .product-header {
