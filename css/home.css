@@ -71,11 +71,29 @@ body {
   border-bottom: 1px solid #eee;
 }
 
-.first-aid-kit,
-.camping-kit,
-.pro-kit {
-  background-color: transparent;
+/* Shared style for all kits */
+.product-block {
+  background-color: var(--accent); /* overridden per kit */
+  margin: 20px auto;
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 700px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
+
+/* Specific kit background colors */
+.first-aid-kit {
+  background-color: var(--accent); /* blush pink */
+}
+
+.camping-kit {
+  background-color: var(--secondary); /* mint green */
+}
+
+.pro-kit {
+  background-color: #b4dce3; /* blue tone from your palette */
+}
+
 
 .product-header {
   margin-bottom: 40px;
