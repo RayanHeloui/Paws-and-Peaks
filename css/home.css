@@ -115,9 +115,9 @@ body {
 .product-content {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* ⬅️ aligns items to the top instead of center */
   gap: 40px;
-  max-width: 1200px;
+  max-width: 100px;
   margin: 0 auto;
 }
 
