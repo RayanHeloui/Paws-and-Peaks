@@ -233,49 +233,50 @@ body {
 
 .testimonials {
   background-color: var(--accent);
-  padding: 80px 20px;
-  text-align: center;
-  border-radius: 50px;
-  margin: 40px 0;
-}
-
-.testimonials h2 {
-  font-family: 'NostalgicRemain', sans-serif;
-  font-size: 2.5rem;
   color: var(--neutral-dark);
-  margin-bottom: 40px;
+  padding: 60px 20px;
+  text-align: center;
+  overflow: hidden;
 }
 
-.testimonial-grid {
+.testimonial-slider {
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.testimonial-track {
   display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
+  transition: transform 0.5s ease-in-out;
+  width: max-content;
 }
 
 .testimonial-card {
   background: #fff;
-  border-radius: 20px;
-  padding: 30px 20px;
-  width: 280px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  text-align: center;
-  font-size: 1rem;
-  color: #444;
-  position: relative;
+  color: #333;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 10px;
+  min-width: 320px;
+  max-width: 320px;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .testimonial-card i {
   font-size: 2rem;
-  color: var(--neutral-dark);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  color: var(--accent);
 }
 
 .testimonial-card span {
-  display: block;
-  margin-top: 12px;
-  font-style: italic;
-  color: #7b523c;
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 0.95rem;
 }
 
 .testimonial-submit {
