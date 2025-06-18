@@ -73,13 +73,13 @@ body {
 
 /* Shared style for all kits */
 .product-block {
+  width: 100%;
   background-color: var(--accent); /* overridden per kit */
-  margin: 20px auto;
-  padding: 24px;
-  border-radius: 12px;
-  max-width: 700px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 60px 20px;
+  margin: 20px 0;
+  box-sizing: border-box;
 }
+
 
 /* Specific kit background colors */
 .first-aid-kit {
