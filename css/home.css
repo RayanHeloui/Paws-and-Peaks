@@ -73,7 +73,7 @@ body {
 
 .product-block {
   width: 100vw; /* full viewport width */
-  margin: 10px 0; /* small gap top and bottom */
+  margin: 5px 0; /* small gap top and bottom */
   padding: 40px 0; /* vertical padding inside the block */
   background-color: var(--accent); /* this gets overridden */
   box-sizing: border-box;
