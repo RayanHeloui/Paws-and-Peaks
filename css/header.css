@@ -64,21 +64,42 @@
 }
 
 /* Popup Styling */
-.header-popups {
-  position: relative;
-  z-index: 1000;
+#cart-popup {
+  position: absolute;
+  top: 100%;               /* drops below the icon */
+  right: 0;                /* align right edge of popup to right edge of icon */
+  transform: translateX(0); /* no horizontal shift */
+}
+#account-popup {
+  position: absolute;
+  top: 100%;             /* Drop directly below the icon */
+  right: 0;              /* Align with the icon’s right edge */
+  transform: translateX(0);
+  min-width: 180px;
+  padding: 12px;
+  border-radius: 12px;
 }
 
+
 .popup {
-  position: absolute;
-  top: 100%;
-  right: 20px;
   background: #fff;
   border: 1px solid #ccc;
   padding: 12px;
   min-width: 200px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   border-radius: 12px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+
+.popup:not(.hidden) {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 #search-popup input {
