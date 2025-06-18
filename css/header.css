@@ -1,10 +1,19 @@
 /* Top Utility Bar */
 .top-bar {
-  background: var(--accent); /* soft blush pink */
-  font-size: 14px;
-  padding: 6px 0;
-  border-bottom: 1px solid #eab3be; /* slightly darker pink */
-  border-radius: 0 0 12px 12px; /* soft bottom curve */
+  background-color: #badccb; /* mint green */
+  padding: 8px 0;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.top-bar .top-center {
+  text-align: center;
+}
+
+.top-bar a {
+  color: #333;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 /* Main Header */
