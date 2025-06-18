@@ -8,7 +8,6 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.6s ease;
-  background: rgba(0, 0, 0, 0.4); /* semi-transparent dark overlay */
 }
 
 .subscribe-popup.visible {
