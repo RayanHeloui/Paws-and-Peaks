@@ -231,14 +231,26 @@ body {
   line-height: 1.7;
 }
 
-
-
 .testimonials {
-  position: relative;
-  background-color: var(--accent);
-  color: #fff;
-  padding: 60px 20px;
+  background-color: var(--secondary); /* mint green background */
+  border: 5px solid #a2c1bb; /* slightly darker mint border */
+  border-radius: 50px;
+  padding: 120px 40px;
+  margin: 2px 0;
+  width: 100vw;
+  margin-left: calc(-1 * (100vw - 100%) / 2);
+  box-sizing: border-box;
+  overflow: hidden;
   text-align: center;
+  color: var(--text);
+}
+
+.testimonials h2 {
+  font-family: 'NostalgicRemain', sans-serif;
+  color: var(--neutral-dark);
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  letter-spacing: 0.05em;
 }
 
 .testimonial-slider {
@@ -266,7 +278,7 @@ body {
   font-size: 2rem;
   background: none;
   border: none;
-  color: #fff;
+  color: var(--neutral-dark);
   cursor: pointer;
 }
 
