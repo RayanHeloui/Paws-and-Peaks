@@ -1,19 +1,32 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Auto-show popup
+function initSubscribePopup() {
   const popup = document.getElementById("subscribe-popup");
-  popup.classList.add("visible");
-
-  // Close button
   const closeBtn = document.getElementById("close-subscribe");
+
+  if (!popup || !closeBtn) return;
+
+  // Show after a delay
+  setTimeout(() => {
+    popup.classList.remove("hidden");
+  }, 700);
+
+  // Close on X button
   closeBtn.addEventListener("click", () => {
-    popup.classList.remove("visible");
+    popup.classList.add("hidden");
   });
 
-  // Optionally: handle form submission here
-  const form = document.getElementById("subscribe-form-popup");
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    alert("Thank you for subscribing!");
-    popup.classList.remove("visible");
+  // Close if clicking outside the popup
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      popup.classList.add("hidden");
+    }
   });
-});
+
+  // Fake submit
+  document
+    .getElementById("subscribe-form-popup")
+    .addEventListener("submit", (e) => {
+      e.preventDefault();
+      popup.classList.add("hidden");
+      alert("Thanks for subscribing!");
+    });
+}
