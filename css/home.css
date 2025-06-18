@@ -75,7 +75,7 @@ body {
 /* 🌟 Apple-Inspired Product Sections */
 .product-section {
   padding: 80px 40px;
-  background-color: #fffdf0;
+ background-color: transparent;
   text-align: center;
   border-bottom: 1px solid #eee;
 }
@@ -102,7 +102,7 @@ body {
   margin-bottom: 10px;
   font-family: 'NostalgicRemain', sans-serif;
   color: var(--heading);
-  background-color: var(--accent);
+  background-color: transparent;
 }
 
 .product-subtitle {
