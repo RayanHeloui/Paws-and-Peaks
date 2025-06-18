@@ -193,13 +193,13 @@ body {
 
 .learn-more {
   background-color: transparent;
-  color: var(--neutral-dark);
+  color: black;
   border: 2px solid var(--accent);
 }
 
 .learn-more:hover {
   background-color: var(--accent);
-  color: var(--heading);
+  color: black;
 }
 
 .mission {
