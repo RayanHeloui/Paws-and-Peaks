@@ -96,7 +96,7 @@ body {
 
 .product-header {
   margin-bottom: 20px;     /* reduce space below the title */
-  transform: translateY(-20px); /* move it higher */
+  transform: translateY(-40px); /* move it higher */
 }
 
 .product-title {
