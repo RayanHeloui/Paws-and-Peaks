@@ -1,12 +1,13 @@
 :root {
-  --main-bg: #fcefb3;        /* 60% - pastel yellow */
-  --secondary: #badccb;      /* 30% - mint green */
-  --accent: #f7cbd1;         /* 10% - blush pink */
-  --neutral-dark: #7b523c;   /* dark brown for contrast */
-  --text: #333;              /* standard body text */
-  --heading: #000;           /* strong title text */
-  --light: #fff;             /* white base */
+  --main-bg: #fcefb3;
+  --secondary: #badccb;
+  --accent: #f7cbd1;
+  --neutral-dark: #7b523c;
+  --text: #333;
+  --heading: #000;
+  --light: #fff;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -15,16 +16,17 @@
 
 body {
   font-family: sans-serif;
-    background: var(--main-bg);
+  background: var(--main-bg);
   color: var(--text);
 }
+
 @font-face {
   font-family: 'NostalgicRemain';
-   src: url('../NostalgicRemain-Regular.ttf') format('truetype');
+  src: url('../NostalgicRemain-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
-/* 🦴 HERO SECTION */
+
 .hero {
   height: 400vh;
   background-color: var(--main-bg);
@@ -48,20 +50,10 @@ body {
   transition: transform 0.1s ease-out;
 }
 
-.img-left {
-  left: 5%;
-  bottom: 5%;
-}
+.img-left { left: 5%; bottom: 5%; }
+.img-center { top: 50%; left: 50%; }
+.img-right { top: 5%; right: 5%; }
 
-.img-center {
-  top: 50%;
-  left: 50%;
-}
-
-.img-right {
-  top: 5%;
-  right: 5%;
-}
 .product-fullscreen {
   height: 100vh;
   display: flex;
@@ -72,28 +64,22 @@ body {
   text-align: center;
 }
 
-/* 🌟 Apple-Inspired Product Sections */
 .product-section {
   padding: 80px 40px;
- background-color: transparent;
+  background-color: transparent;
   text-align: center;
   border-bottom: 1px solid #eee;
 }
 
-.first-aid-kit {
-  background-color: transparent;
-}
-
-.camping-kit {
- background-color: transparent;
-}
-
+.first-aid-kit,
+.camping-kit,
 .pro-kit {
- background-color: transparent;
+  background-color: transparent;
 }
 
 .product-header {
   margin-bottom: 40px;
+  text-align: center;
 }
 
 .product-title {
@@ -102,7 +88,6 @@ body {
   margin-bottom: 10px;
   font-family: 'NostalgicRemain', sans-serif;
   color: var(--heading);
-  background-color: transparent;
 }
 
 .product-subtitle {
@@ -179,7 +164,7 @@ body {
 
 .learn-more {
   background-color: transparent;
-color: var(--neutral-dark);
+  color: var(--neutral-dark);
   border: 2px solid var(--accent);
 }
 
@@ -239,8 +224,6 @@ color: var(--neutral-dark);
 .slider-btn.prev { left: 20px; }
 .slider-btn.next { right: 20px; }
 
-
-/* 🐾 SLOGAN SECTION */
 .hero-slogan {
   font-family: 'NostalgicRemain', sans-serif;
   position: absolute;
@@ -260,7 +243,7 @@ color: var(--neutral-dark);
 }
 
 .hero-slogan h2 {
- font-size: clamp(1.6rem, 3vw + 1rem, 3.5rem);
+  font-size: clamp(1.6rem, 3vw + 1rem, 3.5rem);
   font-weight: 600;
   color: var(--neutral-dark);
   display: flex;
@@ -279,11 +262,9 @@ color: var(--neutral-dark);
 
 .slogan-word.active {
   opacity: 1;
-  color: #7b523c;
   transform: translateX(0);
 }
 
-/* 🧱 FILLER */
 .filler {
   height: 100vh;
   background: #f0f0f0;
@@ -293,36 +274,23 @@ color: var(--neutral-dark);
   font-size: 2rem;
 }
 
-/* 🛍️ Products Title Section */
 .products-title {
-  background-color: #f7cbd1;
+  background-color: transparent;
   padding: 40px 20px;
-}
-
-/* 🧰 Product Fullscreen Sections */
-.product-fullscreen {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2em;
-  color: white;
 }
 
 .product-1 { background-color: #7b523c; }
 .product-2 { background-color: #e8c563; color: #333; }
 .product-3 { background-color: var(--secondary); color: #333; }
 
-/* 🧭 About Section */
 .about {
   background-color: #fffdf0;
   color: #333;
   padding: 60px 20px;
 }
 
-/* 💬 Testimonials Section */
 .testimonies {
-  background-color: #f7cbd1;
+  background-color: var(--accent);
   color: #333;
   padding: 60px 20px;
 }
@@ -330,9 +298,9 @@ color: var(--neutral-dark);
 .testimonies p {
   margin: 10px 0;
 }
-/* 📦 REFINED Product Layout (Screenshot Style) */
+
 .product-layout {
-  background: #fff4c5; /* soft yellow like your screenshot */
+  background: #fff4c5;
   padding: 60px 0;
 }
 
@@ -342,46 +310,6 @@ color: var(--neutral-dark);
   padding: 0 40px;
 }
 
-.product-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.product-title {
-  font-size: 2.2rem;
-  font-weight: bold;
-  font-family: 'NostalgicRemain', sans-serif;
-  color: #000;
-   background-color: #f7cbd1;
-}
-
-.product-subtitle {
-  font-size: 1rem;
-  color: #444;
-}
-
-/* Layout split left-right */
-.product-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-}
-
-.product-image {
-  flex: 0 0 40%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.product-image img {
-  width: 100%;
-  max-width: 280px;
-  height: auto;
-  border-radius: 12px;
-}
-
 .product-caption {
   margin-top: 10px;
   font-size: 1rem;
@@ -389,7 +317,6 @@ color: var(--neutral-dark);
   color: #222;
 }
 
-/* Right side */
 .product-info {
   flex: 0 0 60%;
   display: flex;
@@ -405,7 +332,6 @@ color: var(--neutral-dark);
   line-height: 1.5;
 }
 
-/* Buttons */
 .product-buttons {
   display: flex;
   gap: 20px;
