@@ -85,3 +85,33 @@ setInterval(() => {
 }, 5000); // every 5 seconds
 
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const popup = document.getElementById("subscribe-popup");
+  const closeBtn = document.getElementById("close-subscribe");
+
+  // Show after 1.5 seconds
+  setTimeout(() => {
+    popup.classList.remove("hidden");
+  }, 1500);
+
+  // Close popup on click
+  closeBtn.addEventListener("click", () => {
+    popup.classList.add("hidden");
+  });
+
+  // Optional: close if clicking outside the popup content
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      popup.classList.add("hidden");
+    }
+  });
+
+  // Optional: fake subscribe submission
+  document
+    .getElementById("subscribe-form-popup")
+    .addEventListener("submit", (e) => {
+      e.preventDefault();
+      popup.classList.add("hidden");
+      alert("Thanks for subscribing!");
+    });
+});
