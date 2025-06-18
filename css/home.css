@@ -80,7 +80,7 @@ body {
   margin-left: calc(-1 * (100vw - 100%)/2); /* removes side margin caused by centered container */
     border-radius: 50px; /* ⬅️ Add this line */
   overflow: hidden;    /* ⬅️ Optional: hides overflow from images inside */
-  border: 1px solid transparent; /* default fallback */
+  border: 5px solid transparent; /* default fallback */
 }
 
 /* Specific kit background colors */
