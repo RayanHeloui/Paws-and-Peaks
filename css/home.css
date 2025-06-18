@@ -367,7 +367,7 @@ body {
 }
 
 .btn.learn-more {
-  background: #bde3e0;
+  background-color: #f7cbd1;
   padding: 10px 20px;
   text-decoration: none;
   color: var(--neutral-dark);
@@ -379,5 +379,5 @@ body {
 }
 
 .btn.learn-more:hover {
-  background: #a5d3cf;
+  background-color: #eda9bb;
 }
