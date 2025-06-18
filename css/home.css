@@ -203,15 +203,25 @@ body {
 }
 
 .mission {
+  background-color: #fcefb3; /* pastel yellow background */
   padding: 60px 20px;
-  background-color: #fffdf0;
   text-align: center;
+  color: #333; /* soft black for text */
 }
 
 .mission h2 {
-  font-size: 2rem;
+  font-family: 'Nostalgic Remain', sans-serif;
+  color: #7b523c; /* deep warm brown for the heading */
   margin-bottom: 20px;
 }
+
+.mission p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
 
 .testimonials {
   position: relative;
