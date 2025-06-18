@@ -1,3 +1,12 @@
+:root {
+  --main-bg: #fcefb3;        /* 60% - pastel yellow */
+  --secondary: #badccb;      /* 30% - mint green */
+  --accent: #f7cbd1;         /* 10% - blush pink */
+  --neutral-dark: #7b523c;   /* dark brown for contrast */
+  --text: #333;              /* standard body text */
+  --heading: #000;           /* strong title text */
+  --light: #fff;             /* white base */
+}
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +15,8 @@
 
 body {
   font-family: sans-serif;
-  background: #fff;
+    background: var(--main-bg);
+  color: var(--text);
 }
 @font-face {
   font-family: 'NostalgicRemain';
@@ -17,7 +27,7 @@ body {
 /* 🦴 HERO SECTION */
 .hero {
   height: 400vh;
-  background: #fff8cc;
+  background-color: var(--main-bg);
   position: relative;
 }
 
@@ -65,7 +75,7 @@ body {
 /* 🌟 Apple-Inspired Product Sections */
 .product-section {
   padding: 80px 40px;
-  background: #fff;
+  background-color: #fffdf0;
   text-align: center;
   border-bottom: 1px solid #eee;
 }
@@ -91,7 +101,8 @@ body {
   font-weight: bold;
   margin-bottom: 10px;
   font-family: 'NostalgicRemain', sans-serif;
-  color: #333;
+  color: var(--heading);
+  background-color: var(--accent);
 }
 
 .product-subtitle {
@@ -149,6 +160,12 @@ body {
   text-decoration: none;
   font-weight: bold;
   transition: all 0.3s ease;
+  background-color: var(--secondary);
+  color: var(--heading);
+}
+
+.btn:hover {
+  background-color: #a0c8bb;
 }
 
 .buy-now {
@@ -162,17 +179,18 @@ body {
 
 .learn-more {
   background-color: transparent;
-  color: #000;
-  border: 2px solid #000;
+color: var(--neutral-dark);
+  border: 2px solid var(--accent);
 }
 
 .learn-more:hover {
-  background-color: #f0f0f0;
+  background-color: var(--accent);
+  color: var(--heading);
 }
 
 .mission {
   padding: 60px 20px;
-  background: #f7f7f7;
+  background-color: #fffdf0;
   text-align: center;
 }
 
@@ -183,7 +201,7 @@ body {
 
 .testimonials {
   position: relative;
-  background: #222;
+  background-color: var(--accent);
   color: #fff;
   padding: 60px 20px;
   text-align: center;
@@ -244,7 +262,7 @@ body {
 .hero-slogan h2 {
  font-size: clamp(1.6rem, 3vw + 1rem, 3.5rem);
   font-weight: 600;
-  color: #7b523c;
+  color: var(--neutral-dark);
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -254,7 +272,7 @@ body {
 
 .slogan-word {
   opacity: 0.3;
-  color: #7b523c;
+  color: var(--neutral-dark);
   transform: translateX(15px);
   transition: opacity 0.6s ease-out, color 0.6s ease-out, transform 0.6s ease-out;
 }
@@ -293,11 +311,11 @@ body {
 
 .product-1 { background-color: #7b523c; }
 .product-2 { background-color: #e8c563; color: #333; }
-.product-3 { background-color: #badccb; color: #333; }
+.product-3 { background-color: var(--secondary); color: #333; }
 
 /* 🧭 About Section */
 .about {
-  background-color: #fff;
+  background-color: #fffdf0;
   color: #333;
   padding: 60px 20px;
 }
@@ -334,6 +352,7 @@ body {
   font-weight: bold;
   font-family: 'NostalgicRemain', sans-serif;
   color: #000;
+   background-color: #f7cbd1;
 }
 
 .product-subtitle {
@@ -396,7 +415,7 @@ body {
   background: #bde3e0;
   padding: 10px 20px;
   text-decoration: none;
-  color: #000;
+  color: var(--neutral-dark);
   font-family: 'NostalgicRemain', sans-serif;
   font-size: 1rem;
   border: none;
