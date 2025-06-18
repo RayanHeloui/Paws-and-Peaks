@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ✅ Animate slogan blocks as scroll increases
-    const thresholds = [1.35, 1.7, 2.05, 2.4];
+    const thresholds = [1.05, 1.2, 1.35, 1.5];
     blocks.forEach((block, index) => {
       if (scrollProgress >= thresholds[index]) {
         block.classList.add('active');
