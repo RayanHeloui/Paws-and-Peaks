@@ -24,3 +24,8 @@ document.addEventListener("click", function (e) {
     document.querySelectorAll(".popup").forEach(p => p.classList.add("hidden"));
   }
 });
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.popup').forEach(popup => {
+    popup.classList.add('hidden');
+  });
+});
