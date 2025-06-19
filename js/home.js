@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </label><br><br>
 
     <label>Right X:
-      <input id="rightX" type="range" min="-1000" max="1000" value="-490" step="1">
+      <input id="rightX" type="range" min="-2000" max="2000" value="-490" step="1">
       <input id="rightXNum" type="number" value="-490" style="width: 60px">
     </label><br>
     <label>Right Y:
