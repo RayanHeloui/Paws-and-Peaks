@@ -24,9 +24,15 @@ document.addEventListener("DOMContentLoaded", () => {
     imgRight.style.transform = `translate(calc(-50% + ${scrollProgress * -964}px), -50%)`;
 
     // ✅ Only show images & slogan when .hero is in view
-    const inView = rect.top <= 0 && rect.bottom > 0;
-    heroImages.style.display = inView ? "block" : "none";
-    slogan.style.display = inView ? "block" : "none";
+const heroTop = rect.top;
+const heroBottom = rect.bottom;
+
+// Only show if we're within the hero section bounds
+const inHeroView = heroTop <= 0 && heroBottom >= window.innerHeight;
+
+heroImages.style.display = inHeroView ? 'block' : 'none';
+slogan.style.display = inHeroView ? 'block' : 'none';
+
 
     // ✅ Slogan appears at 0.4 scroll
     if (scrollProgress >= 0.45 && inView) {
