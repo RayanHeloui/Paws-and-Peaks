@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     slogan.style.display = inView ? "block" : "none";
 
     // ✅ Slogan appears at 0.4 scroll
-    if (scrollProgress >= 0.4 && inView) {
+    if (scrollProgress >= 0.45 && inView) {
       slogan.classList.add("visible");
     } else {
       slogan.classList.remove("visible");
