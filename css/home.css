@@ -319,7 +319,7 @@ body {
 
 .hero-slogan {
   font-family: 'NostalgicRemain', sans-serif;
-  position: fixed;
+  position: sticky;
   top: 50%;
   right: 5%;
   transform: translateY(-50%);
