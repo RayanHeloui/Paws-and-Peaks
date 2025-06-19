@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ✅ HERO SECTION SCROLL ANIMATION
   const hero = document.querySelector(".hero");
   const imgLeft = document.querySelector(".img-left");
   const imgCenter = document.querySelector(".img-center");
@@ -16,14 +15,32 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", () => {
     const rect = hero.getBoundingClientRect();
     const windowHeight = window.innerHeight;
-    const scrollProgress = Math.min(Math.max(-rect.top / windowHeight, 0), 4);
-    const progress = Math.min(scrollProgress, 1);
+    const scrollProgress = Math.min(Math.max(-rect.top / windowHeight, 0), 1);
 
-    imgLeft.style.transform = `translate(${progress * 247}px, ${progress * -222}px)`;
-    imgCenter.style.transform = `translate(${progress * -567}px, ${progress * 50}px)`;
-    imgRight.style.transform = `translate(${progress * -1250}px, ${progress * 445}px)`;
+    // 🔧 Tweak your target end positions here
+    const leftX = 300;
+    const leftY = -100;
 
-    if (scrollProgress >= 1.05 && rect.top <= 0 && rect.bottom > 0) {
+    const centerX = -300;
+    const centerY = 30;
+
+    const rightX = -600;
+    const rightY = 100;
+
+    // 💡 Scroll-based movement
+    imgLeft.style.transform = `translate(${scrollProgress * leftX}px, ${scrollProgress * leftY}px)`;
+    imgCenter.style.transform = `translate(${scrollProgress * centerX}px, ${scrollProgress * centerY}px)`;
+    imgRight.style.transform = `translate(${scrollProgress * rightX}px, ${scrollProgress * rightY}px)`;
+
+    // 🧠 Live debug
+    console.clear();
+    console.log("Scroll Progress:", scrollProgress.toFixed(2));
+    console.log("Left:", scrollProgress * leftX, scrollProgress * leftY);
+    console.log("Center:", scrollProgress * centerX, scrollProgress * centerY);
+    console.log("Right:", scrollProgress * rightX, scrollProgress * rightY);
+
+    // 👀 Slogan reveal
+    if (scrollProgress >= 0.8) {
       sloganSection.classList.add('visible');
     } else {
       sloganSection.classList.remove('visible');
@@ -38,21 +55,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-
-  // ✅ TESTIMONIAL SLIDER (3 cards at a time)
-  const track = document.querySelector('.testimonial-track');
-  const cards = document.querySelectorAll('.testimonial-card');
-  const visibleCards = 3;
-  const totalSlides = Math.ceil(cards.length / visibleCards);
-  let index = 0;
-
-  function updateSlider() {
-    const cardWidth = cards[0].offsetWidth + 20; // Adjust for margin if needed
-    track.style.transform = `translateX(-${index * cardWidth}px)`;
-  }
-
-  setInterval(() => {
-    index = (index + 1) % totalSlides;
-    updateSlider();
-  }, 4000);
 });
