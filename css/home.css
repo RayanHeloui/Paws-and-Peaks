@@ -84,8 +84,6 @@ body {
   max-width: 40vw;
   padding-right: 3vw;        /* ✅ Adds spacing from edge */
   margin-left: auto;         /* ✅ Pushes it out of image path */
-  gap: 6px; /* ⬅️ reduce vertical gap between lines */
-  line-height: 1.2; /* ⬅️ tighter line height (was likely 1.4 or more) */
   display: block;
 }
 
@@ -100,8 +98,8 @@ body {
   color: var(--neutral-dark);
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  line-height: 1.4;
+  gap: 6px;
+  line-height: 1.2;
   letter-spacing: 0.05em;
 }
 
