@@ -82,10 +82,11 @@ body {
   z-index: 5;
   text-align: right;
   max-width: 30vw;
-  padding-right: 5vw; /* Creates space from the edge */
-  display: flex;
-  justify-content: flex-end;
+  padding-right: 6vw;        /* ✅ Adds spacing from edge */
+  margin-left: auto;         /* ✅ Pushes it out of image path */
+  display: block;
 }
+
 
 .hero-slogan.visible {
   opacity: 1;
