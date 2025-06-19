@@ -56,19 +56,19 @@ body {
 
 
 .img-left {
-  top: 40%;       /* slightly above center */
+  top: 50%;       /* slightly above center */
   left: 15%;      /* far left */
   transform: translate(-50%, -50%);
 }
 
 .img-center {
-  top: 40%;       /* same vertical level */
+  top: 50%;       /* same vertical level */
   left: 50%;      /* centered */
  transform: translate(-50%, -50%);
 }
 
 .img-right {
-  top: 40%;
+  top: 50%;
   left: 85%;      /* far right */
  transform: translate(-50%, -50%);
 }
