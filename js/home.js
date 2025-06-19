@@ -18,13 +18,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const windowHeight = window.innerHeight;
     const scrollProgress = Math.min(Math.max(-rect.top / windowHeight, 0), 1);
 
-    // ✅ Move images smoothly
+    // 🎯 Sticky image movement
     imgLeft.style.transform = `translate(calc(-50% + ${scrollProgress * -34}px), -50%)`;
     imgCenter.style.transform = `translate(calc(-50% + ${scrollProgress * -500}px), -50%)`;
     imgRight.style.transform = `translate(calc(-50% + ${scrollProgress * -964}px), -50%)`;
 
-
-    // ✅ Slogan appears at 0.4 scroll
+    // ✅ Check if hero is in view for slogan to appear
+    const inView = rect.top <= 0 && rect.bottom >= windowHeight;
     if (scrollProgress >= 0.45 && inView) {
       slogan.classList.add("visible");
     } else {
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ✅ Word-by-word animation
-   const thresholds = [0.65, 0.75, 0.85, 0.95];
+    const thresholds = [0.65, 0.75, 0.85, 0.95];
     blocks.forEach((block, index) => {
       if (scrollProgress >= thresholds[index]) {
         block.classList.add("active");
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ✅ TESTIMONIAL SLIDER
+  // ✅ Testimonial slider
   const track = document.querySelector(".testimonial-track");
   const cards = document.querySelectorAll(".testimonial-card");
   const visibleCards = 3;
