@@ -18,14 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const scrollProgress = Math.min(Math.max(-rect.top / windowHeight, 0), 1);
 
     // 🔧 Tweak your target end positions here
-    const leftX = 300;
-    const leftY = -100;
+    const leftX = 350;
+    const leftY = -0;
 
-    const centerX = -300;
-    const centerY = 30;
+    const centerX = 0;
+    const centerY = 0;
 
-    const rightX = -600;
-    const rightY = 100;
+    const rightX = -350;
+    const rightY = 0;
 
     // 💡 Scroll-based movement
     imgLeft.style.transform = `translate(${scrollProgress * leftX}px, ${scrollProgress * leftY}px)`;
