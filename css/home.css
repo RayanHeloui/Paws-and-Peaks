@@ -94,7 +94,6 @@ body {
   padding: 120px 0; /* vertical padding inside the block */
   background-color: var(--accent); /* this gets overridden */
   box-sizing: border-box;
-  margin-left: calc(-1 * (100vw - 100%)/2); /* removes side margin caused by centered container */
     border-radius: 50px; /* ⬅️ Add this line */
   overflow: hidden;    /* ⬅️ Optional: hides overflow from images inside */
   border: 5px solid transparent; /* default fallback */
@@ -443,4 +442,7 @@ body {
 
 .btn.learn-more:hover {
   background-color: #eda9bb;
+}
+html, body {
+  overflow-x: hidden;
 }
