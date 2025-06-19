@@ -34,7 +34,7 @@ body {
 }
 
 .hero-images {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -319,7 +319,7 @@ body {
 
 .hero-slogan {
   font-family: 'NostalgicRemain', sans-serif;
-  position: absolute;
+  position: fixed;
   top: 50%;
   right: 5%;
   transform: translateY(-50%);
