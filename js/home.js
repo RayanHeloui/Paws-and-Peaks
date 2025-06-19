@@ -30,7 +30,7 @@ if (scrollProgress >= 0.9 && rect.top <= 0 && rect.bottom > 0) {
   sloganSection.classList.remove('visible');
 }
 
-  const thresholds = [1.05, 1.2, 1.35, 1.5];
+  const thresholds = [0.9, 0.93, 0.96, 0.99];
   blocks.forEach((block, index) => {
     if (scrollProgress >= thresholds[index]) {
       block.classList.add('active');
