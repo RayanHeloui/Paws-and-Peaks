@@ -13,25 +13,32 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('word4')
   ];
 
+  const heroImages = document.querySelector('.hero-images');
+  const slogan = document.querySelector('.hero-slogan');
+
   window.addEventListener("scroll", () => {
     const rect = hero.getBoundingClientRect();
     const windowHeight = window.innerHeight;
     const scrollProgress = Math.min(Math.max(-rect.top / windowHeight, 0), 1);
 
-    // 🎯 Image transform
-imgLeft.style.transform = `translate(calc(-50% + ${scrollProgress * -34}px), -50%)`;
-imgCenter.style.transform = `translate(calc(-50% + ${scrollProgress * -500}px), -50%)`;
-imgRight.style.transform = `translate(calc(-50% + ${scrollProgress * -964}px), -50%)`;
+    // 🎯 Image transform logic
+    imgLeft.style.transform = `translate(calc(-50% + ${scrollProgress * -34}px), -50%)`;
+    imgCenter.style.transform = `translate(calc(-50% + ${scrollProgress * -500}px), -50%)`;
+    imgRight.style.transform = `translate(calc(-50% + ${scrollProgress * -964}px), -50%)`;
 
+    // ✅ Show/hide images & slogan only inside .hero
+    const inView = rect.top <= 0 && rect.bottom > 0;
+    heroImages.style.display = inView ? 'block' : 'none';
+    slogan.style.display = inView ? 'block' : 'none';
 
-    // ✅ Slogan appears earlier at 0.75
-    if (scrollProgress >= 0.75 && rect.top <= 0 && rect.bottom > 0) {
+    // ✅ Slogan visibility
+    if (scrollProgress >= 0.75 && inView) {
       sloganSection.classList.add('visible');
     } else {
       sloganSection.classList.remove('visible');
     }
 
-    // ✅ Animated word timing (still nicely spaced out)
+    // ✅ Word-by-word reveal
     const thresholds = [1.1, 1.25, 1.4, 1.55];
     blocks.forEach((block, index) => {
       if (scrollProgress >= thresholds[index]) {
@@ -42,7 +49,7 @@ imgRight.style.transform = `translate(calc(-50% + ${scrollProgress * -964}px), -
     });
   });
 
-  // ✅ TESTIMONIAL SLIDER (auto-scroll)
+  // ✅ TESTIMONIAL SLIDER
   const track = document.querySelector('.testimonial-track');
   const cards = document.querySelectorAll('.testimonial-card');
   const visibleCards = 3;
