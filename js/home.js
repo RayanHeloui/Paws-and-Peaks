@@ -20,9 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const progress = Math.min(scrollProgress, 1);
 
     // 🧠 Original movement
-    imgLeft.style.transform = `translate(${progress * 247}px, ${progress * -222}px)`;
-    imgCenter.style.transform = `translate(${progress * -567}px, ${progress * 50}px)`;
-    imgRight.style.transform = `translate(${progress * -1250}px, ${progress * 445}px)`;
+ imgLeft.style.transform = `translate(${scrollProgress * -182}px, 0px)`;
+  imgCenter.style.transform = `translate(${scrollProgress * -648}px, 0px)`;
+  imgRight.style.transform = `translate(${scrollProgress * -1112}px, 0px)`;
 
     // 🧾 Reveal slogan block
     if (scrollProgress >= 1.05 && rect.top <= 0 && rect.bottom > 0) {
