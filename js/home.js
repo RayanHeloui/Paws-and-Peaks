@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     heroImages.style.display = inView ? "block" : "none";
     slogan.style.display = inView ? "block" : "none";
 
-    // ✅ Slogan appears at 0.75 scroll
+    // ✅ Slogan appears at 0.4 scroll
     if (scrollProgress >= 0.9 && inView) {
       slogan.classList.add("visible");
     } else {
