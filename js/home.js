@@ -22,21 +22,19 @@ document.addEventListener("DOMContentLoaded", () => {
       imgLeft.style.transform = `translate(calc(-50% + ${scrollProgress * -68}px), -50%)`;
       imgCenter.style.transform = `translate(calc(-50% + ${scrollProgress * -1000}px), -50%)`;
       imgRight.style.transform = `translate(calc(-50% + ${scrollProgress * -1928}px), -50%)`;
-    } else {
-      imgLeft.style.transform = `translate(calc(-50% + -34px), -50%)`;
-      imgCenter.style.transform = `translate(calc(-50% + -500px), -50%)`;
-      imgRight.style.transform = `translate(calc(-50% + -964px), -50%)`;
-    }
+  // Slogan fade in
+  slogan.style.opacity = scrollProgress >= 0.45 ? "1" : "0";
 
-    // ✅ Slogan appears and holds like images
-    const inView = rect.top <= 0 && rect.bottom >= 0;
-    if (scrollProgress >= 0.45 && inView) {
-      slogan.style.opacity = "1";
-      slogan.classList.add("visible");
-    } else {
-      slogan.style.opacity = "0";
-      slogan.classList.remove("visible");
-    }
+} else {
+  // Lock image positions
+  imgLeft.style.transform = `translate(calc(-50% + -34px), -50%)`;
+  imgCenter.style.transform = `translate(calc(-50% + -500px), -50%)`;
+  imgRight.style.transform = `translate(calc(-50% + -964px), -50%)`;
+
+  // 🧷 Lock slogan position (remove vertical scroll drift)
+  slogan.style.transform = `translateY(0, -50%)`;
+  slogan.style.opacity = "1";
+}
 
     // ✅ Word-by-word animation
     const thresholds = [0.65, 0.75, 0.85, 0.95];
