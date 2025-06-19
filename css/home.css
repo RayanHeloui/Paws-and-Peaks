@@ -75,26 +75,24 @@ body {
   position: sticky;
   top: 50%;
   right: 0;
-  transform: translate(0, -50%);  /* ✅ Vertically centered, no horizontal shift */
+  transform: translateY(-50%);
   opacity: 0;
   transition: opacity 1s ease;
   pointer-events: none;
   z-index: 5;
   text-align: right;
   max-width: 50vw;
-  padding-right: 3vw;        /* ✅ Keeps safe distance from screen edge */
-  margin-left: auto;         /* ✅ Keeps it away from image center */
+  padding-right: 3vw;
+  margin-left: auto;
   display: block;
 }
-
-
 
 .hero-slogan.visible {
   opacity: 1;
 }
 
 .hero-slogan h2 {
-  font-size: clamp(2.2rem, 4vw + 1rem, 4.2rem); /* ⬅️ Larger min and max */
+  font-size: clamp(2.2rem, 4vw + 1rem, 4.2rem);
   font-weight: 600;
   color: var(--neutral-dark);
   display: flex;
@@ -103,6 +101,7 @@ body {
   line-height: 1.2;
   letter-spacing: 0.05em;
 }
+
 
 .slogan-word {
   opacity: 0.3;
