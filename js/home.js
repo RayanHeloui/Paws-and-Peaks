@@ -21,13 +21,13 @@ document.addEventListener("DOMContentLoaded", () => {
       imgLeft.style.transform = `translate(calc(-50% + ${scrollProgress * -68}px), -50%)`;
       imgCenter.style.transform = `translate(calc(-50% + ${scrollProgress * -1000}px), -50%)`;
       imgRight.style.transform = `translate(calc(-50% + ${scrollProgress * -1928}px), -50%)`;
-      slogan.style.transform = `translateY(-50%)`;
+      slogan.style.transform = `translate(0, -50%)`;
       slogan.style.opacity = scrollProgress >= 0.45 ? "1" : "0";
     } else {
       imgLeft.style.transform = `translate(calc(-50% + -34px), -50%)`;
       imgCenter.style.transform = `translate(calc(-50% + -500px), -50%)`;
       imgRight.style.transform = `translate(calc(-50% + -964px), -50%)`;
-      slogan.style.transform = `translateY(-50%)`;
+      slogan.style.transform = `translate(0, -50%)`;
       slogan.style.opacity = "1";
     }
 
