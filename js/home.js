@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <label>Center Y: <input id="centerY" type="range" min="-500" max="500" value="0" step="1"></label>
     <span id="valCenterY">0</span><br><br>
 
-    <label>Right X: <input id="rightX" type="range" min="-1000" max="1000" value="-490" step="1"></label>
+    <label>Right X: <input id="rightX" type="range" min="-2000" max="2000" value="-490" step="1"></label>
     <span id="valRightX">-490</span><br>
     <label>Right Y: <input id="rightY" type="range" min="-500" max="500" value="0" step="1"></label>
     <span id="valRightY">0</span><br>
