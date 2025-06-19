@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   imgRight.style.transform = `translate(${scrollProgress * -1112}px, 0px)`;
 
   // ✅ Slogan Reveal Logic (keep as is)
-if (scrollProgress >= 0.75 && rect.top <= 0 && rect.bottom > 0) {
+if (scrollProgress >= 0.65 && rect.top <= 0 && rect.bottom > 0) {
   sloganSection.classList.add('visible');
 } else {
   sloganSection.classList.remove('visible');
