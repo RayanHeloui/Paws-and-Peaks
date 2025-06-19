@@ -11,40 +11,32 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("word4"),
   ];
 
-  window.addEventListener("scroll", () => {
-    const rect = hero.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-    const scrollProgress = Math.min(Math.max(-rect.top / windowHeight, 0), 1);
-    const lockAt = 0.5;
+window.addEventListener("scroll", () => {
+  const rect = hero.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+  const scrollProgress = Math.min(Math.max(-rect.top / windowHeight, 0), 1);
+  const lockAt = 0.5;
 
-    // 🎯 Animate + Lock Image Movement
-    if (scrollProgress < lockAt) {
-      imgLeft.style.transform = `translate(calc(-50% + ${scrollProgress * -68}px), -50%)`;
-      imgCenter.style.transform = `translate(calc(-50% + ${scrollProgress * -1000}px), -50%)`;
-      imgRight.style.transform = `translate(calc(-50% + ${scrollProgress * -1928}px), -50%)`;
-  // Slogan fade in
-  slogan.style.opacity = scrollProgress >= 0.45 ? "1" : "0";
+  if (scrollProgress < lockAt) {
+    imgLeft.style.transform = `translate(calc(-50% + ${scrollProgress * -68}px), -50%)`;
+    imgCenter.style.transform = `translate(calc(-50% + ${scrollProgress * -1000}px), -50%)`;
+    imgRight.style.transform = `translate(calc(-50% + ${scrollProgress * -1928}px), -50%)`;
+    slogan.style.transform = `translateY(-50%)`; // ensure center alignment during scroll
+    slogan.style.opacity = scrollProgress >= 0.45 ? "1" : "0";
+  } else {
+    imgLeft.style.transform = `translate(calc(-50% + -34px), -50%)`;
+    imgCenter.style.transform = `translate(calc(-50% + -500px), -50%)`;
+    imgRight.style.transform = `translate(calc(-50% + -964px), -50%)`;
+    slogan.style.transform = `translateY(-50%)`;
+    slogan.style.opacity = "1";
+  }
 
-} else {
-  // Lock image positions
-  imgLeft.style.transform = `translate(calc(-50% + -34px), -50%)`;
-  imgCenter.style.transform = `translate(calc(-50% + -500px), -50%)`;
-  imgRight.style.transform = `translate(calc(-50% + -964px), -50%)`;
+  const thresholds = [0.65, 0.75, 0.85, 0.95];
+  blocks.forEach((block, index) => {
+    block.classList.toggle("active", scrollProgress >= thresholds[index]);
+  });
+});
 
-  // 🧷 Lock slogan position (remove vertical scroll drift)
-  slogan.style.transform = `translateY(0, -50%)`;
-  slogan.style.opacity = "1";
-}
-
-    // ✅ Word-by-word animation
-    const thresholds = [0.65, 0.75, 0.85, 0.95];
-    blocks.forEach((block, index) => {
-      if (scrollProgress >= thresholds[index]) {
-        block.classList.add("active");
-      } else {
-        block.classList.remove("active");
-      }
-    });
   });
 
   // ✅ Testimonial slider
