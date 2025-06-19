@@ -34,11 +34,13 @@ body {
 }
 
 .hero-images {
-  position: sticky;
+  position: fixed;
   top: 0;
-  height: 100vh;
+  left: 0;
   width: 100%;
-  overflow: hidden;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .hero-img {
