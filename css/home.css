@@ -27,7 +27,7 @@ body {
 }
 
 .hero {
-  height: 240vh;
+  height: 300vh;
   background-color: var(--main-bg);
   position: relative;
 }
