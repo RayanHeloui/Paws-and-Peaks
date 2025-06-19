@@ -13,33 +13,33 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('word4')
   ];
 
- window.addEventListener("scroll", () => {
-  const rect = hero.getBoundingClientRect();
-  const windowHeight = window.innerHeight;
-  const scrollProgress = Math.min(Math.max(-rect.top / windowHeight, 0), 1);
+  window.addEventListener("scroll", () => {
+    const rect = hero.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    const scrollProgress = Math.min(Math.max(-rect.top / windowHeight, 0), 1);
 
-  // 🎯 Final transform values
-  imgLeft.style.transform = `translate(${scrollProgress * -182}px, 0px)`;
-  imgCenter.style.transform = `translate(${scrollProgress * -648}px, 0px)`;
-  imgRight.style.transform = `translate(${scrollProgress * -1112}px, 0px)`;
+    // 🎯 Image transform
+    imgLeft.style.transform = `translate(${scrollProgress * -182}px, 0px)`;
+    imgCenter.style.transform = `translate(${scrollProgress * -648}px, 0px)`;
+    imgRight.style.transform = `translate(${scrollProgress * -1112}px, 0px)`;
 
-  // ✅ Slogan Reveal Logic (keep as is)
-if (scrollProgress >= 0.65 && rect.top <= 0 && rect.bottom > 0) {
-  sloganSection.classList.add('visible');
-} else {
-  sloganSection.classList.remove('visible');
-}
-
-  const thresholds = [0.78, 0.82, 0.86, 0.9];
-  blocks.forEach((block, index) => {
-    if (scrollProgress >= thresholds[index]) {
-      block.classList.add('active');
+    // ✅ Slogan appears earlier at 0.75
+    if (scrollProgress >= 0.75 && rect.top <= 0 && rect.bottom > 0) {
+      sloganSection.classList.add('visible');
     } else {
-      block.classList.remove('active');
+      sloganSection.classList.remove('visible');
     }
-  });
-});
 
+    // ✅ Animated word timing (still nicely spaced out)
+    const thresholds = [1.1, 1.25, 1.4, 1.55];
+    blocks.forEach((block, index) => {
+      if (scrollProgress >= thresholds[index]) {
+        block.classList.add('active');
+      } else {
+        block.classList.remove('active');
+      }
+    });
+  });
 
   // ✅ TESTIMONIAL SLIDER (auto-scroll)
   const track = document.querySelector('.testimonial-track');
@@ -49,7 +49,7 @@ if (scrollProgress >= 0.65 && rect.top <= 0 && rect.bottom > 0) {
   let index = 0;
 
   function updateSlider() {
-    const cardWidth = cards[0].offsetWidth + 20; // Adjust for margin if needed
+    const cardWidth = cards[0].offsetWidth + 20;
     track.style.transform = `translateX(-${index * cardWidth}px)`;
   }
 
@@ -58,4 +58,3 @@ if (scrollProgress >= 0.65 && rect.top <= 0 && rect.bottom > 0) {
     updateSlider();
   }, 4000);
 });
-
