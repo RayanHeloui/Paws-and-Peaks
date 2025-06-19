@@ -71,17 +71,18 @@ body {
 }
 
 .hero-slogan {
+  font-family: 'NostalgicRemain', sans-serif;
   position: sticky;
   top: 50%;
-  right: 5%;
+  right: 0; /* Align directly to the right edge */
   transform: translateY(-50%);
   opacity: 0;
-  transition: opacity 0.6s ease-out;
+  transition: opacity 1s ease;
   pointer-events: none;
   z-index: 5;
   text-align: right;
-  max-width: 50%;
-  will-change: opacity;
+  max-width: 40vw; /* Adjust as needed for smaller text block */
+  padding-right: 3vw; /* Add spacing from the right edge */
 }
 
 .hero-slogan.visible {
