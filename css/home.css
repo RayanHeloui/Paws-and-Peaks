@@ -71,17 +71,17 @@ body {
 }
 
 .hero-slogan {
-  font-family: 'NostalgicRemain', sans-serif;
   position: sticky;
   top: 50%;
   right: 5%;
   transform: translateY(-50%);
-  opacity: 0;
-  transition: opacity 1s ease;
-  pointer-events: none;
   z-index: 5;
   text-align: right;
   max-width: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+  will-change: opacity;
 }
 
 .hero-slogan.visible {
