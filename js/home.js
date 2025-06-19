@@ -66,7 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const imgCenter = document.querySelector(".img-center");
   const imgRight = document.querySelector(".img-right");
 
-  // 🧰 Control Panel UI
   const panel = document.createElement("div");
   panel.style.position = "fixed";
   panel.style.bottom = "20px";
@@ -77,68 +76,106 @@ document.addEventListener("DOMContentLoaded", () => {
   panel.style.fontFamily = "monospace";
   panel.style.fontSize = "12px";
   panel.style.zIndex = "9999";
-  panel.style.width = "300px";
+  panel.style.width = "320px";
   panel.style.boxShadow = "0 4px 10px rgba(0,0,0,0.1)";
   panel.innerHTML = `
     <strong>🎛 Hero Image Adjuster</strong><br><br>
-    <label>Left X: <input id="leftX" type="range" min="-1000" max="1000" value="490" step="1"></label>
-    <span id="valLeftX">490</span><br>
-    <label>Left Y: <input id="leftY" type="range" min="-500" max="500" value="0" step="1"></label>
-    <span id="valLeftY">0</span><br><br>
+    
+    <label>Left X:
+      <input id="leftX" type="range" min="-1000" max="1000" value="490" step="1">
+      <input id="leftXNum" type="number" value="490" style="width: 60px">
+    </label><br>
+    <label>Left Y:
+      <input id="leftY" type="range" min="-500" max="500" value="0" step="1">
+      <input id="leftYNum" type="number" value="0" style="width: 60px">
+    </label><br><br>
 
-    <label>Center X: <input id="centerX" type="range" min="-1000" max="1000" value="0" step="1"></label>
-    <span id="valCenterX">0</span><br>
-    <label>Center Y: <input id="centerY" type="range" min="-500" max="500" value="0" step="1"></label>
-    <span id="valCenterY">0</span><br><br>
+    <label>Center X:
+      <input id="centerX" type="range" min="-1000" max="1000" value="0" step="1">
+      <input id="centerXNum" type="number" value="0" style="width: 60px">
+    </label><br>
+    <label>Center Y:
+      <input id="centerY" type="range" min="-500" max="500" value="0" step="1">
+      <input id="centerYNum" type="number" value="0" style="width: 60px">
+    </label><br><br>
 
-    <label>Right X: <input id="rightX" type="range" min="-2000" max="2000" value="-490" step="1"></label>
-    <span id="valRightX">-490</span><br>
-    <label>Right Y: <input id="rightY" type="range" min="-500" max="500" value="0" step="1"></label>
-    <span id="valRightY">0</span><br>
+    <label>Right X:
+      <input id="rightX" type="range" min="-1000" max="1000" value="-490" step="1">
+      <input id="rightXNum" type="number" value="-490" style="width: 60px">
+    </label><br>
+    <label>Right Y:
+      <input id="rightY" type="range" min="-500" max="500" value="0" step="1">
+      <input id="rightYNum" type="number" value="0" style="width: 60px">
+    </label><br>
   `;
   document.body.appendChild(panel);
 
-  // 🧠 Utility to get and show slider values
+  // Sync number inputs with sliders and apply transform
+  const pairs = [
+    ['leftX', 'leftXNum'],
+    ['leftY', 'leftYNum'],
+    ['centerX', 'centerXNum'],
+    ['centerY', 'centerYNum'],
+    ['rightX', 'rightXNum'],
+    ['rightY', 'rightYNum']
+  ];
+
   function getValue(id) {
     return parseFloat(document.getElementById(id).value);
   }
 
-  function updateLabels() {
-    document.getElementById("valLeftX").textContent = getValue("leftX");
-    document.getElementById("valLeftY").textContent = getValue("leftY");
-    document.getElementById("valCenterX").textContent = getValue("centerX");
-    document.getElementById("valCenterY").textContent = getValue("centerY");
-    document.getElementById("valRightX").textContent = getValue("rightX");
-    document.getElementById("valRightY").textContent = getValue("rightY");
-  }
-
-  // 🔄 Update on scroll
-  window.addEventListener("scroll", () => {
+  function updateTransforms() {
     const rect = hero.getBoundingClientRect();
     const windowHeight = window.innerHeight;
     const scrollProgress = Math.min(Math.max(-rect.top / windowHeight, 0), 1);
 
-    const leftX = getValue("leftX");
-    const leftY = getValue("leftY");
-    const centerX = getValue("centerX");
-    const centerY = getValue("centerY");
-    const rightX = getValue("rightX");
-    const rightY = getValue("rightY");
+    const lx = getValue('leftX');
+    const ly = getValue('leftY');
+    const cx = getValue('centerX');
+    const cy = getValue('centerY');
+    const rx = getValue('rightX');
+    const ry = getValue('rightY');
 
-    imgLeft.style.transform = `translate(${scrollProgress * leftX}px, ${scrollProgress * leftY}px)`;
-    imgCenter.style.transform = `translate(${scrollProgress * centerX}px, ${scrollProgress * centerY}px)`;
-    imgRight.style.transform = `translate(${scrollProgress * rightX}px, ${scrollProgress * rightY}px)`;
+    imgLeft.style.transform = `translate(${scrollProgress * lx}px, ${scrollProgress * ly}px)`;
+    imgCenter.style.transform = `translate(${scrollProgress * cx}px, ${scrollProgress * cy}px)`;
+    imgRight.style.transform = `translate(${scrollProgress * rx}px, ${scrollProgress * ry}px)`;
+  }
 
-    updateLabels();
-  });
+  function syncInputs() {
+    pairs.forEach(([sliderId, numId]) => {
+      const slider = document.getElementById(sliderId);
+      const number = document.getElementById(numId);
+      number.value = slider.value;
+    });
+  }
 
-  // 🔁 Update preview live when sliding (not just on scroll)
-  document.querySelectorAll("input[type=range]").forEach(input => {
-    input.addEventListener("input", () => {
-      window.dispatchEvent(new Event("scroll")); // force update
+  function syncSliders() {
+    pairs.forEach(([sliderId, numId]) => {
+      const slider = document.getElementById(sliderId);
+      const number = document.getElementById(numId);
+      slider.value = number.value;
+    });
+  }
+
+  // Handle slider → number sync
+  pairs.forEach(([sliderId, numId]) => {
+    const slider = document.getElementById(sliderId);
+    const number = document.getElementById(numId);
+
+    slider.addEventListener("input", () => {
+      document.getElementById(numId).value = slider.value;
+      updateTransforms();
+    });
+
+    number.addEventListener("input", () => {
+      document.getElementById(sliderId).value = number.value;
+      updateTransforms();
     });
   });
 
-  // Initial update
-  updateLabels();
+  // Update on scroll
+  window.addEventListener("scroll", updateTransforms);
+
+  // Initial draw
+  updateTransforms();
 });
