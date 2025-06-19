@@ -28,11 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
       imgRight.style.transform = `translate(calc(-50% + -964px), -50%)`;
     }
 
-    // ✅ Slogan visibility
+    // ✅ Slogan appears and holds like images
     const inView = rect.top <= 0 && rect.bottom >= 0;
     if (scrollProgress >= 0.45 && inView) {
+      slogan.style.opacity = "1";
       slogan.classList.add("visible");
     } else {
+      slogan.style.opacity = "0";
       slogan.classList.remove("visible");
     }
 
