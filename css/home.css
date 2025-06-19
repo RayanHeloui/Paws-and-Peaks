@@ -34,7 +34,7 @@ body {
 }
 
 .hero-images {
-  position: fixed;
+  position: absolute; /* ✅ Will stay only inside .hero */
   top: 0;
   left: 0;
   width: 100%;
