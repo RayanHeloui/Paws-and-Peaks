@@ -24,11 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
   imgRight.style.transform = `translate(${scrollProgress * -1112}px, 0px)`;
 
   // ✅ Slogan Reveal Logic (keep as is)
-  if (scrollProgress >= 0.83 && rect.top <= 0 && rect.bottom > 0) {
-    sloganSection.classList.add('visible');
-  } else {
-    sloganSection.classList.remove('visible');
-  }
+if (scrollProgress >= 0.9 && rect.top <= 0 && rect.bottom > 0) {
+  sloganSection.classList.add('visible');
+} else {
+  sloganSection.classList.remove('visible');
+}
 
   const thresholds = [1.05, 1.2, 1.35, 1.5];
   blocks.forEach((block, index) => {
