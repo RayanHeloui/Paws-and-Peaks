@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // ✅ HERO SECTION SCROLL ANIMATION
   const hero = document.querySelector(".hero");
   const imgLeft = document.querySelector(".img-left");
   const imgCenter = document.querySelector(".img-center");
@@ -15,23 +16,19 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", () => {
     const rect = hero.getBoundingClientRect();
     const windowHeight = window.innerHeight;
-
     const scrollProgress = Math.min(Math.max(-rect.top / windowHeight, 0), 4);
     const progress = Math.min(scrollProgress, 1);
 
-    // Animate bones
     imgLeft.style.transform = `translate(${progress * 247}px, ${progress * -222}px)`;
     imgCenter.style.transform = `translate(${progress * -567}px, ${progress * 50}px)`;
     imgRight.style.transform = `translate(${progress * -1250}px, ${progress * 445}px)`;
 
-    // ✅ Show slogan ONLY when bones are fully settled
     if (scrollProgress >= 1.05 && rect.top <= 0 && rect.bottom > 0) {
       sloganSection.classList.add('visible');
     } else {
       sloganSection.classList.remove('visible');
     }
 
-    // ✅ Animate slogan blocks as scroll increases
     const thresholds = [1.05, 1.2, 1.35, 1.5];
     blocks.forEach((block, index) => {
       if (scrollProgress >= thresholds[index]) {
@@ -41,47 +38,21 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-  // Sample 10 testimonials
-const testimonials = [
-  "Paws and Peaks saved our trip! – Emily",
-  "Stylish, practical, and pup-approved. – Raj",
-  "I won’t hike without our kit anymore. – Tasha",
-  "The Pro Kit is the real deal. – Michael",
-  "Camping with confidence now! – Zoe",
-  "My dog’s first aid kit is better than mine 😂 – Chris",
-  "Beautiful design and smart packaging. – Lena",
-  "Quick delivery and amazing service. – Jordan",
-  "Preparedness never looked this cute. – Sarah",
-  "A must-have for weekend warriors. – Dean"
-];
 
-const track = document.querySelector('.testimonial-track');
+  // ✅ TESTIMONIAL SLIDER (3 cards at a time)
+  const track = document.querySelector('.testimonial-track');
+  const cards = document.querySelectorAll('.testimonial-card');
+  const visibleCards = 3;
+  const totalSlides = Math.ceil(cards.length / visibleCards);
+  let index = 0;
 
-testimonials.forEach(text => {
-  const slide = document.createElement('div');
-  slide.textContent = text;
-  track.appendChild(slide);
-});
+  function updateSlider() {
+    const cardWidth = cards[0].offsetWidth + 20; // Adjust for margin if needed
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
+  }
 
-let index = 0;
-
-function updateSlider() {
-  track.style.transform = `translateX(-${index * 100}%)`;
-}
-
-document.querySelector('.next').addEventListener('click', () => {
-  index = (index + 1) % testimonials.length;
-  updateSlider();
-});
-
-document.querySelector('.prev').addEventListener('click', () => {
-  index = (index - 1 + testimonials.length) % testimonials.length;
-  updateSlider();
-  
-});
-setInterval(() => {
-  index = (index + 1) % testimonials.length;
-  updateSlider();
-}, 5000); // every 5 seconds
-
+  setInterval(() => {
+    index = (index + 1) % totalSlides;
+    updateSlider();
+  }, 4000);
 });
