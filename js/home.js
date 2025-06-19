@@ -13,34 +13,33 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('word4')
   ];
 
-  window.addEventListener("scroll", () => {
-    const rect = hero.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-    const scrollProgress = Math.min(Math.max(-rect.top / windowHeight, 0), 4);
-    const progress = Math.min(scrollProgress, 1);
+ window.addEventListener("scroll", () => {
+  const rect = hero.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+  const scrollProgress = Math.min(Math.max(-rect.top / windowHeight, 0), 1);
 
-    // 🧠 Original movement
- imgLeft.style.transform = `translate(${scrollProgress * -182}px, 0px)`;
+  // 🎯 Final transform values
+  imgLeft.style.transform = `translate(${scrollProgress * -182}px, 0px)`;
   imgCenter.style.transform = `translate(${scrollProgress * -648}px, 0px)`;
   imgRight.style.transform = `translate(${scrollProgress * -1112}px, 0px)`;
 
-    // 🧾 Reveal slogan block
-    if (scrollProgress >= 1.05 && rect.top <= 0 && rect.bottom > 0) {
-      sloganSection.classList.add('visible');
-    } else {
-      sloganSection.classList.remove('visible');
-    }
+  // ✅ Slogan Reveal Logic (keep as is)
+  if (scrollProgress >= 1.05 && rect.top <= 0 && rect.bottom > 0) {
+    sloganSection.classList.add('visible');
+  } else {
+    sloganSection.classList.remove('visible');
+  }
 
-    // 🪄 Word-by-word animation
-    const thresholds = [1.05, 1.2, 1.35, 1.5];
-    blocks.forEach((block, index) => {
-      if (scrollProgress >= thresholds[index]) {
-        block.classList.add('active');
-      } else {
-        block.classList.remove('active');
-      }
-    });
+  const thresholds = [1.05, 1.2, 1.35, 1.5];
+  blocks.forEach((block, index) => {
+    if (scrollProgress >= thresholds[index]) {
+      block.classList.add('active');
+    } else {
+      block.classList.remove('active');
+    }
   });
+});
+
 
   // ✅ TESTIMONIAL SLIDER (auto-scroll)
   const track = document.querySelector('.testimonial-track');
