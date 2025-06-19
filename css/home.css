@@ -53,9 +53,23 @@ body {
 }
 
 
-.img-left { left: 5%; bottom: 5%; }
-.img-center { top: 50%; left: 50%; }
-.img-right { top: 5%; right: 5%; }
+.img-left {
+  top: 40%;       /* slightly above center */
+  left: 15%;      /* far left */
+  transform: translate(-50%, -50%);
+}
+
+.img-center {
+  top: 40%;       /* same vertical level */
+  left: 50%;      /* centered */
+  transform: translate(-50%, -50%);
+}
+
+.img-right {
+  top: 40%;
+  left: 85%;      /* far right */
+  transform: translate(-50%, -50%);
+}
 
 .product-fullscreen {
   height: 100vh;
