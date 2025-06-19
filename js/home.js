@@ -19,9 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const scrollProgress = Math.min(Math.max(-rect.top / windowHeight, 0), 1);
 
     // 🎯 Image transform
-    imgLeft.style.transform = `translate(${scrollProgress * -182}px, 0px)`;
-    imgCenter.style.transform = `translate(${scrollProgress * -648}px, 0px)`;
-    imgRight.style.transform = `translate(${scrollProgress * -1112}px, 0px)`;
+imgLeft.style.transform = `translate(calc(-50% + ${scrollProgress * -182}px), -50%)`;
+imgCenter.style.transform = `translate(calc(-50% + ${scrollProgress * -648}px), -50%)`;
+imgRight.style.transform = `translate(calc(-50% + ${scrollProgress * -1112}px), -50%)`;
+
 
     // ✅ Slogan appears earlier at 0.75
     if (scrollProgress >= 0.75 && rect.top <= 0 && rect.bottom > 0) {
