@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const hero = document.querySelector(".hero");
+  const heroImages = document.querySelector(".hero-images");
   const imgLeft = document.querySelector(".img-left");
   const imgCenter = document.querySelector(".img-center");
   const imgRight = document.querySelector(".img-right");
@@ -17,21 +18,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const scrollProgress = Math.min(Math.max(-rect.top / windowHeight, 0), 1);
     const lockAt = 0.5;
 
-    // 🎯 Animate + Lock Image Movement
+    // ✅ Fix images + slogan to screen while hero is visible
+    const inHero = rect.top <= 0 && rect.bottom >= windowHeight;
+    if (inHero) {
+      heroImages.style.position = "fixed";
+      heroImages.style.top = "0";
+      slogan.style.position = "fixed";
+      slogan.style.top = "50%";
+    } else {
+      heroImages.style.position = "absolute";
+      heroImages.style.top = "0";
+      slogan.style.position = "absolute";
+      slogan.style.top = "50%";
+    }
+
+    // 🎯 Animate image movement up to lock point
     if (scrollProgress < lockAt) {
       imgLeft.style.transform = `translate(calc(-50% + ${scrollProgress * -68}px), -50%)`;
       imgCenter.style.transform = `translate(calc(-50% + ${scrollProgress * -1000}px), -50%)`;
       imgRight.style.transform = `translate(calc(-50% + ${scrollProgress * -1928}px), -50%)`;
     } else {
-      // ✅ Lock image positions once scroll passes threshold
       imgLeft.style.transform = `translate(calc(-50% + -34px), -50%)`;
       imgCenter.style.transform = `translate(calc(-50% + -500px), -50%)`;
       imgRight.style.transform = `translate(calc(-50% + -964px), -50%)`;
     }
 
-    // ✅ Slogan appears in view
-    const inView = rect.top <= 0 && rect.bottom >= windowHeight;
-    if (scrollProgress >= 0.45 && inView) {
+    // ✅ Slogan appears once inside view and past threshold
+    if (scrollProgress >= 0.45 && inHero) {
       slogan.classList.add("visible");
     } else {
       slogan.classList.remove("visible");
