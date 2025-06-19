@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ✅ Word-by-word animation
-    const thresholds = [1.1, 1.25, 1.4, 1.55];
+   const thresholds = [0.45, 0.55, 0.65, 0.75];
     blocks.forEach((block, index) => {
       if (scrollProgress >= thresholds[index]) {
         block.classList.add("active");
