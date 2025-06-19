@@ -43,12 +43,15 @@ body {
 
 .hero-img {
   position: absolute;
-  width: 120px;
-  height: 120px;
+  width: 320px;     /* ⬅️ Increase this as needed */
+  max-width: 90vw;  /* ⬅️ Makes sure it doesn’t overflow on smaller screens */
+  height: auto;
   object-fit: contain;
   will-change: transform;
-  transition: transform 0.1s ease-out;
+  transition: transform 0.2s ease-out;
+  z-index: 3;
 }
+
 
 .img-left { left: 5%; bottom: 5%; }
 .img-center { top: 50%; left: 50%; }
