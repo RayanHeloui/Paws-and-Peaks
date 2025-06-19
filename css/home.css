@@ -81,7 +81,7 @@ body {
   pointer-events: none;
   z-index: 5;
   text-align: right;
-  max-width: 40vw;
+  max-width: 50vw;
   padding-right: 3vw;        /* ✅ Adds spacing from edge */
   margin-left: auto;         /* ✅ Pushes it out of image path */
   display: block;
