@@ -17,8 +17,8 @@ window.addEventListener("scroll", () => {
   const scrollProgress = Math.min(Math.max(-rect.top / windowHeight, 0), 1);
   const lockAt = 0.5;
 
-  const shadowBlur = 32;
-  const shadowColor = "rgba(0, 0, 0, 0.6)";
+  const shadowBlur = 48;
+  const shadowColor = "rgba(0, 0, 0, 0.75)";
 
   if (scrollProgress < lockAt) {
     imgLeft.style.transform = `translate(calc(-50% + ${scrollProgress * -68}px), -50%)`;
