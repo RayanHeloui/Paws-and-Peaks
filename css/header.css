@@ -26,9 +26,10 @@
   color: #d76c29;
 }
 .sparkle-icon {
-  width: 24px;
-  height: 24px;
+  width: 20px;        /* or 16px for extra small */
+  height: 20px;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
 /* 🌄 Main Header */
