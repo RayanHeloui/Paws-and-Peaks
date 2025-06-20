@@ -26,15 +26,19 @@
 .top-bar a:hover {
   color: #d76c29;
 }
-.sparkle-icon {
+.sparkle-icon-left {
   width: 20px;        /* or 16px for extra small */
   height: 20px;
   object-fit: contain;
   flex-shrink: 0;
+  transform: scaleX(-1);
 }
 
-.sparkle-left {
-  transform: scaleX(-1);
+.sparkle-icon-right {
+  width: 20px;        /* or 16px for extra small */
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 /* 🌄 Main Header */
 .main-header {
