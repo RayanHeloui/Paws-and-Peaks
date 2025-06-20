@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const shadowDistance = 60;
 
     const angle = scrollProgress < lockAt
-      ? 30 + scrollProgress * (100 - 20)
-      : 30 + lockAt * (100 - 20);
+      ? 30 + scrollProgress * (20 -80)
+      : 30 + lockAt * (20 - 80);
 
     const radians = angle * (Math.PI / 180);
     const shadowX = Math.cos(radians) * shadowDistance;
