@@ -19,11 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const shadowBlur = 12;
     const shadowColor = "rgba(0, 0, 0, 0.35)";
-    const shadowDistance = 30;
+    const shadowDistance = 60;
 
     const angle = scrollProgress < lockAt
-      ? 30 + scrollProgress * (75 - 30)
-      : 30 + lockAt * (75 - 30);
+      ? 30 + scrollProgress * (100 - 20)
+      : 30 + lockAt * (100 - 20);
 
     const radians = angle * (Math.PI / 180);
     const shadowX = Math.cos(radians) * shadowDistance;
