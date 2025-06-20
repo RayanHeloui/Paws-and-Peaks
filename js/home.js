@@ -17,23 +17,28 @@ document.addEventListener("DOMContentLoaded", () => {
     const scrollProgress = Math.min(Math.max(-rect.top / windowHeight, 0), 1);
     const lockAt = 0.5;
 
+    // 🌞 Parallax Shadow Lighting
     const shadowBlur = 12;
     const shadowColor = "rgba(0, 0, 0, 0.35)";
-    const shadowDistance = 20;
+    const shadowDistanceBase = 60;
+    const parallaxMultiplier = 1.5;
 
+    const lightStartAngle = 45;
+    const lightEndAngle = 120;
     const angle = scrollProgress < lockAt
-      ? 30 + scrollProgress * (20 -80)
-      : 30 + lockAt * (20 - 80);
+      ? lightStartAngle + scrollProgress * (lightEndAngle - lightStartAngle)
+      : lightStartAngle + lockAt * (lightEndAngle - lightStartAngle);
 
     const radians = angle * (Math.PI / 180);
-    const shadowX = Math.cos(radians) * shadowDistance;
-    const shadowY = Math.sin(radians) * shadowDistance;
+    const shadowX = Math.cos(radians) * shadowDistanceBase;
+    const shadowY = Math.sin(radians) * shadowDistanceBase;
 
-    // Apply shadows
-    imgLeft.style.filter = `drop-shadow(${shadowX}px ${shadowY}px ${shadowBlur}px ${shadowColor})`;
-    imgCenter.style.filter = `drop-shadow(${shadowX}px ${shadowY}px ${shadowBlur}px ${shadowColor})`;
+    // ✅ Apply animated shadows
+    imgLeft.style.filter = `drop-shadow(${shadowX * 0.8}px ${shadowY * 0.8}px ${shadowBlur}px ${shadowColor})`;
+    imgCenter.style.filter = `drop-shadow(${shadowX * parallaxMultiplier}px ${shadowY * parallaxMultiplier}px ${shadowBlur}px ${shadowColor})`;
     imgRight.style.filter = `drop-shadow(${shadowX}px ${shadowY}px ${shadowBlur}px ${shadowColor})`;
 
+    // 🎯 Animate position & slogan
     if (scrollProgress < lockAt) {
       imgLeft.style.transform = `translate(calc(-50% + ${scrollProgress * -68}px), -50%)`;
       imgCenter.style.transform = `translate(calc(-50% + ${scrollProgress * -1000}px), -50%)`;
@@ -50,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
       slogan.style.opacity = "1";
     }
 
-    // Animate slogan words
+    // 🪄 Animate slogan words
     const thresholds = [0.65, 0.75, 0.85, 0.95];
     blocks.forEach((block, index) => {
       block.classList.toggle("active", scrollProgress >= thresholds[index]);
