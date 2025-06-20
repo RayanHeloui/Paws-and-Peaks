@@ -25,8 +25,12 @@ window.addEventListener("scroll", () => {
     imgCenter.style.transform = `translate(calc(-50% + ${scrollProgress * -1000}px), -50%)`;
     imgRight.style.transform = `translate(calc(-50% + ${scrollProgress * -1928}px), -50%)`;
 
-    const shadowX = -(scrollProgress * 20);
-    const shadowY = scrollProgress * 20;
+ const angle = scrollProgress * 180; // Rotate from 0° to 180°
+const radians = angle * (Math.PI / 180);
+const shadowDistance = 30;
+
+const shadowX = Math.cos(radians) * shadowDistance;
+const shadowY = Math.sin(radians) * shadowDistance;
 
     imgLeft.style.filter = `drop-shadow(${shadowX}px ${shadowY}px ${shadowBlur}px ${shadowColor})`;
     imgCenter.style.filter = `drop-shadow(${shadowX}px ${shadowY}px ${shadowBlur}px ${shadowColor})`;
