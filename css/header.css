@@ -33,6 +33,9 @@
   flex-shrink: 0;
 }
 
+.sparkle-left {
+  transform: scaleX(-1);
+}
 /* 🌄 Main Header */
 .main-header {
   background: #fcefb3;
