@@ -17,7 +17,7 @@ window.addEventListener("scroll", () => {
   const scrollProgress = Math.min(Math.max(-rect.top / windowHeight, 0), 1);
   const lockAt = 0.5;
 
-  const shadowBlur = 0;
+  const shadowBlur = 12;
   const shadowColor = "rgba(0, 0, 0, 1)";
 
   if (scrollProgress < lockAt) {
