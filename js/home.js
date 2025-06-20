@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const shadowDistanceBase = 60;
     const parallaxMultiplier = 1.5;
 
-    const lightStartAngle = 45;
-    const lightEndAngle = 120;
+    const lightStartAngle = 195; // Top-left behind
+    const lightEndAngle = 240;   // Top-right behind
     const angle = scrollProgress < lockAt
       ? lightStartAngle + scrollProgress * (lightEndAngle - lightStartAngle)
       : lightStartAngle + lockAt * (lightEndAngle - lightStartAngle);
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     imgCenter.style.filter = `drop-shadow(${shadowX * parallaxMultiplier}px ${shadowY * parallaxMultiplier}px ${shadowBlur}px ${shadowColor})`;
     imgRight.style.filter = `drop-shadow(${shadowX}px ${shadowY}px ${shadowBlur}px ${shadowColor})`;
 
-    // 🎯 Animate position & slogan
+    // 📦 Animate movement & slogan
     if (scrollProgress < lockAt) {
       imgLeft.style.transform = `translate(calc(-50% + ${scrollProgress * -68}px), -50%)`;
       imgCenter.style.transform = `translate(calc(-50% + ${scrollProgress * -1000}px), -50%)`;
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
       slogan.style.opacity = "1";
     }
 
-    // 🪄 Animate slogan words
+    // Animate slogan words
     const thresholds = [0.65, 0.75, 0.85, 0.95];
     blocks.forEach((block, index) => {
       block.classList.toggle("active", scrollProgress >= thresholds[index]);
