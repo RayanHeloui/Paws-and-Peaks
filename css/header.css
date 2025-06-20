@@ -1,3 +1,7 @@
+* {
+  font-family: 'Nostalgic Remain', serif;
+}
+
 @font-face {
   font-family: 'Nostalgic Remain';
   src: url('NostalgicRemain-Regular.ttf') format('truetype');
