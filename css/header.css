@@ -60,6 +60,7 @@
 }
 
 .logo-text a {
+  font-family: inherit !important;
   text-decoration: none;
   color: #7b523c;
 }
