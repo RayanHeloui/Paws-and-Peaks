@@ -11,59 +11,51 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("word4"),
   ];
 
-window.addEventListener("scroll", () => {
-  const rect = hero.getBoundingClientRect();
-  const windowHeight = window.innerHeight;
-  const scrollProgress = Math.min(Math.max(-rect.top / windowHeight, 0), 1);
-  const lockAt = 0.5;
+  window.addEventListener("scroll", () => {
+    const rect = hero.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    const scrollProgress = Math.min(Math.max(-rect.top / windowHeight, 0), 1);
+    const lockAt = 0.5;
 
-  const shadowBlur = 12;
-  const shadowColor = "rgba(0, 0, 0, 0.35)";
-  const shadowDistance = 30;
+    const shadowBlur = 12;
+    const shadowColor = "rgba(0, 0, 0, 0.35)";
+    const shadowDistance = 30;
 
-  // ✨ Always calculate shadow angle (so it appears on load too)
-  const angle = scrollProgress < lockAt
-    ? 30 + scrollProgress * (75 - 30) // Between 30° and 75°
-    : 30 + lockAt * (75 - 30);        // Lock angle after threshold
+    const angle = scrollProgress < lockAt
+      ? 30 + scrollProgress * (75 - 30)
+      : 30 + lockAt * (75 - 30);
 
-  const radians = angle * (Math.PI / 180);
-  const shadowX = Math.cos(radians) * shadowDistance;
-  const shadowY = Math.sin(radians) * shadowDistance;
+    const radians = angle * (Math.PI / 180);
+    const shadowX = Math.cos(radians) * shadowDistance;
+    const shadowY = Math.sin(radians) * shadowDistance;
 
-  // ✅ Apply shadows
-  imgLeft.style.filter = `drop-shadow(${shadowX}px ${shadowY}px ${shadowBlur}px ${shadowColor})`;
-  imgCenter.style.filter = `drop-shadow(${shadowX}px ${shadowY}px ${shadowBlur}px ${shadowColor})`;
-  imgRight.style.filter = `drop-shadow(${shadowX}px ${shadowY}px ${shadowBlur}px ${shadowColor})`;
+    // Apply shadows
+    imgLeft.style.filter = `drop-shadow(${shadowX}px ${shadowY}px ${shadowBlur}px ${shadowColor})`;
+    imgCenter.style.filter = `drop-shadow(${shadowX}px ${shadowY}px ${shadowBlur}px ${shadowColor})`;
+    imgRight.style.filter = `drop-shadow(${shadowX}px ${shadowY}px ${shadowBlur}px ${shadowColor})`;
 
-  // 📦 Animate movement & slogan
-  if (scrollProgress < lockAt) {
-    imgLeft.style.transform = `translate(calc(-50% + ${scrollProgress * -68}px), -50%)`;
-    imgCenter.style.transform = `translate(calc(-50% + ${scrollProgress * -1000}px), -50%)`;
-    imgRight.style.transform = `translate(calc(-50% + ${scrollProgress * -1928}px), -50%)`;
+    if (scrollProgress < lockAt) {
+      imgLeft.style.transform = `translate(calc(-50% + ${scrollProgress * -68}px), -50%)`;
+      imgCenter.style.transform = `translate(calc(-50% + ${scrollProgress * -1000}px), -50%)`;
+      imgRight.style.transform = `translate(calc(-50% + ${scrollProgress * -1928}px), -50%)`;
 
-    slogan.style.transform = `translate(0, -50%)`;
-    slogan.style.opacity = scrollProgress >= 0.45 ? "1" : "0";
-  } else {
-    imgLeft.style.transform = `translate(calc(-50% + -34px), -50%)`;
-    imgCenter.style.transform = `translate(calc(-50% + -500px), -50%)`;
-    imgRight.style.transform = `translate(calc(-50% + -964px), -50%)`;
+      slogan.style.transform = `translate(0, -50%)`;
+      slogan.style.opacity = scrollProgress >= 0.45 ? "1" : "0";
+    } else {
+      imgLeft.style.transform = `translate(calc(-50% + -34px), -50%)`;
+      imgCenter.style.transform = `translate(calc(-50% + -500px), -50%)`;
+      imgRight.style.transform = `translate(calc(-50% + -964px), -50%)`;
 
-    slogan.style.transform = `translate(0, -50%)`;
-    slogan.style.opacity = "1";
-  }
-});
+      slogan.style.transform = `translate(0, -50%)`;
+      slogan.style.opacity = "1";
+    }
 
-    slogan.style.transform = `translate(0, -50%)`;
-    slogan.style.opacity = "1";
-  }
-
-  // Animate slogan words
-  const thresholds = [0.65, 0.75, 0.85, 0.95];
-  blocks.forEach((block, index) => {
-    block.classList.toggle("active", scrollProgress >= thresholds[index]);
+    // Animate slogan words
+    const thresholds = [0.65, 0.75, 0.85, 0.95];
+    blocks.forEach((block, index) => {
+      block.classList.toggle("active", scrollProgress >= thresholds[index]);
+    });
   });
-});
-
 
   // ✅ Testimonial slider
   const track = document.querySelector(".testimonial-track");
