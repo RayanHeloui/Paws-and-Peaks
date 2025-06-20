@@ -18,14 +18,14 @@ window.addEventListener("scroll", () => {
   const lockAt = 0.5;
 
   const shadowBlur = 12;
-  const shadowColor = "rgba(0, 0, 0, 1)";
+  const shadowColor = "rgba(0, 0, 0, 0.35)";
 
   if (scrollProgress < lockAt) {
     imgLeft.style.transform = `translate(calc(-50% + ${scrollProgress * -68}px), -50%)`;
     imgCenter.style.transform = `translate(calc(-50% + ${scrollProgress * -1000}px), -50%)`;
     imgRight.style.transform = `translate(calc(-50% + ${scrollProgress * -1928}px), -50%)`;
 
- const angle = scrollProgress * 180; // Rotate from 0° to 180°
+ const angle = 30 + scrollProgress * (75 - 30);
 const radians = angle * (Math.PI / 180);
 const shadowDistance = 30;
 
@@ -43,13 +43,15 @@ const shadowY = Math.sin(radians) * shadowDistance;
     imgCenter.style.transform = `translate(calc(-50% + -500px), -50%)`;
     imgRight.style.transform = `translate(calc(-50% + -964px), -50%)`;
 
-    // Lock the shadow position (final values)
-    const shadowX = -10;
-    const shadowY = 10;
+const finalAngle = 30 + lockAt * (75 - 30);
+const finalRadians = finalAngle * (Math.PI / 180);
+const finalShadowX = Math.cos(finalRadians) * shadowDistance;
+const finalShadowY = Math.sin(finalRadians) * shadowDistance;
 
-    imgLeft.style.filter = `drop-shadow(${shadowX}px ${shadowY}px ${shadowBlur}px ${shadowColor})`;
-    imgCenter.style.filter = `drop-shadow(${shadowX}px ${shadowY}px ${shadowBlur}px ${shadowColor})`;
-    imgRight.style.filter = `drop-shadow(${shadowX}px ${shadowY}px ${shadowBlur}px ${shadowColor})`;
+imgLeft.style.filter = `drop-shadow(${finalShadowX}px ${finalShadowY}px ${shadowBlur}px ${shadowColor})`;
+imgCenter.style.filter = `drop-shadow(${finalShadowX}px ${finalShadowY}px ${shadowBlur}px ${shadowColor})`;
+imgRight.style.filter = `drop-shadow(${finalShadowX}px ${finalShadowY}px ${shadowBlur}px ${shadowColor})`;
+
 
     slogan.style.transform = `translate(0, -50%)`;
     slogan.style.opacity = "1";
