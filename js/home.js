@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const shadowDistanceBase = 60;
     const parallaxMultiplier = 1.5;
 
-    const lightStartAngle = 195; // Top-left behind
-    const lightEndAngle = 240;   // Top-right behind
+    const lightStartAngle = 10; // Top-left behind
+    const lightEndAngle = 10;   // Top-right behind
     const angle = scrollProgress < lockAt
       ? lightStartAngle + scrollProgress * (lightEndAngle - lightStartAngle)
       : lightStartAngle + lockAt * (lightEndAngle - lightStartAngle);
