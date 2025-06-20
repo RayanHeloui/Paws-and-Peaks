@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Nostalgic Remain';
+  src: url('NostalgicRemain-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
 /* 🌟 Top Bar */
 .top-bar {
   background-color: #fcefb3;
@@ -48,7 +54,7 @@
 /* Logo */
 .logo-text {
   font-family: 'Nostalgic Remain', serif;
-  font-size: 24px; /* up from 20px */
+  font-size: 34px; /* up from 20px */
   font-weight: bold;
   color: #7b523c;
 }
