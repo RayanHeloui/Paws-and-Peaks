@@ -20,11 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // 🌞 Parallax Shadow Lighting
     const shadowBlur = 12;
     const shadowColor = "rgba(0, 0, 0, 0.35)";
-    const shadowDistanceBase = 60;
+    const shadowDistanceBase = 20;
     const parallaxMultiplier = 1.5;
 
     const lightStartAngle = 10; // Top-left behind
-    const lightEndAngle = 10;   // Top-right behind
+    const lightEndAngle = 90;   // Top-right behind
     const angle = scrollProgress < lockAt
       ? lightStartAngle + scrollProgress * (lightEndAngle - lightStartAngle)
       : lightStartAngle + lockAt * (lightEndAngle - lightStartAngle);
