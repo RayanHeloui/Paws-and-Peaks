@@ -21,6 +21,7 @@
   color: #7b523c;
   font-weight: bold;
   text-decoration: underline;
+
 }
 .top-bar a:hover {
   color: #d76c29;
@@ -30,6 +31,7 @@
   height: 20px;
   object-fit: contain;
   flex-shrink: 0;
+  border: 1px solid red;
 }
 
 /* 🌄 Main Header */
