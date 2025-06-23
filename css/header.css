@@ -114,7 +114,8 @@
 
 .nav-links a {
   font-family: 'Arsenica Thin', serif;
-  font-size: 2rem;
+  font-size: 3rem;
+  gap: 20px; 
   font-weight: normal;
   color: #7b523c;
   text-decoration: none;
