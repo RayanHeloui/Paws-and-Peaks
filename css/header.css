@@ -67,18 +67,29 @@
 /* Logo */
 .logo-text {
   font-family: 'Nostalgic Remain', serif;
-  font-size: 34px; /* up from 20px */
-  font-weight: bold;
+  font-size: 34px;
+  font-weight: normal;
   color: #7b523c;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .logo-text a {
-  font-family: inherit !important;
   text-decoration: none;
-  color: #7b523c;
+  color: inherit;
+  display: flex;
+  align-items: center;
 }
+
 .logo-text a:hover {
   color: #d76c29;
+}
+
+.logo-icon {
+  height: 1em;       /* Matches text height */
+  width: auto;
+  object-fit: contain;
 }
 
 /* Navigation */
