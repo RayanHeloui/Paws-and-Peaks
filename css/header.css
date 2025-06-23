@@ -84,7 +84,7 @@
 /* Navigation */
 .nav-links {
   display: flex;
-  gap: 30px;
+  gap: 20px;
   justify-content: center;
 }
 .nav-links a {
