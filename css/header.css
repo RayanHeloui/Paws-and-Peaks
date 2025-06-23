@@ -7,6 +7,9 @@
 }
 /* 🌟 Top Bar */
 .top-bar {
+  font-family: 'Nostalgic Remain', serif;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
   background-color: #badccb;
   border-bottom: 2px solid #e8c563;
   padding: 6px 0;
