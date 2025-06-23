@@ -90,6 +90,7 @@
   height: 1em;       /* Matches text height */
   width: auto;
   object-fit: contain;
+  margin-right: 12px;
 }
 
 /* Navigation */
