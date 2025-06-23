@@ -119,6 +119,7 @@
   color: #7b523c;
   text-decoration: none;
   transition: color 0.3s ease;
+  text-transform: uppercase; 
 }
 
 .nav-links a:hover {
