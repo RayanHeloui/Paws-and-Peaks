@@ -64,6 +64,11 @@
   min-height: 64px; /* optional height control */
 }
 
+.main-header .container {
+  padding-left: 24px;  /* move slightly left */
+  padding-right: 40px;
+}
+
 /* Logo */
 .logo-text {
   font-family: 'Nostalgic Remain', serif;
