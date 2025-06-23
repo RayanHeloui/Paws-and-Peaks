@@ -108,14 +108,13 @@
 /* Navigation */
 .nav-links {
   display: flex;
-  gap: 10px;
+  gap: 25px;
   justify-content: center;
 }
 
 .nav-links a {
   font-family: 'Arsenica Thin', serif;
-  font-size: 3rem;
-  gap: 20px; 
+  font-size: 3rem; 
   font-weight: normal;
   color: #7b523c;
   text-decoration: none;
