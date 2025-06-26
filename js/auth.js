@@ -1,25 +1,21 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyDb1yerEIWp6bXxVi1azqrRoddFDue3a7U",
+  authDomain: "pawsandpeaks.firebaseapp.com",
+  projectId: "pawsandpeaks",
+  storageBucket: "pawsandpeaks.firebasestorage.app",
+  messagingSenderId: "637494651303",
+  appId: "1:637494651303:web:081b5f7a50609db86a6e82",
+  measurementId: "G-FFFW368Z2D"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-// Optional: You can now check for logged-in users
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    console.log("✅ Logged in as:", user.email);
-  } else {
-    console.log("🚫 Not logged in");
-  }
-});
-
-export { auth };
+const analytics = getAnalytics(app);
