@@ -1,0 +1,28 @@
+.account-container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 20px;
+  text-align: center;
+  background: #fcefb3;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+input {
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #7b523c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+button:hover {
+  background-color: #d76c29;
+}
