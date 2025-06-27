@@ -1,4 +1,4 @@
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import { auth } from "./auth.js";
 
 const loginForm = document.getElementById('loginForm');
@@ -18,23 +18,31 @@ window.toggleForm = function () {
 };
 
 // 🔐 Login
-loginForm.addEventListener('submit', (e) => {
+loginForm?.addEventListener('submit', (e) => {
   e.preventDefault();
-  const email = document.getElementById('loginEmail').value;
+  const email = document.getElementById('loginEmail').value.trim();
   const password = document.getElementById('loginPassword').value;
 
   signInWithEmailAndPassword(auth, email, password)
-    .then(() => window.location.href = "account-dashboard.html")
-    .catch((err) => message.textContent = err.message);
+    .then(() => {
+      window.location.href = "account-dashboard.html";
+    })
+    .catch((err) => {
+      message.textContent = err.message;
+    });
 });
 
 // 🆕 Register
-registerForm.addEventListener('submit', (e) => {
+registerForm?.addEventListener('submit', (e) => {
   e.preventDefault();
-  const email = document.getElementById('registerEmail').value;
+  const email = document.getElementById('registerEmail').value.trim();
   const password = document.getElementById('registerPassword').value;
 
   createUserWithEmailAndPassword(auth, email, password)
-    .then(() => window.location.href = "account-dashboard.html")
-    .catch((err) => message.textContent = err.message);
+    .then(() => {
+      window.location.href = "account-dashboard.html";
+    })
+    .catch((err) => {
+      message.textContent = err.message;
+    });
 });
