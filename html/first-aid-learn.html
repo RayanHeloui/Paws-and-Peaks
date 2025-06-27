@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>First Aid Kit – Learn More</title>
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+
+  <div id="header-container"></div>
+
+  <main class="product-learn">
+    <h1>First Aid Kit</h1>
+    <img src="/images/first-aid-photo.png" alt="First Aid Kit">
+
+    <section>
+      <h2>What’s Inside</h2>
+      <p>[Insert list of contents here]</p>
+    </section>
+
+    <section>
+      <h2>How It’s Used</h2>
+      <p>[Explain when and how to use the kit]</p>
+    </section>
+
+    <section>
+      <h2>Why It’s Different</h2>
+      <p>[Describe unique selling points]</p>
+    </section>
+
+    <section>
+      <h2>Perfect For</h2>
+      <p>[List scenarios like hiking, camping, etc.]</p>
+    </section>
+
+    <a href="store.html" class="btn">Buy Now</a>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script>
+    fetch("/html/header.html").then(res => res.text()).then(data => {
+      document.getElementById("header-container").innerHTML = data;
+    });
+    fetch("/html/footer.html").then(res => res.text()).then(data => {
+      document.getElementById("footer-container").innerHTML = data;
+    });
+  </script>
+
+</body>
+</html>
