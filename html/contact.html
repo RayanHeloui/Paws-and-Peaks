@@ -2,35 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us - Paws and Peaks</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
 </head>
+
 <body>
-
-  <!-- ✅ Shared Header Container -->
+  <!-- 🔥 HEADER -->
   <div id="header-container"></div>
+  <script>
+    fetch('../html/header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+      });
+  </script>
 
+  <!-- 📬 Contact Section -->
   <section class="contact-section">
-    <h1>Contact Us</h1>
-    <p>Got a question, idea, or just want to bark at us? Fill out the form below!</p>
+    <div class="contact-container">
+      <h1>Contact Us</h1>
+      <p>Have a question, feedback, or just want to say hi? We’d love to hear from you!</p>
 
-    <form class="contact-form">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required />
+      <div class="contact-info">
+        <p><strong>Email:</strong> <a href="mailto:woof@pawsandpeaks.com.au">woof@pawsandpeaks.com.au</a></p>
+        <p><strong>Location:</strong> Brisbane City, QLD</p>
+      </div>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-
-      <button type="submit">Send Message</button>
-    </form>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="6" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
   </section>
 
-  <!-- 🔁 Shared Scripts -->
-  <script src="script.js"></script>
-
+  <!-- 🐾 FOOTER -->
+  <div id="footer-container"></div>
+  <script>
+    fetch('../html/footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
 </body>
 </html>
