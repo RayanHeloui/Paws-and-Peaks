@@ -1,106 +1,105 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <title>Admin Console</title>
-      <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Console</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-      <!-- ✅ Shared Header -->
-      <div id="header-container"></div>
+  <!-- ✅ Shared Header -->
+  <div id="header-container"></div>
 
-      <!-- 🛠️ Admin Content -->
-      <main>
-        <h1>🛠️ Admin Console</h1>
-        <p>Welcome, <span id="admin-name"></span>! Here's your control panel.</p>
+  <!-- 🛠️ Admin Content -->
+  <main>
+    <h1>⚒️ Admin Console</h1>
+    <p>Welcome, <span id="admin-name"></span>! Here's your control panel.</p>
 
-        <!-- 👥 Registered Users -->
-        <section>
-          <h2>👥 Registered Users</h2>
-          <ul id="user-list"></ul>
-        </section>
+    <!-- 👥 Registered Users -->
+    <section>
+      <h2>👥 Registered Users</h2>
+      <ul id="user-list"></ul>
+    </section>
 
-        <!-- 📦 Orders -->
-        <section>
-          <h2>📦 Orders (Dummy Data)</h2>
-          <ul id="order-list"></ul>
-        </section>
+    <!-- 📦 Orders -->
+    <section>
+      <h2>📦 Orders (Dummy Data)</h2>
+      <ul id="order-list"></ul>
+    </section>
 
-        <!-- 📝 Blog Manager -->
-        <section>
-          <h2>📝 Blog Manager</h2>
-          <form id="blogForm">
-            <input type="text" id="blogTitle" placeholder="Post title" required />
-            <textarea id="blogContent" placeholder="Write your post..." required></textarea>
-            <button type="submit">Add Post</button>
-          </form>
-          <h3>🗂 Existing Posts</h3>
-          <ul id="blogPostsList"></ul>
-        </section>
+    <!-- 📝 Blog Manager -->
+    <section>
+      <h2>📝 Blog Manager</h2>
+      <form id="blogForm">
+        <input type="text" id="blogTitle" placeholder="Post title" required />
+        <textarea id="blogContent" placeholder="Write your post..." required></textarea>
+        <button type="submit">Add Post</button>
+      </form>
+      <h3>📂 Existing Posts</h3>
+      <ul id="blogPostsList"></ul>
+    </section>
 
-        <!-- 🛍️ Product Manager -->
-        <section>
-          <h2>🛍️ Product Manager</h2>
-          <form id="productForm">
-            <input type="text" id="productName" placeholder="Product Name" required />
-            <input type="number" id="productPrice" placeholder="Price (USD)" step="0.01" required />
-            <textarea id="productDescription" placeholder="Product Description" required></textarea>
-            <input type="file" id="productImage" accept="image/*" required />
-            <button type="submit">Add Product</button>
-          </form>
-          <h3>📦 Product Listings</h3>
-          <ul id="productList"></ul>
-        </section>
+    <!-- 🛍️ Product Manager -->
+    <section>
+      <h2>🛍️ Product Manager</h2>
+      <form id="productForm">
+        <input type="text" id="productName" placeholder="Product Name" required />
+        <input type="number" id="productPrice" placeholder="Price (USD)" step="0.01" required />
+        <textarea id="productDescription" placeholder="Product Description" required></textarea>
+        <input type="file" id="productImage" accept="image/*" required />
+        <button type="submit">Add Product</button>
+      </form>
+      <h3>📦 Product Listings</h3>
+      <ul id="productList"></ul>
+    </section>
 
-        <button onclick="logout()">Logout</button>
-      </main>
+    <button id="logoutBtn">Logout</button>
+  </main>
 
-      <!-- 🔁 Shared Scripts -->
-      <script>
-        fetch('header.html')
-          .then(res => res.text())
-          .then(html => {
-            document.getElementById('header-container').innerHTML = html;
-          });
-      </script>
+  <!-- 🔁 Shared Scripts -->
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header-container').innerHTML = html;
+      });
+  </script>
 
-      <script src="auth.js"></script>
-      <script src="blog-manager.js"></script>
-      <script src="product-manager.js"></script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-      <script>
-        // 🛡️ Protect Admin Page
-        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        if (!currentUser || currentUser.username !== "admin123") {
-          alert("Access denied!");
-          window.location.href = 'index.html';
-        } else {
-          document.getElementById('admin-name').textContent = currentUser.username;
-        }
+    const firebaseConfig = {
+      apiKey: "AIzaSyDb1yerEIWp6bXxVi1azqrRoddFDue3a7U",
+      authDomain: "pawsandpeaks.firebaseapp.com",
+      projectId: "pawsandpeaks",
+      storageBucket: "pawsandpeaks.firebasestorage.app",
+      messagingSenderId: "637494651303",
+      appId: "1:637494651303:web:081b5f7a50609db86a6e82",
+      measurementId: "G-FFFW368Z2D"
+    };
 
-        // 👥 Load Users
-        const users = JSON.parse(localStorage.getItem('users')) || [];
-        const userList = document.getElementById('user-list');
-        users.forEach(user => {
-          const li = document.createElement('li');
-          li.textContent = `👤 ${user.username}`;
-          userList.appendChild(li);
-        });
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
 
-        // 📦 Dummy Orders
-        const orders = [
-          { id: "ORD001", customer: "buddy42", item: "Trail Pack", date: "2025-06-01" },
-          { id: "ORD002", customer: "woofmaster", item: "Hydration Bowl", date: "2025-06-03" }
-        ];
-        const orderList = document.getElementById('order-list');
-        orders.forEach(order => {
-          const li = document.createElement('li');
-          li.textContent = `#${order.id} — ${order.item} for ${order.customer} on ${order.date}`;
-          orderList.appendChild(li);
-        });
-      </script>
+    onAuthStateChanged(auth, (user) => {
+      if (!user || !user.email.endsWith("@pawsandpeaks.com.au")) {
+        alert("Access denied!");
+        window.location.href = "account.html";
+      } else {
+        document.getElementById('admin-name').textContent = user.email;
+      }
+    });
 
-    </body>
-    </html>
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      signOut(auth).then(() => {
+        window.location.href = "account.html";
+      });
+    });
+  </script>
+
+  <script src="blog-manager.js"></script>
+  <script src="product-manager.js"></script>
+</body>
+</html>
