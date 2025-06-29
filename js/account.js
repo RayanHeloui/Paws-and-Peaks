@@ -48,8 +48,9 @@ registerForm?.addEventListener('submit', (e) => {
 });
 
 // ✅ Auto-switch to register form if ?mode=signup is in URL
-const urlParams = new URLSearchParams(window.location.search);
-if (urlParams.get('mode') === 'signup') {
-  toggleForm();
-}
-
+document.addEventListener('DOMContentLoaded', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('mode') === 'signup') {
+    window.toggleForm();
+  }
+});
