@@ -46,3 +46,10 @@ registerForm?.addEventListener('submit', (e) => {
       message.textContent = err.message;
     });
 });
+
+// ✅ Auto-switch to register form if ?mode=signup is in URL
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get('mode') === 'signup') {
+  toggleForm();
+}
+
