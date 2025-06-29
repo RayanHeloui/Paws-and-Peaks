@@ -23,13 +23,20 @@ loginForm?.addEventListener('submit', (e) => {
   const email = document.getElementById('loginEmail').value.trim();
   const password = document.getElementById('loginPassword').value;
 
-  signInWithEmailAndPassword(auth, email, password)
-    .then(() => {
+signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    const user = userCredential.user;
+
+    // ✅ Check if email ends with @pawsandpeaks.com.au
+    if (user.email.endsWith("@pawsandpeaks.com.au")) {
+      window.location.href = "admin-dashboard.html";
+    } else {
       window.location.href = "account-dashboard.html";
-    })
-    .catch((err) => {
-      message.textContent = err.message;
-    });
+    }
+  })
+  .catch((err) => {
+    message.textContent = err.message;
+  });
 });
 
 // 🆕 Register
