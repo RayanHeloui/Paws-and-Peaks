@@ -1,102 +1,129 @@
-  const productForm = document.getElementById('productForm');
-  const productName = document.getElementById('productName');
-  const productPrice = document.getElementById('productPrice');
-  const productDescription = document.getElementById('productDescription');
-  const productImage = document.getElementById('productImage');
-  const productList = document.getElementById('productList');
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-  // 🧱 Default "Add Product" handler
-  const defaultSubmitHandler = (e) => {
-    e.preventDefault();
-    const file = productImage.files[0];
-    if (!file) return alert("Please upload an image.");
+const firebaseConfig = {
+  apiKey: "AIzaSyDb1yerEIWp6bXxVi1azqrRoddFDue3a7U",
+  authDomain: "pawsandpeaks.firebaseapp.com",
+  projectId: "pawsandpeaks",
+  storageBucket: "pawsandpeaks.firebasestorage.app",
+  messagingSenderId: "637494651303",
+  appId: "1:637494651303:web:081b5f7a50609db86a6e82",
+  measurementId: "G-FFFW368Z2D"
+};
 
-    const reader = new FileReader();
-    reader.onload = () => {
-      const newProduct = {
-        name: productName.value.trim(),
-        price: parseFloat(productPrice.value).toFixed(2),
-        description: productDescription.value.trim(),
-        image: reader.result
-      };
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth(app);
 
-      const products = JSON.parse(localStorage.getItem('products')) || [];
-      products.unshift(newProduct);
-      localStorage.setItem('products', JSON.stringify(products));
+const productForm = document.getElementById('productForm');
+const productName = document.getElementById('productName');
+const productPrice = document.getElementById('productPrice');
+const productDescription = document.getElementById('productDescription');
+const productImage = document.getElementById('productImage');
+const productList = document.getElementById('productList');
 
-      productForm.reset();
-      loadProducts();
-    };
-    reader.readAsDataURL(file);
-  };
+let currentUserId = null;
 
-  productForm.addEventListener('submit', defaultSubmitHandler);
-
-  // 🧾 Load products into the UI
-  function loadProducts() {
-    productList.innerHTML = "";
-    const products = JSON.parse(localStorage.getItem('products')) || [];
-
-    products.forEach((product, index) => {
-      const li = document.createElement('li');
-      li.innerHTML = `
-        <strong>${product.name}</strong> - $${product.price}<br/>
-        <p>${product.description}</p>
-        <img src="${product.image}" alt="${product.name}" style="max-width: 100px; display:block; margin-top: 5px;" />
-        <button onclick="editProduct(${index})">Edit</button>
-        <button onclick="deleteProduct(${index})">Delete</button>
-      `;
-      productList.appendChild(li);
-    });
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    currentUserId = user.uid;
+    loadProducts();
+  } else {
+    alert("You must be logged in to manage products.");
+    window.location.href = "account.html";
   }
+});
 
-  // ❌ Delete a product
-  function deleteProduct(index) {
-    const products = JSON.parse(localStorage.getItem('products')) || [];
-    if (confirm(`Delete "${products[index].name}"?`)) {
-      products.splice(index, 1);
-      localStorage.setItem('products', JSON.stringify(products));
+productForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const file = productImage.files[0];
+  if (!file) return alert("Please upload an image.");
+
+  const reader = new FileReader();
+  reader.onload = async () => {
+    const newProduct = {
+      name: productName.value.trim(),
+      price: parseFloat(productPrice.value).toFixed(2),
+      description: productDescription.value.trim(),
+      image: reader.result,
+      owner: currentUserId,
+      createdAt: new Date()
+    };
+
+    await addDoc(collection(db, "products"), newProduct);
+    productForm.reset();
+    loadProducts();
+  };
+  reader.readAsDataURL(file);
+});
+
+async function loadProducts() {
+  productList.innerHTML = "";
+  const snapshot = await getDocs(collection(db, "products"));
+  snapshot.forEach(docSnap => {
+    const product = docSnap.data();
+    if (product.owner !== currentUserId) return;
+
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <strong>${product.name}</strong> - $${product.price}<br/>
+      <p>${product.description}</p>
+      <img src="${product.image}" alt="${product.name}" style="max-width: 100px; display:block; margin-top: 5px;" />
+      <button onclick="editProduct('${docSnap.id}')">Edit</button>
+      <button onclick="deleteProduct('${docSnap.id}')">Delete</button>
+    `;
+    productList.appendChild(li);
+  });
+}
+
+window.deleteProduct = async function (id) {
+  if (confirm("Delete this product?")) {
+    await deleteDoc(doc(db, "products", id));
+    loadProducts();
+  }
+};
+
+window.editProduct = async function (id) {
+  const docRef = doc(db, "products", id);
+  const productSnap = await getDocs(collection(db, "products"));
+  let productData;
+  productSnap.forEach(p => {
+    if (p.id === id) productData = p.data();
+  });
+
+  productName.value = productData.name;
+  productPrice.value = productData.price;
+  productDescription.value = productData.description;
+
+  alert("Edit the form fields, then click 'Update Product'");
+
+  productForm.onsubmit = async function (e) {
+    e.preventDefault();
+    productData.name = productName.value.trim();
+    productData.price = parseFloat(productPrice.value).toFixed(2);
+    productData.description = productDescription.value.trim();
+
+    const file = productImage.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = async () => {
+        productData.image = reader.result;
+        await updateDoc(docRef, productData);
+        finishEdit();
+      };
+      reader.readAsDataURL(file);
+    } else {
+      await updateDoc(docRef, productData);
+      finishEdit();
+    }
+
+    function finishEdit() {
+      productForm.reset();
+      productForm.onsubmit = null;
+      productForm.addEventListener('submit', defaultSubmitHandler);
       loadProducts();
     }
-  }
-
-  // ✏️ Edit a product
-  function editProduct(index) {
-    const products = JSON.parse(localStorage.getItem('products')) || [];
-    const product = products[index];
-
-    productName.value = product.name;
-    productPrice.value = product.price;
-    productDescription.value = product.description;
-
-    alert("Edit the form fields, then click 'Update Product'");
-
-    productForm.onsubmit = function (e) {
-      e.preventDefault();
-      product.name = productName.value.trim();
-      product.price = parseFloat(productPrice.value).toFixed(2);
-      product.description = productDescription.value.trim();
-
-      const file = productImage.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = () => {
-          product.image = reader.result;
-          finishEdit();
-        };
-        reader.readAsDataURL(file);
-      } else {
-        finishEdit();
-      }
-
-      function finishEdit() {
-        products[index] = product;
-        localStorage.setItem('products', JSON.stringify(products));
-        productForm.reset();
-        productForm.onsubmit = defaultSubmitHandler;
-        loadProducts();
-      }
-    };
-  }
-
-  window.addEventListener('load', loadProducts);
+  };
+};
