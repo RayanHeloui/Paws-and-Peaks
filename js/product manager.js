@@ -35,7 +35,7 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-productForm.addEventListener('submit', async (e) => {
+const submitNewProduct = async (e) => {
   e.preventDefault();
 
   const file = productImage.files[0];
@@ -57,7 +57,10 @@ productForm.addEventListener('submit', async (e) => {
     loadProducts();
   };
   reader.readAsDataURL(file);
-});
+};
+
+productForm.addEventListener('submit', submitNewProduct);
+
 
 async function loadProducts() {
   productList.innerHTML = "";
@@ -87,11 +90,14 @@ window.deleteProduct = async function (id) {
 
 window.editProduct = async function (id) {
   const docRef = doc(db, "products", id);
-  const productSnap = await getDocs(collection(db, "products"));
+  const docSnap = await getDocs(collection(db, "products"));
   let productData;
-  productSnap.forEach(p => {
+
+  docSnap.forEach(p => {
     if (p.id === id) productData = p.data();
   });
+
+  if (!productData) return alert("Product not found.");
 
   productName.value = productData.name;
   productPrice.value = productData.price;
@@ -121,8 +127,7 @@ window.editProduct = async function (id) {
 
     function finishEdit() {
       productForm.reset();
-      productForm.onsubmit = null;
-      productForm.addEventListener('submit', defaultSubmitHandler);
+      productForm.onsubmit = submitNewProduct;
       loadProducts();
     }
   };
