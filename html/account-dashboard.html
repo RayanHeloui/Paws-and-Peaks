@@ -13,14 +13,14 @@
 
   <!-- 🧾 User Dashboard -->
   <main class="dashboard">
-    <h1>Welcome to Your Dashboard 🧾</h1>
+    <h1>Welcome to Your Dashboard 🗾</h1>
     <div id="dashboard-content">
       <p id="welcome-msg"></p>
 
       <h2>Your Recent Orders</h2>
       <ul id="order-list"></ul>
 
-      <button onclick="logout()">Logout</button>
+      <button id="logoutBtn">Logout</button>
     </div>
   </main>
 
@@ -43,28 +43,51 @@
   </script>
 
   <!-- 🔁 Dashboard Scripts -->
-  <script src="chatbot.js"></script>
-  <script src="auth.js"></script>
-  <script>
-    const user = JSON.parse(localStorage.getItem('currentUser'));
-    if (!user) {
-      alert("You're not logged in!");
-      window.location.href = 'account.html';
-    } else {
-      document.getElementById('welcome-msg').textContent = `Hi, ${user.username}! Thanks for shopping with us 🐾`;
-    }
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-    const orders = [
-      { id: 'A1001', item: 'Dog Hiking Harness', date: '2025-06-03' },
-      { id: 'A1002', item: 'Trail Treats Bundle', date: '2025-06-05' }
-    ];
+    const firebaseConfig = {
+      apiKey: "AIzaSyDb1yerEIWp6bXxVi1azqrRoddFDue3a7U",
+      authDomain: "pawsandpeaks.firebaseapp.com",
+      projectId: "pawsandpeaks",
+      storageBucket: "pawsandpeaks.firebasestorage.app",
+      messagingSenderId: "637494651303",
+      appId: "1:637494651303:web:081b5f7a50609db86a6e82",
+      measurementId: "G-FFFW368Z2D"
+    };
 
-    const orderList = document.getElementById('order-list');
-    orders.forEach(order => {
-      const li = document.createElement('li');
-      li.textContent = `Order #${order.id} — ${order.item} (📦 ${order.date})`;
-      orderList.appendChild(li);
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        alert("You're not logged in!");
+        window.location.href = 'account.html';
+      } else {
+        document.getElementById('welcome-msg').textContent = `Hi, ${user.email}! Thanks for shopping with us 🐾`;
+
+        const orders = [
+          { id: 'A1001', item: 'Dog Hiking Harness', date: '2025-06-03' },
+          { id: 'A1002', item: 'Trail Treats Bundle', date: '2025-06-05' }
+        ];
+
+        const orderList = document.getElementById('order-list');
+        orders.forEach(order => {
+          const li = document.createElement('li');
+          li.textContent = `Order #${order.id} — ${order.item} (📦 ${order.date})`;
+          orderList.appendChild(li);
+        });
+      }
+    });
+
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      signOut(auth).then(() => {
+        window.location.href = "account.html";
+      });
     });
   </script>
+
+  <script src="chatbot.js"></script>
 </body>
 </html>
