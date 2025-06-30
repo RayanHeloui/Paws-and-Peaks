@@ -4,13 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Camping Kit – Learn More</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
+  <!-- 🔁 Shared Header -->
   <div id="header-container"></div>
 
+  <!-- 🏕️ Product Learn Section -->
   <main class="product-learn">
     <h1>Camping Kit</h1>
     <img src="/images/camping-kit-photo.png" alt="Camping Kit">
@@ -35,18 +42,25 @@
       <p>[List outdoor scenarios, day trips, etc.]</p>
     </section>
 
-    <a href="store.html" class="btn">Buy Now</a>
+    <a href="/html/store.html" class="btn">Buy Now</a>
   </main>
 
+  <!-- 🔁 Shared Footer -->
   <div id="footer-container"></div>
 
+  <!-- Inject Header & Footer -->
   <script>
-    fetch("/html/header.html").then(res => res.text()).then(data => {
-      document.getElementById("header-container").innerHTML = data;
-    });
-    fetch("/html/footer.html").then(res => res.text()).then(data => {
-      document.getElementById("footer-container").innerHTML = data;
-    });
+    fetch("/html/header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header-container").innerHTML = data;
+      });
+
+    fetch("/html/footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer-container").innerHTML = data;
+      });
   </script>
 
 </body>
