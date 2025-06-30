@@ -1,3 +1,6 @@
+/* ====================
+   Fonts
+   ==================== */
 @font-face {
   font-family: 'Nostalgic Remain';
   src: url('/fonts/NostalgicRemain-Regular.ttf') format('truetype');
@@ -6,27 +9,30 @@
   font-display: swap;
 }
 
+/* ====================
+   CSS Variables
+   ==================== */
 :root {
-  /* 🖋 Font Variables */
+  /* 🖋 Font Families */
   --font-heading: 'Nostalgic Remain', serif;
   --font-body: 'Arsenica Trial', sans-serif;
 
-  /* 🎨 Refined Brand Colors */
+  /* 🎨 Brand Colors */
   --color-base: #f6f1e7;
   --color-sand: #fcefb3;
   --color-mint: #b3cfc4;
   --color-blush: #e9c2c9;
   --color-caramel: #7b523c;
   --color-ember: #d76c29;
+
+  /* 🖤 Neutral Colors */
   --color-text: #3f3f3f;
   --color-text-secondary: #7c7268;
   --color-cream-dark: #e8e0d3;
-
-  /* 🖤 Utility */
   --white: #ffffff;
   --black: #000000;
 
-  /* 📏 Spacing */
+  /* 📏 Spacing Units */
   --spacing-xs: 4px;
   --spacing-sm: 8px;
   --spacing-md: 16px;
@@ -39,10 +45,10 @@
   --radius-lg: 16px;
 
   /* ⛅ Shadows */
-  --shadow-light: 0 1px 3px rgba(0,0,0,0.08);
-  --shadow-medium: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-  /* 🔖 Aliases */
+  /* 🔖 Semantic Aliases */
   --main-bg: var(--color-base);
   --accent: var(--color-mint);
   --highlight: var(--color-blush);
