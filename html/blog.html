@@ -4,19 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog | Paws and Peaks</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
-  <!-- 🔁 Header -->
+  <!-- 🔁 Shared Header -->
   <div id="header-container"></div>
 
+  <!-- 🐾 Blog Section -->
   <main>
     <h1>🐾 Our Blog</h1>
     <div id="blog-posts"></div>
   </main>
 
-  <!-- 💬 Chatbot Widget -->
+  <!-- 💬 Chatbot -->
   <div id="chatbot-container">
     <div id="chatbot-header">💬 Chat with us!</div>
     <div id="chatbot-body">
@@ -25,19 +32,29 @@
     </div>
   </div>
 
-  <!-- 🔁 Scripts -->
+  <!-- 🔁 Shared Footer -->
+  <div id="footer-container"></div>
+
+  <!-- 🔁 Inject Header/Footer -->
   <script>
-    // 🧠 Inject Shared Header
-    fetch('header.html')
+    fetch('/html/header.html')
       .then(res => res.text())
       .then(html => {
         document.getElementById('header-container').innerHTML = html;
       });
-  </script>
-  <script src="script.js"></script>
-  <script src="chatbot.js"></script>
 
-  <!-- 📝 Blog Rendering -->
+    fetch('/html/footer.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('footer-container').innerHTML = html;
+      });
+  </script>
+
+  <!-- 📜 Scripts -->
+  <script src="/js/script.js"></script>
+  <script src="/js/chatbot.js"></script>
+
+  <!-- 📝 Blog Posts -->
   <script>
     window.addEventListener("DOMContentLoaded", () => {
       const blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
