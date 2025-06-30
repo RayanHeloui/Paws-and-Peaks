@@ -1,0 +1,70 @@
+/* ====================
+   About Page Styling
+   ==================== */
+
+.about-wrapper {
+  padding: var(--spacing-xl) var(--spacing-md);
+  background-color: var(--main-bg);
+  color: var(--text-body);
+  font-family: var(--font-body);
+}
+
+.about-wrapper h1 {
+  font-family: var(--font-heading);
+  color: var(--text-heading);
+  font-size: 2.8rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.about-wrapper p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 800px;
+  margin-bottom: var(--spacing-lg);
+}
+
+.team-section {
+  margin-top: var(--spacing-xl);
+}
+
+.team-section h2 {
+  font-family: var(--font-heading);
+  color: var(--text-heading);
+  font-size: 2.2rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-md);
+}
+
+.team-member {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-light);
+  text-align: center;
+}
+
+.team-member img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+.team-member h3 {
+  font-size: 1.3rem;
+  font-family: var(--font-heading);
+  color: var(--text-heading);
+  margin-bottom: var(--spacing-xs);
+}
+
+.team-member p {
+  font-size: 1rem;
+  color: var(--text-body);
+}
