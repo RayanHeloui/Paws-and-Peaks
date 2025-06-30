@@ -4,7 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Account Dashboard</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
 </head>
 <body>
 
@@ -33,16 +38,21 @@
     </div>
   </div>
 
-  <!-- 🔁 Load Header -->
+  <!-- ✅ Shared Footer -->
+  <div id="footer-container"></div>
+
+  <!-- 🔁 Load Header & Footer -->
   <script>
     fetch('header.html')
       .then(res => res.text())
-      .then(html => {
-        document.getElementById('header-container').innerHTML = html;
-      });
+      .then(html => { document.getElementById('header-container').innerHTML = html });
+
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(html => { document.getElementById('footer-container').innerHTML = html });
   </script>
 
-  <!-- 🔁 Dashboard Scripts -->
+  <!-- 🔁 Firebase Dashboard Script -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
     import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
@@ -88,6 +98,7 @@
     });
   </script>
 
+  <!-- 💬 Chatbot Script -->
   <script src="chatbot.js"></script>
 </body>
 </html>
