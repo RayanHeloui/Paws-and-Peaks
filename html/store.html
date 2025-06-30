@@ -4,11 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shop - Paws and Peaks</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
-  <!-- ✅ Shared Header (loads via JS) -->
+  <!-- ✅ Shared Header -->
   <div id="header-container"></div>
 
   <!-- 🛒 Cart Toggle Button -->
@@ -20,32 +26,37 @@
       <h2>Your Cart</h2>
       <button id="cart-close">×</button>
     </div>
-    <div class="cart-content">
-      <!-- Cart items will be dynamically inserted here -->
-    </div>
+    <div class="cart-content"></div>
   </div>
 
   <!-- 🛍️ Store Section -->
   <section class="store-section">
     <h1>Shop Our Gear 🏕️🐾</h1>
-    <div class="product-grid" id="product-container">
-      <!-- Products will load here -->
-    </div>
+    <div class="product-grid" id="product-container"></div>
   </section>
 
-  <!-- 🔁 Shared Scripts -->
-  <script src="script.js"></script>
+  <!-- ✅ Shared Footer -->
+  <div id="footer-container"></div>
+
+  <!-- ✅ Scripts -->
+  <script>
+    fetch('/html/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header-container').innerHTML = html;
+      });
+
+    fetch('/html/footer.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('footer-container').innerHTML = html;
+      });
+  </script>
+
+  <script src="/js/script.js"></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Load shared header
-      fetch('header.html')
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById('header-container').innerHTML = html;
-        });
-
-      // Load products
       const container = document.getElementById('product-container');
       const products = JSON.parse(localStorage.getItem('products')) || [];
 
@@ -67,18 +78,12 @@
         container.appendChild(card);
       });
 
-      // Cart functionality
       const cartToggle = document.getElementById('cart-toggle');
       const cartPanel = document.getElementById('cart-panel');
       const cartClose = document.getElementById('cart-close');
 
-      cartToggle.addEventListener('click', () => {
-        cartPanel.classList.add('open');
-      });
-
-      cartClose.addEventListener('click', () => {
-        cartPanel.classList.remove('open');
-      });
+      cartToggle.addEventListener('click', () => cartPanel.classList.add('open'));
+      cartClose.addEventListener('click', () => cartPanel.classList.remove('open'));
 
       document.addEventListener('click', (event) => {
         if (!cartPanel.contains(event.target) && !cartToggle.contains(event.target)) {
@@ -86,20 +91,18 @@
         }
       });
 
-      // Add to Cart functionality
       const cartContent = document.querySelector('.cart-content');
       container.addEventListener('click', (event) => {
         if (event.target.classList.contains('add-to-cart')) {
           const productCard = event.target.closest('.product-card');
-          const productName = productCard.querySelector('h3').textContent;
-          const productPrice = productCard.querySelector('p').textContent;
-          const cartItem = document.createElement('div');
-          cartItem.textContent = `${productName} - ${productPrice}`;
-          cartContent.appendChild(cartItem);
+          const name = productCard.querySelector('h3').textContent;
+          const price = productCard.querySelector('p').textContent;
+          const item = document.createElement('div');
+          item.textContent = `${name} - ${price}`;
+          cartContent.appendChild(item);
         }
       });
     });
   </script>
-
 </body>
 </html>
