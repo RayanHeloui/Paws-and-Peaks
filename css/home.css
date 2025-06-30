@@ -237,14 +237,14 @@ body {
 }
 
 .learn-more {
-  background-color: transparent;
-  color: var(--text);
+  background-color: var(--color-surface);           /* orange */
+  color: var(--white);
   border: 2px solid var(--accent);
 }
 
 .learn-more:hover {
-  background-color: var(--accent);
-  color: var(--text);
+  background-color: var(--color-accent);            /* yellow hover */
+  color: var(--color-text-primary);                 /* brown text on yellow */
 }
 
 /* Additional Sections */
