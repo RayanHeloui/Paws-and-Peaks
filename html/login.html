@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Login</title>
-  <link rel="stylesheet" href="../css/login.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login – Paws and Peaks</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/login.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
+
+  <!-- Shared Header -->
+  <div id="header-container"></div>
+
+  <!-- Login Form -->
   <div class="login-form">
     <h2>Login</h2>
     <form id="loginForm">
@@ -14,6 +27,24 @@
     </form>
   </div>
 
-  <script src="../js/login.js"></script>
+  <!-- Shared Footer -->
+  <div id="footer-container"></div>
+
+  <!-- Inject Header/Footer -->
+  <script>
+    fetch("/html/header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header-container").innerHTML = data;
+      });
+
+    fetch("/html/footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer-container").innerHTML = data;
+      });
+  </script>
+
+  <script src="/js/login.js"></script>
 </body>
 </html>
