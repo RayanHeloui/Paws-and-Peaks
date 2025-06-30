@@ -1,12 +1,3 @@
-:root {
-  --main-bg: var(--color-bg-main);
-  --secondary: var(--brand-primary); /* fallback if needed */
-  --accent: var(--color-surface);
-  --neutral-dark: var(--color-text-primary);
-  --text: var(--color-text-primary);
-  --heading: var(--color-text-primary);
-  --light: var(--white);
-}
 
 * {
   margin: 0;
