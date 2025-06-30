@@ -44,4 +44,12 @@
   /* ⛅ Shadows */
   --shadow-light: 0 1px 3px rgba(0,0,0,0.1);
   --shadow-medium: 0 4px 6px rgba(0,0,0,0.15);
+  /* 🧭 Shorthand Aliases for Global Use */
+--main-bg: var(--color-bg-main);
+--accent: var(--color-surface);
+--neutral-dark: var(--color-text-primary);
+--text: var(--color-text-primary);
+--heading: var(--color-text-primary);
+--light: var(--white);
+
 }
