@@ -1,14 +1,18 @@
 :root {
-  /* 🎨 Brand Palette */
-  --brand-primary: #b4dce3;         /* Light blue (primary theme) */
-  --brand-primary-dark: #7bb1c8;   /* Darker shade of primary */
-  --brand-accent: #d76c29;         /* Warm, bold orange */
-  --brand-highlight: #f7cbd1;      /* Soft pink highlight */
-  --brand-yellow: #fcefb3;         /* Light gold accent */
-  --brand-neutral: #382f2d;        /* Dark brown / charcoal */
+  /* 🎨 Core Brand Colors */
+  --color-bg-main: #badccb;           /* Mint green: main background */
+  --color-surface: #d76c29;           /* Orange: for feature boxes, banners */
+  --color-text-primary: #7b523c;      /* Brown: primary text */
+  --color-text-secondary: #382f2d;    /* Darker brown/charcoal text */
+  --color-accent: #fcefb3;            /* Yellow: highlight text, icons */
 
-  /* 🌿 Natural Tones */
-  --brand-background: #badccb;     /* Soft leafy green */
+  /* 💧 Legacy Brand Colors (optional keep) */
+  --brand-primary: #b4dce3;           /* Light blue */
+  --brand-primary-dark: #7bb1c8;
+  --brand-highlight: #f7cbd1;         /* Soft pink */
+  --brand-neutral: #382f2d;
+
+  /* 🌿 Extra Naturals */
   --forest-green: #2e4e36;
   --warm-beige: #f3ede3;
   --earth-brown: #6b4e3d;
