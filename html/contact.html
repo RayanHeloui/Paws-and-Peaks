@@ -5,21 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us</title>
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="../css/header.css">
-  <link rel="stylesheet" href="../css/footer.css">
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
-  <!-- 🔥 HEADER -->
+  <!-- 🔥 Shared Header -->
   <div id="header-container"></div>
-  <script>
-    fetch('../html/header.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('header-container').innerHTML = data;
-      });
-  </script>
 
   <!-- 📬 Contact Section -->
   <section class="contact-section">
@@ -41,14 +37,18 @@
     </div>
   </section>
 
-  <!-- 🐾 FOOTER -->
+  <!-- 🐾 Shared Footer -->
   <div id="footer-container"></div>
+
+  <!-- 🔁 Load Shared Header + Footer -->
   <script>
+    fetch('../html/header.html')
+      .then(res => res.text())
+      .then(html => { document.getElementById('header-container').innerHTML = html });
+
     fetch('../html/footer.html')
       .then(res => res.text())
-      .then(data => {
-        document.getElementById('footer-container').innerHTML = data;
-      });
+      .then(html => { document.getElementById('footer-container').innerHTML = html });
   </script>
 </body>
 </html>
