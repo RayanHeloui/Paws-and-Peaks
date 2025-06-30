@@ -1,11 +1,11 @@
 :root {
-  --main-bg: #fcefb3;
-  --secondary: #badccb;
-  --accent: #f7cbd1;
-  --neutral-dark: #7b523c;
-  --text: #333;
-  --heading: #000;
-  --light: #fff;
+  --main-bg: var(--brand-accent);
+  --secondary: var(--brand-secondary);
+  --accent: var(--brand-accent);
+  --neutral-dark: var(--brand-neutral);
+  --text: var(--text-dark);
+  --heading: var(--text-dark);
+  --light: var(--white);
 }
 
 * {
@@ -15,7 +15,7 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: var(--font-body, sans-serif);
   background: var(--main-bg);
   color: var(--text);
   overflow-x: hidden;
@@ -102,7 +102,6 @@ body {
   letter-spacing: 0.05em;
 }
 
-
 .slogan-word {
   opacity: 0.3;
   transform: translateX(15px);
@@ -127,7 +126,7 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  color: #fff;
+  color: var(--light);
   text-align: center;
 }
 
@@ -142,14 +141,14 @@ body {
   margin: 2px 0;
   padding: 120px 0;
   background-color: var(--accent);
-  border-radius: 50px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   border: 5px solid transparent;
 }
 
-.first-aid-kit { background-color: var(--accent); border-color: #eab3be; }
-.camping-kit { background-color: var(--secondary); border-color: #a2c1bb; }
-.pro-kit { background-color: #b4dce3; border-color: #9cced6; }
+.first-aid-kit { background-color: var(--accent); border-color: var(--accent); }
+.camping-kit { background-color: var(--secondary); border-color: var(--secondary); }
+.pro-kit { background-color: var(--main-bg); border-color: var(--secondary); }
 
 .product-header {
   margin-bottom: 20px;
@@ -166,7 +165,7 @@ body {
 
 .product-subtitle {
   font-size: 1.1rem;
-  color: #666;
+  color: var(--text);
 }
 
 .product-content {
@@ -189,7 +188,7 @@ body {
 .product-image img {
   max-width: 180px;
   height: auto;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
 }
 
 .product-details {
@@ -208,7 +207,7 @@ body {
 .product-details p {
   font-size: 1rem;
   margin-bottom: 20px;
-  color: #333;
+  color: var(--text);
 }
 
 .product-actions {
@@ -218,7 +217,7 @@ body {
 
 .btn {
   padding: 12px 24px;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   text-decoration: none;
   font-weight: bold;
   transition: all 0.3s ease;
@@ -226,11 +225,11 @@ body {
   color: var(--heading);
 }
 
-.btn:hover { background-color: #a0c8bb; }
+.btn:hover { background-color: var(--secondary); opacity: 0.85; }
 
 .buy-now {
-  background-color: #000;
-  color: #fff;
+  background-color: var(--black);
+  color: var(--white);
 }
 
 .buy-now:hover {
@@ -239,13 +238,13 @@ body {
 
 .learn-more {
   background-color: transparent;
-  color: black;
+  color: var(--text);
   border: 2px solid var(--accent);
 }
 
 .learn-more:hover {
   background-color: var(--accent);
-  color: black;
+  color: var(--text);
 }
 
 /* Additional Sections */
@@ -259,8 +258,8 @@ body {
 
 .mission {
   background-color: var(--accent);
-  border: 5px solid #eab3be;
-  border-radius: 50px;
+  border: 5px solid var(--accent);
+  border-radius: var(--radius-lg);
   padding: 120px 40px;
   margin: 2px 0;
   width: 100vw;
@@ -301,10 +300,10 @@ body {
 }
 
 .testimonial-card {
-  background: #fff;
-  color: #333;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: var(--white);
+  color: var(--text);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-medium);
   padding: 20px;
   margin: 10px;
   min-width: 320px;
@@ -332,11 +331,11 @@ body {
 
 .btn.submit-story {
   background-color: var(--neutral-dark);
-  color: white;
+  color: var(--white);
   padding: 14px 28px;
   font-size: 1rem;
   border: none;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   font-family: 'NostalgicRemain', sans-serif;
   cursor: pointer;
   transition: background 0.3s ease;
