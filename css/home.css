@@ -265,6 +265,7 @@ body {
   width: 100vw;
   margin-left: calc(-1 * (100vw - 100%) / 2);
   color: var(--text);
+  margin-bottom: 60px; /* or var(--spacing-lg) */
 }
 
 .mission h2 {
@@ -289,6 +290,7 @@ body {
   width: 100vw;
   margin-left: calc(-1 * (100vw - 100%) / 2);
   color: var(--neutral-dark);
+  margin-bottom: 60px; /* or var(--spacing-lg) */
 }
 
 
