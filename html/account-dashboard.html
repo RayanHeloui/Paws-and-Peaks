@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Account Dashboard</title>
 
- <!-- 🧾 Shared Stylesheet Imports for All Pages -->
-<link rel="stylesheet" href="css/variables.css" />
-<link rel="stylesheet" href="css/global.css" />
-<link rel="stylesheet" href="css/helpers.css" />
-<link rel="stylesheet" href="css/header.css" />
-<link rel="stylesheet" href="css/footer.css" />
-<link rel="stylesheet" href="css/subscribe-popup.css" />
+  <!-- 🌈 Unified Styles -->
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/helpers.css" />
+  <link rel="stylesheet" href="../css/header.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/subscribe-popup.css" />
+  <link rel="stylesheet" href="../css/account-dashboard.css" />
 
-<!-- 🌟 Font Awesome for Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
+  <!-- 🌟 Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
@@ -31,7 +31,7 @@
       <h2>Your Recent Orders</h2>
       <ul id="order-list"></ul>
 
-      <button id="logoutBtn">Logout</button>
+      <button id="logoutBtn" class="btn">Logout</button>
     </div>
   </main>
 
@@ -47,18 +47,18 @@
   <!-- ✅ Shared Footer -->
   <div id="footer-container"></div>
 
-  <!-- 🔁 Load Header & Footer -->
+  <!-- 🔁 Load Shared Header & Footer -->
   <script>
-    fetch('header.html')
+    fetch('../html/header.html')
       .then(res => res.text())
       .then(html => { document.getElementById('header-container').innerHTML = html });
 
-    fetch('footer.html')
+    fetch('../html/footer.html')
       .then(res => res.text())
       .then(html => { document.getElementById('footer-container').innerHTML = html });
   </script>
 
-  <!-- 🔁 Firebase Dashboard Script -->
+  <!-- 🔐 Firebase Dashboard Script -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
     import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
@@ -105,6 +105,6 @@
   </script>
 
   <!-- 💬 Chatbot Script -->
-  <script src="chatbot.js"></script>
+  <script src="../js/chatbot.js"></script>
 </body>
 </html>
