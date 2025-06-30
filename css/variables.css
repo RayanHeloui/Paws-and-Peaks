@@ -1,18 +1,22 @@
+@font-face {
+  font-family: 'Nostalgic Remain';
+  src: url('/fonts/NostalgicRemain-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* 🎨 Refined Brand Colors */
-  --color-base: #f6f1e7;         /* Warm Linen – global background */
-  --color-sand: #fcefb3;         /* Soft Sand – subtle yellow tint */
-  --color-mint: #b3cfc4;         /* Muted Mint – cool secondary */
-  --color-blush: #e9c2c9;        /* Blush Dust – gentle pink highlight */
-  --color-caramel: #7b523c;      /* Rich Caramel – headers, titles */
-  --color-ember: #d76c29;        /* Sunset Ember – CTAs */
-  --color-text: #3f3f3f;         /* Mocha Smoke – paragraph text */
-  --color-text-secondary: #7c7268; /* Taupe Grey – supporting text */
-  --color-cream-dark: #e8e0d3; /* Slightly darker version of Warm Linen */
-
-  /* ✨ Typography */
-  --font-body: 'Nunito', 'Lato', 'Open Sans', sans-serif;
-  --font-heading: 'Nostalgic Remain', serif;
+  --color-base: #f6f1e7;
+  --color-sand: #fcefb3;
+  --color-mint: #b3cfc4;
+  --color-blush: #e9c2c9;
+  --color-caramel: #7b523c;
+  --color-ember: #d76c29;
+  --color-text: #3f3f3f;
+  --color-text-secondary: #7c7268;
+  --color-cream-dark: #e8e0d3;
 
   /* 🖤 Utility */
   --white: #ffffff;
