@@ -1,0 +1,121 @@
+/* store.css – Clean layout matching Paws and Peaks styling */
+
+.store-section {
+  padding: var(--spacing-xl) var(--spacing-md);
+  background-color: var(--main-bg);
+  text-align: center;
+}
+
+.store-section h1 {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  color: var(--text-heading);
+  margin-bottom: var(--spacing-lg);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background-color: var(--white);
+  border: 3px solid var(--highlight);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-light);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+.product-card h3 {
+  font-size: 1.5rem;
+  color: var(--text-heading);
+  margin-bottom: 0.5em;
+  font-family: var(--font-heading);
+}
+
+.product-card p {
+  font-size: 1rem;
+  color: var(--text-body);
+  margin-bottom: 0.75em;
+}
+
+.add-to-cart {
+  background-color: var(--cta);
+  color: var(--white);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background-color: var(--cta-hover);
+}
+
+/* Cart Panel */
+.cart-panel {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100vh;
+  background: var(--white);
+  box-shadow: var(--shadow-medium);
+  padding: var(--spacing-md);
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.cart-panel.open {
+  right: 0;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.cart-header h2 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  color: var(--text-heading);
+}
+
+#cart-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--cta);
+}
+
+.cart-content div {
+  font-size: 1rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-body);
+}
