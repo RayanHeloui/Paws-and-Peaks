@@ -1,5 +1,14 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  doc,
+  getDoc,
+  updateDoc,
+  deleteDoc
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
@@ -35,36 +44,10 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-const submitNewProduct = async (e) => {
-  e.preventDefault();
-
-  const file = productImage.files[0];
-  if (!file) return alert("Please upload an image.");
-
-  const reader = new FileReader();
-  reader.onload = async () => {
-    const newProduct = {
-      name: productName.value.trim(),
-      price: parseFloat(productPrice.value).toFixed(2),
-      description: productDescription.value.trim(),
-      image: reader.result,
-      owner: currentUserId,
-      createdAt: new Date()
-    };
-
-    await addDoc(collection(db, "products"), newProduct);
-    productForm.reset();
-    loadProducts();
-  };
-  reader.readAsDataURL(file);
-};
-
-productForm.addEventListener('submit', submitNewProduct);
-
-
 async function loadProducts() {
   productList.innerHTML = "";
   const snapshot = await getDocs(collection(db, "products"));
+
   snapshot.forEach(docSnap => {
     const product = docSnap.data();
     if (product.owner !== currentUserId) return;
@@ -81,6 +64,32 @@ async function loadProducts() {
   });
 }
 
+productForm.addEventListener('submit', submitNewProduct);
+
+async function submitNewProduct(e) {
+  e.preventDefault();
+
+  const file = productImage.files[0];
+  if (!file) return alert("Please upload an image.");
+
+  const reader = new FileReader();
+  reader.onload = async () => {
+    const newProduct = {
+      name: productName.value.trim(),
+      price: parseFloat(productPrice.value),
+      description: productDescription.value.trim(),
+      image: reader.result,
+      owner: currentUserId,
+      createdAt: new Date()
+    };
+
+    await addDoc(collection(db, "products"), newProduct);
+    productForm.reset();
+    loadProducts();
+  };
+  reader.readAsDataURL(file);
+}
+
 window.deleteProduct = async function (id) {
   if (confirm("Delete this product?")) {
     await deleteDoc(doc(db, "products", id));
@@ -90,38 +99,42 @@ window.deleteProduct = async function (id) {
 
 window.editProduct = async function (id) {
   const docRef = doc(db, "products", id);
-  const docSnap = await getDocs(collection(db, "products"));
-  let productData;
+  const docSnap = await getDoc(docRef);
 
-  docSnap.forEach(p => {
-    if (p.id === id) productData = p.data();
-  });
+  if (!docSnap.exists()) {
+    alert("Product not found.");
+    return;
+  }
 
-  if (!productData) return alert("Product not found.");
+  const product = docSnap.data();
 
-  productName.value = productData.name;
-  productPrice.value = productData.price;
-  productDescription.value = productData.description;
+  // Pre-fill the form
+  productName.value = product.name;
+  productPrice.value = product.price;
+  productDescription.value = product.description;
 
   alert("Edit the form fields, then click 'Update Product'");
 
   productForm.onsubmit = async function (e) {
     e.preventDefault();
-    productData.name = productName.value.trim();
-    productData.price = parseFloat(productPrice.value).toFixed(2);
-    productData.description = productDescription.value.trim();
+
+    const updates = {
+      name: productName.value.trim(),
+      price: parseFloat(productPrice.value),
+      description: productDescription.value.trim()
+    };
 
     const file = productImage.files[0];
     if (file) {
       const reader = new FileReader();
       reader.onload = async () => {
-        productData.image = reader.result;
-        await updateDoc(docRef, productData);
+        updates.image = reader.result;
+        await updateDoc(docRef, updates);
         finishEdit();
       };
       reader.readAsDataURL(file);
     } else {
-      await updateDoc(docRef, productData);
+      await updateDoc(docRef, updates);
       finishEdit();
     }
 
