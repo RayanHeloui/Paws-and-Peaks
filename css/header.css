@@ -16,8 +16,8 @@
   font-family: 'Nostalgic Remain', serif;
   font-size: 1rem;
   letter-spacing: 0.02em;
-  background-color: var(--color-base); /* #fcefb3 Soft Sand */
-  border-bottom: 2px solid var(--cta); /* #d76c29 Sunset Ember */
+  background-color: var(--color-mint); /* Muted Mint */
+  border-bottom: 2px solid var(--cta); /* Sunset Ember */
   display: flex;
   justify-content: center;
   padding: 6px 0;
@@ -47,8 +47,8 @@
 
 /* 🌄 Main Header */
 .main-header {
-  background: var(--section-bg); /* #faf9f6 Misty Cream */
-  border-bottom: 2px solid var(--cta); /* Orange */
+  background: var(--color-cream); /* Warm Linen */
+  border-bottom: 2px solid var(--color-cream);
   position: sticky;
   top: 0;
   z-index: 1000;
