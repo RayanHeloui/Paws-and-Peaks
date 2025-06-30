@@ -1,11 +1,14 @@
 :root {
   /* 🎨 Brand Palette */
-  --brand-primary: #d76c29;         /* Warm, bold orange */
-  --brand-primary-dark: #b35620;
-  --brand-accent: #fcefb3;          /* Light gold accent */
-  --brand-neutral: #382f2d;         /* Dark brown / charcoal */
+  --brand-primary: #b4dce3;         /* Light blue (primary theme) */
+  --brand-primary-dark: #7bb1c8;   /* Darker shade of primary */
+  --brand-accent: #d76c29;         /* Warm, bold orange */
+  --brand-highlight: #f7cbd1;      /* Soft pink highlight */
+  --brand-yellow: #fcefb3;         /* Light gold accent */
+  --brand-neutral: #382f2d;        /* Dark brown / charcoal */
 
   /* 🌿 Natural Tones */
+  --brand-background: #badccb;     /* Soft leafy green */
   --forest-green: #2e4e36;
   --warm-beige: #f3ede3;
   --earth-brown: #6b4e3d;
