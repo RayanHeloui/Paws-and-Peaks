@@ -2,10 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Shipping & Returns</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shipping & Returns – Paws and Peaks</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <h1>Shipping & Returns</h1>
-  <p>This is placeholder content for your Shipping & Returns policy.</p>
+
+  <!-- Shared Header -->
+  <div id="header-container"></div>
+
+  <!-- Policy Content -->
+  <main style="max-width: 800px; margin: 60px auto; padding: 0 20px;">
+    <h1>Shipping & Returns</h1>
+    <p>This is placeholder content for your Shipping & Returns policy.</p>
+  </main>
+
+  <!-- Shared Footer -->
+  <div id="footer-container"></div>
+
+  <!-- Load Header/Footer -->
+  <script>
+    fetch("/html/header.html").then(res => res.text()).then(data => {
+      document.getElementById("header-container").innerHTML = data;
+    });
+    fetch("/html/footer.html").then(res => res.text()).then(data => {
+      document.getElementById("footer-container").innerHTML = data;
+    });
+  </script>
+
 </body>
 </html>
