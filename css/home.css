@@ -1,3 +1,4 @@
+/* 🌄 Polished Paws & Peaks Homepage Styles */
 
 * {
   margin: 0;
@@ -6,9 +7,9 @@
 }
 
 body {
-  font-family: var(--font-body, sans-serif);
+  font-family: var(--font-body);
   background: var(--main-bg);
-  color: var(--text);
+  color: var(--text-body);
   overflow-x: hidden;
 }
 
@@ -43,26 +44,12 @@ body {
   z-index: 3;
 }
 
-.img-left {
-  top: 50%;
-  left: 15%;
-  transform: translate(-50%, -50%);
-}
-
-.img-center {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.img-right {
-  top: 50%;
-  left: 85%;
-  transform: translate(-50%, -50%);
-}
+.img-left { top: 50%; left: 15%; transform: translate(-50%, -50%); }
+.img-center { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.img-right { top: 50%; left: 85%; transform: translate(-50%, -50%); }
 
 .hero-slogan {
-  font-family: 'NostalgicRemain', sans-serif;
+  font-family: var(--font-heading);
   position: absolute;
   top: 50%;
   right: 0;
@@ -75,17 +62,14 @@ body {
   max-width: 50vw;
   padding-right: 3vw;
   margin-left: auto;
-  display: block;
 }
 
-.hero-slogan.visible {
-  opacity: 1;
-}
+.hero-slogan.visible { opacity: 1; }
 
 .hero-slogan h2 {
   font-size: clamp(2.2rem, 4vw + 1rem, 4.2rem);
   font-weight: 600;
-  color: var(--neutral-dark);
+  color: var(--text-heading);
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -97,7 +81,7 @@ body {
   opacity: 0.3;
   transform: translateX(15px);
   transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-  color: var(--neutral-dark);
+  color: var(--text-heading);
 }
 
 .slogan-word.active {
@@ -105,22 +89,7 @@ body {
   transform: translateX(0);
 }
 
-/* Product Layout */
-.products-title {
-  background-color: transparent;
-  padding: 40px 20px;
-}
-
-.product-fullscreen {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  color: var(--light);
-  text-align: center;
-}
-
+/* 🛍️ Product Sections */
 .product-section {
   padding: 2px 0;
   background-color: transparent;
@@ -131,23 +100,17 @@ body {
   width: 100vw;
   margin: 2px 0;
   padding: 120px 0;
-  background-color: var(--accent);
+  background-color: var(--section-bg);
   border-radius: var(--radius-lg);
+  border: 5px solid var(--accent);
   overflow: hidden;
-  border: 5px solid transparent;
 }
 
-.first-aid-kit {
-  background-color: var(--brand-primary);      /* blue */
-  border-color: var(--color-accent);
-}
-.camping-kit { 
-    background-color: var(--brand-primary);      /* blue */
-  border-color: var(--color-accent);
-  }
-.pro-kit { 
-   background-color: var(--brand-primary);      /* blue */
-  border-color: var(--color-accent);
+.first-aid-kit,
+.camping-kit,
+.pro-kit {
+  background-color: var(--section-bg);
+  border-color: var(--accent);
 }
 
 .product-header {
@@ -157,15 +120,15 @@ body {
 
 .product-title {
   font-size: 2.5rem;
-  font-family: 'NostalgicRemain', sans-serif;
+  font-family: var(--font-heading);
   font-weight: bold;
-  color: var(--heading);
+  color: var(--text-heading);
   letter-spacing: 0.05em;
 }
 
 .product-subtitle {
   font-size: 1.1rem;
-  color: var(--text);
+  color: var(--text-body);
 }
 
 .product-content {
@@ -177,29 +140,20 @@ body {
   margin: 0 auto;
 }
 
-.product-image {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex: 1;
-  margin-left: -20px;
-}
-
 .product-image img {
-  max-width: 180px;
+  max-width: 240px;
   height: auto;
   border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
 }
 
 .product-details {
-  margin-top: -30px;
   max-width: 500px;
   text-align: right;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  height: 100%;
   padding-right: 20px;
   transform: translateY(-20px);
 }
@@ -207,7 +161,7 @@ body {
 .product-details p {
   font-size: 1rem;
   margin-bottom: 20px;
-  color: var(--text);
+  color: var(--text-body);
 }
 
 .product-actions {
@@ -221,11 +175,8 @@ body {
   text-decoration: none;
   font-weight: bold;
   transition: all 0.3s ease;
-  background-color: var(--secondary);
-  color: var(--heading);
+  font-family: var(--font-body);
 }
-
-.btn:hover { background-color: var(--secondary); opacity: 0.85; }
 
 .buy-now {
   background-color: var(--black);
@@ -237,68 +188,53 @@ body {
 }
 
 .learn-more {
-  background-color: var(--color-surface);           /* orange */
+  background-color: var(--cta);
   color: var(--white);
-  border: 2px solid var(--accent);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-soft);
+  border: none;
 }
 
 .learn-more:hover {
-  background-color: var(--color-accent);            /* yellow hover */
-  color: var(--color-text-primary);                 /* brown text on yellow */
+  background-color: var(--cta-hover);
+  color: var(--white);
 }
 
-/* Additional Sections */
+/* 📢 Mission & Testimonials */
 .mission,
-.testimonials,
-.about,
-.testimonies {
-  padding: 60px 20px;
+.testimonials {
+  background-color: var(--section-bg);
+  border: 5px solid var(--accent);
+  border-radius: var(--radius-lg);
+  padding: 120px 40px;
+  margin: 5px 0;
+  width: 100vw;
+  margin-left: calc(-1 * (100vw - 100%) / 2);
+  color: var(--text-body);
   text-align: center;
 }
 
-.mission {
-  background-color: var(--brand-primary);      /* blue */
-  border: 5px solid var(--color-accent);
-  border-radius: var(--radius-lg);
-  padding: 120px 40px;
-  margin: 2px 0;
-  width: 100vw;
-  margin-left: calc(-1 * (100vw - 100%) / 2);
-  color: var(--text);
-  margin-bottom: 5px; /* or var(--spacing-lg) */
-}
-
-.mission h2 {
-  font-family: 'NostalgicRemain', sans-serif;
+.mission h2,
+.testimonials h2 {
+  font-family: var(--font-heading);
   font-size: 2.5rem;
-  color: var(--neutral-dark);
+  color: var(--text-heading);
   margin-bottom: 20px;
 }
 
-.mission p {
+.mission p,
+.testimonials p {
   max-width: 800px;
   margin: 0 auto;
   font-size: 1.1rem;
   line-height: 1.7;
 }
 
-.testimonials {
-  background-color: var(--brand-primary);         /* blue */
-  border: 5px solid var(--color-accent);
-  border-radius: var(--radius-lg);                /* rounded */
-  padding: 120px 40px;                            /* match mission layout */
-  width: 100vw;
-  margin-left: calc(-1 * (100vw - 100%) / 2);
-  color: var(--neutral-dark);
-  margin-bottom: 5px; /* or var(--spacing-lg) */
-}
-
-
 .testimonial-slider {
   max-width: 1200px;
   margin: 0 auto;
-  position: relative;
   overflow: hidden;
+  position: relative;
 }
 
 .testimonial-track {
@@ -309,7 +245,7 @@ body {
 
 .testimonial-card {
   background: var(--white);
-  color: var(--text);
+  color: var(--text-body);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-medium);
   padding: 20px;
@@ -333,18 +269,14 @@ body {
   margin-top: 10px;
 }
 
-.testimonial-submit {
-  margin-top: 50px;
-}
-
 .btn.submit-story {
-  background-color: var(--neutral-dark);
+  background-color: var(--text-heading);
   color: var(--white);
   padding: 14px 28px;
   font-size: 1rem;
   border: none;
   border-radius: var(--radius-md);
-  font-family: 'NostalgicRemain', sans-serif;
+  font-family: var(--font-heading);
   cursor: pointer;
   transition: background 0.3s ease;
 }
