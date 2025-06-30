@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FAQ – Paws and Peaks</title>
 
-  <!-- ✅ Clean, unified styles -->
+  <!-- ✅ Stylesheets (root-relative) -->
   <link rel="stylesheet" href="/css/variables.css" />
   <link rel="stylesheet" href="/css/global.css" />
   <link rel="stylesheet" href="/css/helpers.css" />
@@ -16,10 +16,10 @@
 </head>
 <body>
 
-  <!-- ✅ Shared Header -->
+  <!-- ✅ Header -->
   <div id="header-container"></div>
 
-  <!-- 📚 FAQ Page Content -->
+  <!-- 📚 FAQ Content -->
   <main class="faq-page">
     <div class="faq-container">
       <h1>Frequently Asked Questions</h1>
@@ -46,10 +46,10 @@
     </div>
   </main>
 
-  <!-- ✅ Shared Footer -->
+  <!-- ✅ Footer -->
   <div id="footer-container"></div>
 
-  <!-- ✅ Load header & footer -->
+  <!-- ✅ Header/Footer Loader -->
   <script>
     fetch('/html/header.html')
       .then(res => res.text())
