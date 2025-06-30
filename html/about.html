@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us - Paws and Peaks</title>
   <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/header.css" />
-  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="../css/header.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
 </head>
 <body>
 
@@ -38,20 +38,20 @@
   <!-- ✅ Shared Footer Container -->
   <div id="footer-container"></div>
 
-  <!-- 🔄 Load Shared Header/Footer -->
-  <script>
-    fetch('/header.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('header-container').innerHTML = html;
-      });
+<!-- ✅ Inside html/about.html -->
+<script>
+  fetch('header.html') // Looks for html/header.html (same folder)
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('header-container').innerHTML = html;
+    });
 
-    fetch('/footer.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('footer-container').innerHTML = html;
-      });
-  </script>
+  fetch('footer.html') // Looks for html/footer.html (same folder)
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer-container').innerHTML = html;
+    });
+</script>
 
   <!-- Site Scripts -->
   <script src="/js/script.js"></script>
