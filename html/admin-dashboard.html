@@ -4,7 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Admin Console</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/variables.css" />
 </head>
 <body>
 
@@ -16,19 +21,16 @@
     <h1>⚒️ Admin Console</h1>
     <p>Welcome, <span id="admin-name"></span>! Here's your control panel.</p>
 
-    <!-- 👥 Registered Users -->
     <section>
       <h2>👥 Registered Users</h2>
       <ul id="user-list"></ul>
     </section>
 
-    <!-- 📦 Orders -->
     <section>
       <h2>📦 Orders (Dummy Data)</h2>
       <ul id="order-list"></ul>
     </section>
 
-    <!-- 📝 Blog Manager -->
     <section>
       <h2>📝 Blog Manager</h2>
       <form id="blogForm">
@@ -40,7 +42,6 @@
       <ul id="blogPostsList"></ul>
     </section>
 
-    <!-- 🛍️ Product Manager -->
     <section>
       <h2>🛍️ Product Manager</h2>
       <form id="productForm">
@@ -57,15 +58,21 @@
     <button id="logoutBtn">Logout</button>
   </main>
 
-  <!-- 🔁 Shared Scripts -->
+  <!-- ✅ Shared Footer -->
+  <div id="footer-container"></div>
+
+  <!-- ✅ Inject Header/Footer -->
   <script>
-    fetch('header.html')
+    fetch('/html/header.html')
       .then(res => res.text())
-      .then(html => {
-        document.getElementById('header-container').innerHTML = html;
-      });
+      .then(html => { document.getElementById('header-container').innerHTML = html });
+
+    fetch('/html/footer.html')
+      .then(res => res.text())
+      .then(html => { document.getElementById('footer-container').innerHTML = html });
   </script>
 
+  <!-- 🔐 Auth Logic -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
     import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
@@ -99,7 +106,7 @@
     });
   </script>
 
-  <script src="blog-manager.js"></script>
-  <script src="product-manager.js"></script>
+  <script src="/js/blog-manager.js"></script>
+  <script src="/js/product-manager.js"></script>
 </body>
 </html>
