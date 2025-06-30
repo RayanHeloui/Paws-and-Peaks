@@ -4,28 +4,42 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Track Your Order | Paws and Peaks</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Core Styles -->
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
   <!-- ✅ Shared Header -->
   <div id="header-container"></div>
 
-  <main class="track-order">
+  <!-- 🚚 Track Order -->
+  <main class="track-order" style="padding: 40px; max-width: 600px; margin: auto;">
     <h1>🚚 Track Your Order</h1>
     <form id="trackForm">
-      <input type="text" id="orderIdInput" placeholder="Enter your Order ID" required />
-      <button type="submit">Track</button>
+      <input type="text" id="orderIdInput" placeholder="Enter your Order ID" required style="width: 100%; padding: 10px; margin-bottom: 12px;" />
+      <button type="submit" style="padding: 10px 20px;">Track</button>
     </form>
-    <div id="orderResult"></div>
+    <div id="orderResult" style="margin-top: 20px;"></div>
   </main>
 
-  <!-- 🔁 Shared Scripts -->
-  <script src="script.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      loadHeader();
+  <!-- ✅ Shared Footer -->
+  <div id="footer-container"></div>
 
+  <!-- JS Logic -->
+  <script>
+    fetch('/html/header.html').then(res => res.text()).then(data => {
+      document.getElementById('header-container').innerHTML = data;
+    });
+
+    fetch('/html/footer.html').then(res => res.text()).then(data => {
+      document.getElementById('footer-container').innerHTML = data;
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
       document.getElementById('trackForm').addEventListener('submit', (e) => {
         e.preventDefault();
         const orderId = document.getElementById('orderIdInput').value.trim();
@@ -33,15 +47,11 @@
         const result = document.getElementById('orderResult');
 
         const found = orders.find(o => o.id === orderId);
-        if (found) {
-          result.innerHTML = `
-            <p><strong>Status:</strong> ${found.status}</p>
-            <p><strong>Item:</strong> ${found.item}</p>
-            <p><strong>Date:</strong> ${found.date}</p>
-          `;
-        } else {
-          result.innerHTML = `<p>Order not found. Please check your ID.</p>`;
-        }
+        result.innerHTML = found
+          ? `<p><strong>Status:</strong> ${found.status}</p>
+             <p><strong>Item:</strong> ${found.item}</p>
+             <p><strong>Date:</strong> ${found.date}</p>`
+          : `<p>Order not found. Please check your ID.</p>`;
       });
     });
   </script>
