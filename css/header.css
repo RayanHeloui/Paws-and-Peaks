@@ -17,8 +17,8 @@
   font-family: 'Nostalgic Remain', serif;
   font-size: 1rem;
   letter-spacing: 0.02em;
-  background-color: #badccb;
-  border-bottom: 2px solid #e8c563;
+  background-color: var(--color-bg-main); 
+  border-bottom: 2px solid var(--color-accent);
   display: flex;
   justify-content: center;
   padding: 6px 0;
@@ -28,13 +28,13 @@
   font-weight: 500;
 }
 .top-bar a {
-  color: #7b523c;
+  color: var(--color-text-primary); 
   font-weight: bold;
   text-decoration: underline;
 
 }
 .top-bar a:hover {
-  color: #d76c29;
+  color: var(--color-surface); 
 }
 .sparkle-icon-left {
   width: 20px;        /* or 16px for extra small */
@@ -52,8 +52,8 @@
 }
 /* 🌄 Main Header */
 .main-header {
-  background: #fcefb3;
-  border-bottom: 2px solid #e8c563;
+  background: var(--color-accent); 
+  border-bottom: 2px solid var(--color-accent);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -81,7 +81,7 @@
   font-family: 'Nostalgic Remain', serif;
   font-size: 34px;
   font-weight: normal;
-  color: #7b523c;
+  color: var(--color-text-primary);
   display: flex;
   align-items: center;
   gap: 20px;
@@ -95,7 +95,7 @@
 }
 
 .logo-text a:hover {
-  color: #d76c29;
+  color: var(--color-surface);
 }
 
 .logo-icon {
@@ -116,14 +116,14 @@
   font-family: 'Arsenica Thin', serif;
   font-size: 2.6rem; 
   font-weight: normal;
-  color: #7b523c;
+  color: var(--color-text-primary);
   text-decoration: none;
   transition: color 0.3s ease;
   text-transform: uppercase; 
 }
 
 .nav-links a:hover {
-  color: #d76c29;
+  color: var(--color-surface);  
 }
 
 /* Icon Buttons */
