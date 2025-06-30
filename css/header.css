@@ -47,8 +47,8 @@
 
 /* 🌄 Main Header */
 .main-header {
-  background: var(--color-cream); /* Warm Linen */
-  border-bottom: 2px solid var(--color-cream);
+  background: var(--color-cream-dark);
+  border-bottom: 2px solid var(--color-cream-dark);
   position: sticky;
   top: 0;
   z-index: 1000;
