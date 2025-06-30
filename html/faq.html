@@ -5,47 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FAQ – Paws and Peaks</title>
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="/css/style.css" />
+  <!-- 🧾 Shared Stylesheet Imports -->
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/helpers.css" />
   <link rel="stylesheet" href="/css/header.css" />
   <link rel="stylesheet" href="/css/footer.css" />
-  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/faq.css" />
+
+  <!-- 🌟 Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
-  <!-- Shared Header -->
+  <!-- ✅ Shared Header -->
   <div id="header-container"></div>
 
-  <!-- FAQ Content -->
-  <main class="faq-content" style="padding: 40px; max-width: 800px; margin: auto;">
-    <h1>Frequently Asked Questions</h1>
+  <!-- ❓ FAQ Section -->
+  <main class="faq-page">
+    <div class="faq-container">
+      <h1>Frequently Asked Questions</h1>
 
-    <section>
-      <h2>What is included in each kit?</h2>
-      <p>Each kit contains essential items for pet safety and outdoor adventure. Specific contents vary by product. Visit our <a href="/html/store.html">store page</a> for full details.</p>
-    </section>
+      <section>
+        <h2>What is included in each kit?</h2>
+        <p>Each kit contains essential items for pet safety and outdoor adventure. Specific contents vary by product. Visit our <a href="/html/store.html">store page</a> for full details.</p>
+      </section>
 
-    <section>
-      <h2>Do you ship internationally?</h2>
-      <p>Not at this time — we're focused on Australia only while we scale our operations.</p>
-    </section>
+      <section>
+        <h2>Do you ship internationally?</h2>
+        <p>Not at this time — we're focused on Australia only while we scale our operations.</p>
+      </section>
 
-    <section>
-      <h2>Can I customize a kit?</h2>
-      <p>We currently don’t offer customization, but stay tuned! It’s something we’re working on.</p>
-    </section>
+      <section>
+        <h2>Can I customize a kit?</h2>
+        <p>We currently don’t offer customization, but stay tuned! It’s something we’re working on.</p>
+      </section>
 
-    <section>
-      <h2>How do I clean the kit or gear?</h2>
-      <p>Most gear can be spot cleaned or gently wiped. We’ll include care instructions with every order.</p>
-    </section>
+      <section>
+        <h2>How do I clean the kit or gear?</h2>
+        <p>Most gear can be spot cleaned or gently wiped. We’ll include care instructions with every order.</p>
+      </section>
+    </div>
   </main>
 
-  <!-- Shared Footer -->
+  <!-- ✅ Shared Footer -->
   <div id="footer-container"></div>
 
-  <!-- Header/Footer Loader -->
+  <!-- 🔁 Load Header/Footer -->
   <script>
     fetch('/html/header.html').then(res => res.text()).then(data => {
       document.getElementById('header-container').innerHTML = data;
