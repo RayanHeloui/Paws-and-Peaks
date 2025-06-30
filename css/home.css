@@ -137,9 +137,18 @@ body {
   border: 5px solid transparent;
 }
 
-.first-aid-kit { background-color: var(--accent); border-color: var(--accent); }
-.camping-kit { background-color: var(--secondary); border-color: var(--secondary); }
-.pro-kit { background-color: var(--main-bg); border-color: var(--secondary); }
+.first-aid-kit {
+  background-color: var(--brand-primary);      /* blue */
+  border-color: var(--color-accent);           /* yellow border */
+}
+.camping-kit { 
+    background-color: var(--brand-primary);      /* blue */
+  border-color: var(--color-accent);
+  }
+.pro-kit { 
+   background-color: var(--brand-primary);      /* blue */
+  border-color: var(--color-accent);
+}
 
 .product-header {
   margin-bottom: 20px;
@@ -248,8 +257,8 @@ body {
 }
 
 .mission {
-  background-color: var(--accent);
-  border: 5px solid var(--accent);
+  background-color: var(--brand-primary);      /* blue */
+  border: 5px solid var(--color-accent);
   border-radius: var(--radius-lg);
   padding: 120px 40px;
   margin: 2px 0;
