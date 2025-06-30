@@ -4,16 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pro Adventure Kit – Learn More</title>
-  <link rel="stylesheet" href="/css/header.css">
-  <link rel="stylesheet" href="/css/footer.css">
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
+  <!-- Shared Header -->
   <div id="header-container"></div>
 
-  <main class="product-learn">
+  <!-- Main Product Content -->
+  <main class="product-learn" style="padding: 40px; max-width: 1000px; margin: auto;">
     <h1>Pro Adventure Kit</h1>
-    <img src="/images/pro-adventurer-photo.png" alt="Pro Adventure Kit">
+    <img src="/images/pro-adventurer-photo.png" alt="Pro Adventure Kit" style="max-width: 100%; height: auto; margin-bottom: 20px;" />
 
     <section>
       <h2>What’s Inside</h2>
@@ -38,8 +45,10 @@
     <a href="store.html" class="btn">Buy Now</a>
   </main>
 
+  <!-- Shared Footer -->
   <div id="footer-container"></div>
 
+  <!-- Load Header and Footer -->
   <script>
     fetch("/html/header.html").then(res => res.text()).then(data => {
       document.getElementById("header-container").innerHTML = data;
