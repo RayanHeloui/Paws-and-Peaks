@@ -4,13 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>First Aid Kit – Learn More</title>
-  <link rel="stylesheet" href="/css/header.css">
-  <link rel="stylesheet" href="/css/footer.css">
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
+  <!-- Shared Header -->
   <div id="header-container"></div>
 
+  <!-- Main Product Content -->
   <main class="product-learn">
     <h1>First Aid Kit</h1>
     <img src="/images/first-aid-photo.png" alt="First Aid Kit">
@@ -35,11 +42,13 @@
       <p>[List scenarios like hiking, camping, etc.]</p>
     </section>
 
-    <a href="store.html" class="btn">Buy Now</a>
+    <a href="/html/store.html" class="btn">Buy Now</a>
   </main>
 
+  <!-- Shared Footer -->
   <div id="footer-container"></div>
 
+  <!-- Inject Header/Footer -->
   <script>
     fetch("/html/header.html").then(res => res.text()).then(data => {
       document.getElementById("header-container").innerHTML = data;
