@@ -36,7 +36,8 @@ section {
   padding: var(--spacing-lg) var(--spacing-md);
 }
 
-button, .btn {
+button,
+.btn {
   background-color: var(--cta);
   color: var(--white);
   padding: var(--spacing-sm) var(--spacing-md);
@@ -47,7 +48,8 @@ button, .btn {
   transition: background 0.3s ease;
   font-family: var(--font-body);
 }
-button:hover, .btn:hover {
+button:hover,
+.btn:hover {
   background-color: var(--cta-hover);
 }
 
@@ -71,7 +73,8 @@ img {
   border-radius: var(--radius-sm);
 }
 
-input, textarea {
+input,
+textarea {
   font-family: var(--font-body);
   padding: var(--spacing-sm);
   border-radius: var(--radius-sm);
