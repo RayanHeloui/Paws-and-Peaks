@@ -1,6 +1,6 @@
 /* ====================
    Base Page Styling
-   For All Pages (linked to variables.css)
+   Shared across all pages
    ==================== */
 
 body {
@@ -28,29 +28,14 @@ a {
   color: var(--cta);
   text-decoration: none;
 }
+
 a:hover {
   color: var(--cta-hover);
 }
 
+/* Layout Elements */
 section {
   padding: var(--spacing-lg) var(--spacing-md);
-}
-
-button,
-.btn {
-  background-color: var(--cta);
-  color: var(--white);
-  padding: var(--spacing-sm) var(--spacing-md);
-  border: none;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s ease;
-  font-family: var(--font-body);
-}
-button:hover,
-.btn:hover {
-  background-color: var(--cta-hover);
 }
 
 .container {
@@ -67,12 +52,33 @@ button:hover,
   margin-bottom: var(--spacing-lg);
 }
 
+/* Buttons */
+button,
+.btn {
+  background-color: var(--cta);
+  color: var(--white);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  font-family: var(--font-body);
+}
+
+button:hover,
+.btn:hover {
+  background-color: var(--cta-hover);
+}
+
+/* Images */
 img {
   max-width: 100%;
   display: block;
   border-radius: var(--radius-sm);
 }
 
+/* Forms */
 input,
 textarea {
   font-family: var(--font-body);
@@ -84,7 +90,7 @@ textarea {
   margin-bottom: var(--spacing-md);
 }
 
-/* Utility classes */
+/* Utility Classes */
 .text-center { text-align: center; }
 .text-right { text-align: right; }
 .text-left { text-align: left; }
