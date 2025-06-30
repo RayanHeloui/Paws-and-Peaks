@@ -1,8 +1,8 @@
-/* ===== FOOTER STYLES (Refactored with variables.css) ===== */
+/* ===== FOOTER STYLES (Refined to match new brand palette) ===== */
 
 .footer {
-  background-color: var(--brand-neutral);
-  color: var(--white);
+  background-color: var(--text-heading); /* #7b523c Rich Caramel */
+  color: var(--color-base);              /* #fcefb3 Soft Sand */
   padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md);
   font-family: var(--font-body);
 }
@@ -31,6 +31,7 @@
   font-size: var(--font-size-sm);
   margin: var(--spacing-xs) 0;
   line-height: 1.5;
+  color: var(--color-cream); /* optional contrast */
 }
 
 .social-icons {
@@ -38,7 +39,7 @@
 }
 
 .social-icons a {
-  color: var(--white);
+  color: var(--color-base); /* soft sand */
   font-size: 20px;
   margin-right: var(--spacing-md);
   transition: opacity 0.3s;
@@ -62,19 +63,20 @@
 
 .footer-nav a,
 .footer-column ul a {
-  color: var(--white);
+  color: var(--color-base); /* soft sand */
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .footer-nav a:hover,
 .footer-column ul a:hover {
-  color: var(--brand-accent);
+  color: var(--cta); /* #d76c29 Sunset Ember */
 }
 
 .newsletter p {
   margin: var(--spacing-sm) 0;
   font-size: var(--font-size-sm);
+  color: var(--color-cream);
 }
 
 .newsletter form {
@@ -94,7 +96,7 @@
 
 .newsletter button {
   padding: var(--spacing-sm) var(--spacing-md);
-  background-color: var(--brand-primary);
+  background-color: var(--cta);         /* #d76c29 Sunset Ember */
   color: var(--white);
   border: none;
   border-radius: var(--radius-sm);
@@ -104,7 +106,7 @@
 }
 
 .newsletter button:hover {
-  background-color: var(--brand-primary-dark);
+  background-color: var(--text-heading); /* #7b523c Rich Caramel */
 }
 
 .footer-bottom {
@@ -115,10 +117,11 @@
   border-top: 1px solid rgba(255, 255, 255, 0.27);
   padding-top: var(--spacing-md);
   font-size: 13px;
+  color: var(--color-base);
 }
 
 .back-to-top {
-  color: var(--white);
+  color: var(--color-base);
   text-decoration: none;
   font-size: 20px;
   transition: opacity 0.3s;
