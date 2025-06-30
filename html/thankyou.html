@@ -4,24 +4,41 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Thank You!</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Core Styles -->
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
   <!-- ✅ Shared Header -->
   <div id="header-container"></div>
 
-  <section class="thankyou-section">
+  <!-- 🐾 Thank You Message -->
+  <section class="thankyou-section" style="text-align: center; padding: 60px 20px;">
     <h1>Thank you for your order! 🐾</h1>
     <p>We’ll get your trail-ready gear out to you soon!</p>
-    <a href="index.html" class="return-home">🏡 Return Home</a>
+    <a href="index.html" class="return-home" style="margin-top: 20px; display: inline-block; color: var(--brand-primary); text-decoration: underline;">🏡 Return Home</a>
   </section>
 
-  <!-- 🔁 Shared Scripts -->
-  <script src="script.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', loadHeader);
-  </script>
+  <!-- ✅ Shared Footer -->
+  <div id="footer-container"></div>
 
+  <!-- Scripts -->
+  <script>
+    fetch('/html/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header-container').innerHTML = html;
+      });
+
+    fetch('/html/footer.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('footer-container').innerHTML = html;
+      });
+  </script>
 </body>
 </html>
