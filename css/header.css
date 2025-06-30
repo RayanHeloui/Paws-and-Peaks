@@ -1,15 +1,17 @@
 @font-face {
   font-family: 'Nostalgic Remain';
-  src: url('../fonts/NostalgicRemain-Regular.ttf') format('truetype');
+  src: url('/fonts/NostalgicRemain-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Arsenica Thin';
-  src: url('../fonts/ArsenicaTrial-Thin.ttf') format('truetype');
+  src: url('/fonts/ArsenicaTrial-Thin.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
+
 
 /* 🌟 Top Bar */
 .top-bar {
