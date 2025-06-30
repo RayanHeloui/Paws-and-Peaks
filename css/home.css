@@ -282,9 +282,15 @@ body {
 }
 
 .testimonials {
-  background-color: var(--accent);
+  background-color: var(--brand-primary);         /* blue */
+  border: 5px solid var(--color-accent);          /* yellow */
+  border-radius: var(--radius-lg);                /* rounded */
+  padding: 120px 40px;                            /* match mission layout */
+  width: 100vw;
+  margin-left: calc(-1 * (100vw - 100%) / 2);
   color: var(--neutral-dark);
 }
+
 
 .testimonial-slider {
   max-width: 1200px;
