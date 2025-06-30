@@ -4,27 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FAQ – Paws and Peaks</title>
-  <link rel="stylesheet" href="../css/header.css">
-  <link rel="stylesheet" href="../css/footer.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
-  <!-- 🔼 Load Header -->
+  <!-- Shared Header -->
   <div id="header-container"></div>
-  <script>
-    fetch('../html/header.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('header-container').innerHTML = data;
-      });
-  </script>
 
+  <!-- FAQ Content -->
   <main class="faq-content" style="padding: 40px; max-width: 800px; margin: auto;">
     <h1>Frequently Asked Questions</h1>
 
     <section>
       <h2>What is included in each kit?</h2>
-      <p>Each kit contains essential items for pet safety and outdoor adventure. Specific contents vary by product. Visit our <a href="store.html">store page</a> for full details.</p>
+      <p>Each kit contains essential items for pet safety and outdoor adventure. Specific contents vary by product. Visit our <a href="/html/store.html">store page</a> for full details.</p>
     </section>
 
     <section>
@@ -43,14 +42,17 @@
     </section>
   </main>
 
-  <!-- 🔽 Load Footer -->
+  <!-- Shared Footer -->
   <div id="footer-container"></div>
+
+  <!-- Header/Footer Loader -->
   <script>
-    fetch('../html/footer.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('footer-container').innerHTML = data;
-      });
+    fetch('/html/header.html').then(res => res.text()).then(data => {
+      document.getElementById('header-container').innerHTML = data;
+    });
+    fetch('/html/footer.html').then(res => res.text()).then(data => {
+      document.getElementById('footer-container').innerHTML = data;
+    });
   </script>
 
 </body>
