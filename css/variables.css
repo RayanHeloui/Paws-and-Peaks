@@ -7,6 +7,10 @@
 }
 
 :root {
+  /* 🖋 Font Variables */
+  --font-heading: 'Nostalgic Remain', serif;
+  --font-body: 'Arsenica Trial', sans-serif;
+
   /* 🎨 Refined Brand Colors */
   --color-base: #f6f1e7;
   --color-sand: #fcefb3;
