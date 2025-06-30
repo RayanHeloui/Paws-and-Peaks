@@ -4,24 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Checkout - Paws and Peaks</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
-  <!-- ✅ Shared Header Container -->
+  <!-- Shared Header -->
   <div id="header-container"></div>
 
+  <!-- Checkout Content -->
   <section class="checkout-section">
     <h1>Checkout</h1>
 
-    <!-- 🛒 Cart Summary -->
     <div id="checkout-cart-summary">
       <h2>Your Cart</h2>
       <ul id="checkout-cart-items"></ul>
       <p><strong>Total:</strong> $<span id="checkout-total">0.00</span></p>
     </div>
 
-    <!-- 🔐 Account Options -->
     <div id="account-options">
       <h2>Account Options</h2>
       <button id="guest-checkout-btn">Checkout as Guest</button>
@@ -35,7 +40,6 @@
       </div>
     </div>
 
-    <!-- 📝 Checkout Form -->
     <form id="checkout-form" style="display: none;">
       <label for="name">Full Name</label>
       <input type="text" id="name" required>
@@ -68,39 +72,44 @@
     </form>
   </section>
 
-  <!-- 🔁 Shared Scripts -->
-  <script src="script.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      loadHeader();
-      renderCart();
-      renderCheckoutCart();
+  <!-- Shared Footer -->
+  <div id="footer-container"></div>
 
-      // Toggle login form
-      document.getElementById('login-btn').addEventListener('click', () => {
+  <!-- JS -->
+  <script src="/js/script.js"></script>
+  <script>
+    fetch('/html/header.html').then(res => res.text()).then(data => {
+      document.getElementById('header-container').innerHTML = data;
+    });
+
+    fetch('/html/footer.html').then(res => res.text()).then(data => {
+      document.getElementById('footer-container').innerHTML = data;
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadHeader?.();
+      renderCart?.();
+      renderCheckoutCart?.();
+
+      document.getElementById('login-btn')?.addEventListener('click', () => {
         document.getElementById('login-form').style.display = 'block';
       });
 
-      // Handle guest checkout
-      document.getElementById('guest-checkout-btn').addEventListener('click', () => {
+      document.getElementById('guest-checkout-btn')?.addEventListener('click', () => {
         document.getElementById('account-options').style.display = 'none';
         document.getElementById('checkout-form').style.display = 'block';
       });
 
-      // Handle login submission
-      document.getElementById('login-submit').addEventListener('click', () => {
-        // Implement login logic here
-        // On successful login:
+      document.getElementById('login-submit')?.addEventListener('click', () => {
         document.getElementById('account-options').style.display = 'none';
         document.getElementById('checkout-form').style.display = 'block';
       });
 
-      // Handle checkout form submission
-      document.getElementById('checkout-form').addEventListener('submit', (e) => {
+      document.getElementById('checkout-form')?.addEventListener('submit', (e) => {
         e.preventDefault();
         alert('🎉 Order confirmed! Thank you for shopping with Paws and Peaks!');
-        localStorage.removeItem(getCartKey());
-        window.location.href = 'index.html';
+        localStorage.removeItem(getCartKey?.());
+        window.location.href = 'home.html';
       });
     });
   </script>
