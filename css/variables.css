@@ -1,24 +1,13 @@
 :root {
-  /* 🎨 Core Brand Palette */
-  --color-base: #fcefb3;
-  --color-mint: #badccb;
-  --color-blush: #f7cbd1;
-  --color-caramel: #7b523c;
-  --color-amber: #d76c29;
-  --color-charcoal: #4a4a4a;
-  --color-cream: #faf9f6;
-  --color-shadow: #697F1A;
-
-  /* 💧 Legacy Brand Colors (optional keep) */
-  --brand-primary: #b4dce3;
-  --brand-primary-dark: #7bb1c8;
-  --brand-highlight: #f7cbd1;
-  --brand-neutral: #382f2d;
-
-  /* 🌿 Extra Naturals */
-  --forest-green: #2e4e36;
-  --warm-beige: #f3ede3;
-  --earth-brown: #6b4e3d;
+  /* 🎨 Core Brand Colors */
+  --color-bg-base: #f6f1e7;       /* Warm Linen – background */
+  --color-sand: #fcefb3;          /* Soft Sand – light base/tint */
+  --color-mint: #b3cfc4;          /* Muted Mint – secondary accent */
+  --color-blush: #e9c2c9;         /* Blush Dust – testimonial/story base */
+  --color-caramel: #7b523c;       /* Rich Caramel – strong text, hover */
+  --color-ember: #d76c29;         /* Sunset Ember – CTA buttons */
+  --color-text-body: #3f3f3f;     /* Mocha Smoke – main paragraph text */
+  --color-text-muted: #7c7268;    /* Taupe Grey – captions, subtle info */
 
   /* 🖤 Utility */
   --white: #ffffff;
@@ -46,16 +35,18 @@
   --radius-lg: 16px;
 
   /* ⛅ Shadows */
-  --shadow-light: 0 1px 3px rgba(0,0,0,0.1);
-  --shadow-medium: 0 4px 6px rgba(0,0,0,0.15);
-  --shadow-soft: 0 2px 8px rgba(105, 127, 26, 0.1);
+  --shadow-light: 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-medium: 0 4px 8px rgba(0,0,0,0.1);
+  --shadow-soft: 0 2px 8px rgba(123, 82, 60, 0.1); /* caramel tone */
 
-  /* ✨ Shorthand Aliases */
-  --main-bg: var(--color-base);
-  --accent: var(--color-mint);
-  --cta: var(--color-amber);
+  /* ✅ Shorthand Aliases */
+  --main-bg: var(--color-bg-base);
+  --accent-bg: var(--color-sand);
+  --section-bg: var(--color-mint);
+  --testimonial-bg: var(--color-blush);
+  --cta-bg: var(--color-ember);
   --cta-hover: var(--color-caramel);
   --text-heading: var(--color-caramel);
-  --text-body: var(--color-charcoal);
-  --section-bg: var(--color-cream);
+  --text-body: var(--color-text-body);
+  --text-muted: var(--color-text-muted);
 }
