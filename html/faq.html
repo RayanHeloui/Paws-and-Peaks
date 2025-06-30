@@ -5,15 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FAQ – Paws and Peaks</title>
 
-  <!-- 🧾 Shared Stylesheet Imports -->
-  <link rel="stylesheet" href="/css/variables.css" />
-  <link rel="stylesheet" href="/css/global.css" />
-  <link rel="stylesheet" href="/css/helpers.css" />
-  <link rel="stylesheet" href="/css/header.css" />
-  <link rel="stylesheet" href="/css/footer.css" />
-  <link rel="stylesheet" href="/css/faq.css" />
-
-  <!-- 🌟 Font Awesome -->
+  <!-- ✅ Corrected Paths for Stylesheets -->
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/helpers.css" />
+  <link rel="stylesheet" href="../css/header.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/faq.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
@@ -21,7 +19,7 @@
   <!-- ✅ Shared Header -->
   <div id="header-container"></div>
 
-  <!-- ❓ FAQ Section -->
+  <!-- 📚 FAQ Page Content -->
   <main class="faq-page">
     <div class="faq-container">
       <h1>Frequently Asked Questions</h1>
@@ -51,14 +49,15 @@
   <!-- ✅ Shared Footer -->
   <div id="footer-container"></div>
 
-  <!-- 🔁 Load Header/Footer -->
+  <!-- ✅ Load Header & Footer from html folder -->
   <script>
-    fetch('/html/header.html').then(res => res.text()).then(data => {
-      document.getElementById('header-container').innerHTML = data;
-    });
-    fetch('/html/footer.html').then(res => res.text()).then(data => {
-      document.getElementById('footer-container').innerHTML = data;
-    });
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => { document.getElementById('header-container').innerHTML = data });
+
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => { document.getElementById('footer-container').innerHTML = data });
   </script>
 
 </body>
