@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FAQ – Paws and Peaks</title>
 
-  <!-- ✅ Corrected Paths for Stylesheets -->
-  <link rel="stylesheet" href="../css/variables.css" />
-  <link rel="stylesheet" href="../css/global.css" />
-  <link rel="stylesheet" href="../css/helpers.css" />
-  <link rel="stylesheet" href="../css/header.css" />
-  <link rel="stylesheet" href="../css/footer.css" />
-  <link rel="stylesheet" href="../css/faq.css" />
+  <!-- ✅ Corrected root-relative paths -->
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/helpers.css" />
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/faq.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
@@ -49,15 +49,19 @@
   <!-- ✅ Shared Footer -->
   <div id="footer-container"></div>
 
-  <!-- ✅ Load Header & Footer from html folder -->
+  <!-- ✅ Load header & footer using root-relative paths -->
   <script>
-    fetch('header.html')
+    fetch('/html/header.html')
       .then(res => res.text())
-      .then(data => { document.getElementById('header-container').innerHTML = data });
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+      });
 
-    fetch('footer.html')
+    fetch('/html/footer.html')
       .then(res => res.text())
-      .then(data => { document.getElementById('footer-container').innerHTML = data });
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
   </script>
 
 </body>
