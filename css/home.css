@@ -17,7 +17,7 @@ body {
 
 @font-face {
   font-family: 'NostalgicRemain';
-  src: url('../NostalgicRemain-Regular.ttf') format('truetype');
+  src: url('../fonts/NostalgicRemain-Regular.ttf') format('truetype');
 }
 
 /* ========== Hero Section ========== */
