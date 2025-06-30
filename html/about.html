@@ -6,20 +6,16 @@
   <title>About Us - Paws and Peaks</title>
 
   <!-- Core Styles -->
+  <link rel="stylesheet" href="/css/variables.css" />
   <link rel="stylesheet" href="/css/header.css" />
-  <link rel="stylesheet" href="/css/variables.css">
-
-  <!-- Footer Styles -->
-<link rel="stylesheet" href="/css/footer.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
-  <!-- Shared Header -->
+  <!-- Shared Layout -->
   <div id="header-container"></div>
 
-  <!-- About Content -->
   <section id="about" class="hero about-hero">
     <h1>About Paws and Peaks 🐾⛰️</h1>
     <p>We’re a passionate team dedicated to connecting pets and nature.</p>
@@ -40,18 +36,12 @@
     </div>
   </section>
 
-  <!-- Shared Footer -->
   <div id="footer-container"></div>
 
-  <!-- JS Includes -->
-  <script>
-    fetch('header.html')
-      .then(res => res.text())
-      .then(html => { document.getElementById('header-container').innerHTML = html });
-
-    fetch('footer.html')
-      .then(res => res.text())
-      .then(html => { document.getElementById('footer-container').innerHTML = html });
+  <!-- Load Shared Header/Footer + JS Behaviors -->
+  <script type="module">
+    import { loadSharedLayout } from "/js/layout.js";
+    loadSharedLayout();
   </script>
 </body>
 </html>
