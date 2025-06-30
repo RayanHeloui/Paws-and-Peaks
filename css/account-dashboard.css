@@ -1,0 +1,102 @@
+.dashboard {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: var(--color-sand);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-medium);
+  text-align: center;
+}
+
+.dashboard h1 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--text-heading);
+  margin-bottom: var(--spacing-lg);
+}
+
+#welcome-msg {
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--text-body);
+}
+
+.dashboard h2 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--text-heading);
+  margin: var(--spacing-lg) 0 var(--spacing-md);
+}
+
+#order-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: var(--spacing-lg);
+}
+
+#order-list li {
+  background-color: var(--white);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-sm);
+  box-shadow: var(--shadow-light);
+  color: var(--text-body);
+}
+
+#logoutBtn {
+  background-color: var(--cta);
+  color: var(--white);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-family: var(--font-body);
+}
+#logoutBtn:hover {
+  background-color: var(--cta-hover);
+}
+
+/* 🧠 Chatbot Styling */
+#chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 280px;
+  background: var(--white);
+  border: 1px solid var(--text-muted);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-medium);
+  font-family: var(--font-body);
+  z-index: 9999;
+}
+
+#chatbot-header {
+  background-color: var(--cta);
+  color: var(--white);
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  border-top-left-radius: var(--radius-md);
+  border-top-right-radius: var(--radius-md);
+}
+
+#chatbot-body {
+  padding: 10px;
+}
+
+#chatbot-messages {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+#chatbot-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--text-muted);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+}
