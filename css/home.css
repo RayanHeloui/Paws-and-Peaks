@@ -1,10 +1,10 @@
 :root {
-  --main-bg: var(--brand-accent);
-  --secondary: var(--brand-secondary);
-  --accent: var(--brand-accent);
-  --neutral-dark: var(--brand-neutral);
-  --text: var(--text-dark);
-  --heading: var(--text-dark);
+  --main-bg: var(--color-bg-main);
+  --secondary: var(--brand-primary); /* fallback if needed */
+  --accent: var(--color-surface);
+  --neutral-dark: var(--color-text-primary);
+  --text: var(--color-text-primary);
+  --heading: var(--color-text-primary);
   --light: var(--white);
 }
 
