@@ -1,26 +1,21 @@
 :root {
-  /* 🎨 Core Brand Colors */
-  --color-bg-base: #f6f1e7;       /* Warm Linen – background */
-  --color-sand: #fcefb3;          /* Soft Sand – light base/tint */
-  --color-mint: #b3cfc4;          /* Muted Mint – secondary accent */
-  --color-blush: #e9c2c9;         /* Blush Dust – testimonial/story base */
-  --color-caramel: #7b523c;       /* Rich Caramel – strong text, hover */
-  --color-ember: #d76c29;         /* Sunset Ember – CTA buttons */
-  --color-text-body: #3f3f3f;     /* Mocha Smoke – main paragraph text */
-  --color-text-muted: #7c7268;    /* Taupe Grey – captions, subtle info */
-
-  /* 🖤 Utility */
-  --white: #ffffff;
-  --black: #000000;
+  /* 🎨 Refined Brand Colors */
+  --color-base: #f6f1e7;         /* Warm Linen – global background */
+  --color-sand: #fcefb3;         /* Soft Sand – subtle yellow tint */
+  --color-mint: #b3cfc4;         /* Muted Mint – cool secondary */
+  --color-blush: #e9c2c9;        /* Blush Dust – gentle pink highlight */
+  --color-caramel: #7b523c;      /* Rich Caramel – headers, titles */
+  --color-ember: #d76c29;        /* Sunset Ember – CTAs */
+  --color-text: #3f3f3f;         /* Mocha Smoke – paragraph text */
+  --color-text-secondary: #7c7268; /* Taupe Grey – supporting text */
 
   /* ✨ Typography */
   --font-body: 'Nunito', 'Lato', 'Open Sans', sans-serif;
   --font-heading: 'Nostalgic Remain', serif;
-  --font-size-base: 16px;
-  --font-size-sm: 14px;
-  --font-size-lg: 20px;
-  --font-weight-regular: 400;
-  --font-weight-bold: 700;
+
+  /* 🖤 Utility */
+  --white: #ffffff;
+  --black: #000000;
 
   /* 📏 Spacing */
   --spacing-xs: 4px;
@@ -35,18 +30,16 @@
   --radius-lg: 16px;
 
   /* ⛅ Shadows */
-  --shadow-light: 0 1px 3px rgba(0,0,0,0.05);
-  --shadow-medium: 0 4px 8px rgba(0,0,0,0.1);
-  --shadow-soft: 0 2px 8px rgba(123, 82, 60, 0.1); /* caramel tone */
+  --shadow-light: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-medium: 0 4px 6px rgba(0,0,0,0.1);
 
-  /* ✅ Shorthand Aliases */
-  --main-bg: var(--color-bg-base);
-  --accent-bg: var(--color-sand);
-  --section-bg: var(--color-mint);
-  --testimonial-bg: var(--color-blush);
-  --cta-bg: var(--color-ember);
+  /* 🔖 Aliases */
+  --main-bg: var(--color-base);
+  --accent: var(--color-mint);
+  --highlight: var(--color-blush);
+  --cta: var(--color-ember);
   --cta-hover: var(--color-caramel);
   --text-heading: var(--color-caramel);
-  --text-body: var(--color-text-body);
-  --text-muted: var(--color-text-muted);
+  --text-body: var(--color-text);
+  --text-muted: var(--color-text-secondary);
 }
