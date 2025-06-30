@@ -8,6 +8,7 @@
   --color-ember: #d76c29;        /* Sunset Ember – CTAs */
   --color-text: #3f3f3f;         /* Mocha Smoke – paragraph text */
   --color-text-secondary: #7c7268; /* Taupe Grey – supporting text */
+  --color-cream-dark: #e8e0d3; /* Slightly darker version of Warm Linen */
 
   /* ✨ Typography */
   --font-body: 'Nunito', 'Lato', 'Open Sans', sans-serif;
