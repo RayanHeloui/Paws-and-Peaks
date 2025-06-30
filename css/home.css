@@ -139,15 +139,15 @@ body {
 
 .first-aid-kit {
   background-color: var(--brand-primary);      /* blue */
-  border-color: var(--color-accent);           /* yellow border */
+  border-color: var(--color-surface); /* orange */
 }
 .camping-kit { 
     background-color: var(--brand-primary);      /* blue */
-  border-color: var(--color-accent);
+  border-color: var(--color-surface); /* orange */
   }
 .pro-kit { 
    background-color: var(--brand-primary);      /* blue */
-  border-color: var(--color-accent);
+  border-color: var(--color-surface); /* orange */
 }
 
 .product-header {
@@ -258,7 +258,7 @@ body {
 
 .mission {
   background-color: var(--brand-primary);      /* blue */
-  border: 5px solid var(--color-accent);
+  border: 5px solid var(--color-surface); /* orange */
   border-radius: var(--radius-lg);
   padding: 120px 40px;
   margin: 2px 0;
@@ -284,7 +284,7 @@ body {
 
 .testimonials {
   background-color: var(--brand-primary);         /* blue */
-  border: 5px solid var(--color-accent);          /* yellow */
+  border: 5px solid var(--color-surface); /* orange */
   border-radius: var(--radius-lg);                /* rounded */
   padding: 120px 40px;                            /* match mission layout */
   width: 100vw;
