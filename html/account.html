@@ -3,17 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Account</title>
-  <link rel="stylesheet" href="/css/account.css" />
-  <link rel="stylesheet" href="/css/header.css" />
-  <link rel="stylesheet" href="/css/footer.css" />
-  <link rel="stylesheet" href="/css/variables.css" />
+  <title>Account - Paws and Peaks</title>
+
+  <!-- 🌈 Unified Styles -->
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/helpers.css" />
+  <link rel="stylesheet" href="../css/header.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/account.css" />
+  <link rel="stylesheet" href="../css/subscribe-popup.css" />
+
+  <!-- 🌟 Font Awesome (if needed later) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
+
 <body>
   <!-- ✅ Shared Header -->
   <div id="header-container"></div>
 
-  <!-- 🧾 Account Container -->
+  <!-- 🧾 Account Section -->
   <main class="account-container">
     <h1 id="form-title">Login</h1>
 
@@ -24,13 +33,14 @@
       <button type="submit">Login</button>
     </form>
 
-    <!-- 🆕 Registration Form (hidden initially) -->
-    <form id="registerForm" style="display:none">
+    <!-- 🆕 Registration Form -->
+    <form id="registerForm" style="display: none;">
       <input type="email" id="registerEmail" placeholder="Email" required />
       <input type="password" id="registerPassword" placeholder="Password" required />
       <button type="submit">Register</button>
     </form>
 
+    <!-- 🔁 Form Toggle -->
     <p>
       <span id="toggle-text">Don't have an account?</span>
       <a href="#" onclick="toggleForm()">Click here</a>
@@ -42,22 +52,18 @@
   <!-- ✅ Shared Footer -->
   <div id="footer-container"></div>
 
-  <!-- JS: Header/Footer injection -->
+  <!-- 🔁 Load Shared Header/Footer -->
   <script>
-    fetch('/html/header.html')
+    fetch('../html/header.html')
       .then(res => res.text())
-      .then(data => {
-        document.getElementById('header-container').innerHTML = data;
-      });
+      .then(data => { document.getElementById('header-container').innerHTML = data });
 
-    fetch('/html/footer.html')
+    fetch('../html/footer.html')
       .then(res => res.text())
-      .then(data => {
-        document.getElementById('footer-container').innerHTML = data;
-      });
+      .then(data => { document.getElementById('footer-container').innerHTML = data });
   </script>
 
-  <!-- 🔐 Auth Scripts -->
+  <!-- 🔐 Auth JS Modules -->
   <script type="module" src="/js/auth.js"></script>
   <script type="module" src="/js/account.js"></script>
 </body>
