@@ -6,52 +6,28 @@
   <title>Hero Animation</title>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/home.css" />
-  <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="/css/variables.css">
-  <link rel="stylesheet" href="css/subscribe-popup.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/home.css" />
+  <link rel="stylesheet" href="/css/subscribe-popup.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
 
-  <!-- 🔔 Subscribe Popup Container -->
+  <!-- Subscribe Popup -->
   <div id="subscribe-container"></div>
-  <script>
-    fetch('html/subscribe-popup.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('subscribe-container').innerHTML = html;
 
-        const script = document.createElement('script');
-        script.src = 'js/subscribe-popup.js';
-        script.onload = () => {
-          if (typeof initSubscribePopup === 'function') {
-            initSubscribePopup();
-          }
-        };
-        document.body.appendChild(script);
-      });
-  </script>
-
-  <!-- 🔥 HEADER CONTAINER -->
+  <!-- Header -->
   <div id="header-container"></div>
-  <script>
-    fetch('html/header.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('header-container').innerHTML = data;
-      });
-  </script>
 
-  <!-- 🌄 HERO SECTION -->
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-images">
-<img src="images/first-aid-kit.png" class="hero-img img-left" alt="First Aid Kit">
-<img src="images/camping-kit.png" class="hero-img img-center" alt="Camping Kit">
-<img src="images/pro-adventurer.png" class="hero-img img-right" alt="Pro Adventurer Kit">
-
+      <img src="images/first-aid-kit.png" class="hero-img img-left" alt="First Aid Kit">
+      <img src="images/camping-kit.png" class="hero-img img-center" alt="Camping Kit">
+      <img src="images/pro-adventurer.png" class="hero-img img-right" alt="Pro Adventurer Kit">
       <div class="hero-slogan">
         <h2>
           <span class="slogan-word" id="word1">Preparedness</span>
@@ -63,8 +39,7 @@
     </div>
   </section>
 
-  <!-- 🛍️ PRODUCT SECTIONS -->
-
+  <!-- Product Sections -->
   <section class="product-section">
     <div class="product-block first-aid-kit">
       <div class="product-header">
@@ -128,7 +103,7 @@
     </div>
   </section>
 
-  <!-- 💡 MISSION STATEMENT -->
+  <!-- Mission Statement -->
   <section class="mission">
     <h2>Our Mission</h2>
     <p>
@@ -137,7 +112,7 @@
     </p>
   </section>
 
-  <!-- 💬 TESTIMONIALS CAROUSEL -->
+  <!-- Testimonials -->
   <section class="testimonials">
     <h2>What Our Customers Say</h2>
     <div class="testimonial-slider">
@@ -152,39 +127,33 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <div id="footer-container"></div>
-  <script>
-    fetch("html/footer.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("footer-container").innerHTML = data;
-      });
-  </script>
 
   <!-- Scripts -->
-  <script src="js/home.js"></script>
-  <script src="js/header.js" defer></script>
+  <script type="module">
+    import { loadSharedLayout } from "/js/layout.js";
+    loadSharedLayout();
+  </script>
+
+  <script src="/js/home.js"></script>
 
   <!-- Firebase SDK -->
-<script type="module">
-  // Import the functions you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-  import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-  const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT_ID.appspot.com",
-    messagingSenderId: "XXXXXXXXXXXX",
-    appId: "YOUR_APP_ID"
-  };
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "XXXXXXXXXXXX",
+      appId: "YOUR_APP_ID"
+    };
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-</script>
-
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+  </script>
 </body>
 </html>
