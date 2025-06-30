@@ -1,15 +1,18 @@
 :root {
-  /* 🎨 Core Brand Colors */
-  --color-bg-main: #badccb;           /* Mint green: main background */
-  --color-surface: #d76c29;           /* Orange: for feature boxes, banners */
-  --color-text-primary: #7b523c;      /* Brown: primary text */
-  --color-text-secondary: #382f2d;    /* Darker brown/charcoal text */
-  --color-accent: #fcefb3;            /* Yellow: highlight text, icons */
+  /* 🎨 Core Brand Palette */
+  --color-base: #fcefb3;
+  --color-mint: #badccb;
+  --color-blush: #f7cbd1;
+  --color-caramel: #7b523c;
+  --color-amber: #d76c29;
+  --color-charcoal: #4a4a4a;
+  --color-cream: #faf9f6;
+  --color-shadow: #697F1A;
 
   /* 💧 Legacy Brand Colors (optional keep) */
-  --brand-primary: #b4dce3;           /* Light blue */
+  --brand-primary: #b4dce3;
   --brand-primary-dark: #7bb1c8;
-  --brand-highlight: #f7cbd1;         /* Soft pink */
+  --brand-highlight: #f7cbd1;
   --brand-neutral: #382f2d;
 
   /* 🌿 Extra Naturals */
@@ -22,7 +25,8 @@
   --black: #000000;
 
   /* ✨ Typography */
-  --font-body: 'Inter', sans-serif;
+  --font-body: 'Nunito', 'Lato', 'Open Sans', sans-serif;
+  --font-heading: 'Nostalgic Remain', serif;
   --font-size-base: 16px;
   --font-size-sm: 14px;
   --font-size-lg: 20px;
@@ -44,12 +48,14 @@
   /* ⛅ Shadows */
   --shadow-light: 0 1px 3px rgba(0,0,0,0.1);
   --shadow-medium: 0 4px 6px rgba(0,0,0,0.15);
-  /* 🧭 Shorthand Aliases for Global Use */
---main-bg: var(--color-bg-main);
---accent: var(--color-surface);
---neutral-dark: var(--color-text-primary);
---text: var(--color-text-primary);
---heading: var(--color-text-primary);
---light: var(--white);
+  --shadow-soft: 0 2px 8px rgba(105, 127, 26, 0.1);
 
+  /* ✨ Shorthand Aliases */
+  --main-bg: var(--color-base);
+  --accent: var(--color-mint);
+  --cta: var(--color-amber);
+  --cta-hover: var(--color-caramel);
+  --text-heading: var(--color-caramel);
+  --text-body: var(--color-charcoal);
+  --section-bg: var(--color-cream);
 }
