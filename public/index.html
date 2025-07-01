@@ -12,8 +12,14 @@
   <!-- ✅ PAGE-SPECIFIC CSS -->
   <link rel="stylesheet" href="/css/landing.css" />
 
-  <!-- ✅ ICONS (Optional) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- ✅ ICONS (CDN - FontAwesome) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-N+I4Ibmpm3A2kYCRfU5MB9W1i1QaM44ClO+eHbl2mEYTV9tRP9qXDHgHRhdDg6UzCTnOcjB6q+SBdgtpFkUj1w=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
 
 <body class="landing-body">
@@ -36,7 +42,13 @@
         <div class="subscribe-wrapper">
           <div class="subscribe-inner">
             <form id="subscribe-form" class="subscribe">
-              <input type="email" id="email-input" placeholder="Enter your email" required />
+              <input
+                type="email"
+                id="email-input"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
               <button type="submit">Subscribe</button>
             </form>
           </div>
