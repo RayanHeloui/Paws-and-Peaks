@@ -3,27 +3,12 @@ body, html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #e8c563;  /* ✅ darker yellow */
-  color: #7b523c;             /* ✅ brown (same as button) */
+  background-color: #e8c563;
+  color: #7b523c;
   height: 100vh;
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-
-@font-face {
-  font-family: 'NostalgicRemain';
-  src: url('../fonts/NostalgicRemain-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'NostalgicRemainItalic';
-  src: url('../fonts/NostalgicRemainItalic-Italic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
 }
 
 /* LEFT: Logo centered in left half */
@@ -46,28 +31,16 @@ body, html {
   height: 100%;
 }
 
-/*.rotating-bone {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 60vw;
-  max-width: 600px;
-  transform: translate(-50%, -50%);
-  object-fit: contain;
-  opacity: 0.2;
-  animation: rotateBone 64s linear infinite;
-  z-index: 1;
-}*/
-
 .logo {
-  width: 95vw;           /* Bigger = wider */
-  max-width: 1000px;      /* Allow larger sizes on big screens */
+  width: 95vw;
+  max-width: 1000px;
   height: auto;
   object-fit: contain;
-    position: relative;
-  left: -2vw; /* Shift left */
-  top: -2vh;  /* Shift upward */
+  position: relative;
+  left: -2vw;
+  top: -2vh;
 }
+
 @media (max-width: 1024px) {
   .logo {
     width: 85vw;
@@ -94,6 +67,7 @@ body, html {
     top: -1vh;
   }
 }
+
 .landing-container {
   display: flex;
   width: 100vw;
