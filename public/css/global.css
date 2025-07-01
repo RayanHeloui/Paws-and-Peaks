@@ -2,11 +2,13 @@
    Base Page Styling
    Shared across all pages
    ==================== */
-@font-face {
-  font-family: 'NostalgicRemain';
-  src: url('/fonts/NostalgicRemain-Regular.ttf') format('truetype');
-}
 
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 body {
   font-family: var(--font-body);
