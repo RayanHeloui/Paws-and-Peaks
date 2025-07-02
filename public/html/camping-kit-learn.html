@@ -5,14 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Camping Kit – Learn More</title>
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/header.css">
-  <link rel="stylesheet" href="/css/footer.css">
-  <link rel="stylesheet" href="/css/variables.css">
+  <!-- 🧾 Styles -->
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/helpers.css" />
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/product-learn.css" />
+  <link rel="stylesheet" href="/css/subscribe-popup.css" />
+
+  <!-- 🌟 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
+
+  <!-- Subscribe Popup -->
+  <div id="subscribe-container"></div>
 
   <!-- 🔁 Shared Header -->
   <div id="header-container"></div>
@@ -20,7 +28,7 @@
   <!-- 🏕️ Product Learn Section -->
   <main class="product-learn">
     <h1>Camping Kit</h1>
-    <img src="/images/camping-kit-photo.png" alt="Camping Kit">
+    <img src="/images/camping-kit-photo.png" alt="Camping Kit" />
 
     <section>
       <h2>What’s Inside</h2>
@@ -48,19 +56,10 @@
   <!-- 🔁 Shared Footer -->
   <div id="footer-container"></div>
 
-  <!-- Inject Header & Footer -->
-  <script>
-    fetch("/html/header.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("header-container").innerHTML = data;
-      });
-
-    fetch("/html/footer.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("footer-container").innerHTML = data;
-      });
+  <!-- Layout Loader -->
+  <script type="module">
+    import { loadSharedLayout } from "/js/layout.js";
+    loadSharedLayout();
   </script>
 
 </body>
