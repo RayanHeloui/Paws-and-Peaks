@@ -5,19 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Warranty / Guarantee – Paws and Peaks</title>
 
-  <!-- Shared Styles -->
+  <!-- 🧾 Styles -->
   <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/helpers.css" />
   <link rel="stylesheet" href="/css/header.css" />
   <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/policies.css" />
+  <link rel="stylesheet" href="/css/subscribe-popup.css" />
+
+  <!-- 🌟 Icons (Font Awesome) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
+
+  <!-- Subscribe Popup -->
+  <div id="subscribe-container"></div>
 
   <!-- ✅ Shared Header -->
   <div id="header-container"></div>
 
   <!-- 📜 Warranty Content -->
-  <main style="max-width: 800px; margin: auto; padding: 40px;">
+  <main class="policy-content">
     <h1>Warranty / Guarantee</h1>
     <p>This is placeholder content for your Warranty and Guarantee information.</p>
   </main>
@@ -25,19 +34,10 @@
   <!-- ✅ Shared Footer -->
   <div id="footer-container"></div>
 
-  <!-- Inject Header/Footer -->
-  <script>
-    fetch('/html/header.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('header-container').innerHTML = data;
-      });
-
-    fetch('/html/footer.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('footer-container').innerHTML = data;
-      });
+  <!-- Load Shared Layout -->
+  <script type="module">
+    import { loadSharedLayout } from "/js/layout.js";
+    loadSharedLayout();
   </script>
 
 </body>
