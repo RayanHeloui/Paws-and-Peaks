@@ -63,22 +63,22 @@ body {
 
 .hero-section {
   position: relative;
-  height: 300px; /* Total height of the hero section */
+  height: 1200px; /* Ensures enough space for sticky behavior */
 }
 
 .hero-frame {
   position: sticky;
   top: 0;
-  height: 600px; /* Height of the hero frame */
+  height: 600px;
   background-color: #f8ebd2;
   border: 2px solid #7b523c;
   border-radius: 12px;
-  margin: 0 auto;
   width: 90%;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .hero {
