@@ -1,33 +1,19 @@
-/* ====================
-   Fonts
-   ==================== */
-@font-face {
-  font-family: 'Nostalgic Remain';
-  src: url('/fonts/NostalgicRemain-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* ====================
-   CSS Variables
-   ==================== */
 :root {
   /* 🖋 Font Families */
   --font-heading: 'Nostalgic Remain', serif;
   --font-body: 'Arsenica Trial', sans-serif;
 
   /* 🎨 Brand Colors */
-  --color-base: #f0eadc;
-  --color-sand: #efe9e4;
-  --color-mint: #fad2ad;
-  --color-blush: #cfd8c8;
-  --color-caramel: #7b523c;
-  --color-ember: #7e93ab;
+  --color-base: #f0eadc;        /* Main background */
+  --color-sand: #efe9e4;        /* Secondary background */
+  --color-mint: #fad2ad;        /* Product container background */
+  --color-blush: #cfd8c8;       /* CTA hover */
+  --color-caramel: #7b523c;     /* Primary text and borders */
+  --color-ember: #7e93ab;       /* CTA (Buy Now) */
 
   /* 🖤 Neutral Colors */
-  --color-text: #7b523c;
-  --color-text-secondary: #7b523c;
+  --color-text: var(--color-caramel);
+  --color-text-secondary: var(--color-caramel);
   --color-cream-dark: #e8e0d3;
   --white: #ffffff;
   --black: #000000;
@@ -58,4 +44,3 @@
   --text-body: var(--color-text);
   --text-muted: var(--color-text-secondary);
 }
-
