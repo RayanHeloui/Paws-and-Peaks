@@ -18,16 +18,16 @@
   --font-body: 'Arsenica Trial', sans-serif;
 
   /* 🎨 Brand Colors */
-  --color-base: #f6f1e7;
-  --color-sand: #fcefb3;
-  --color-mint: #b3cfc4;
-  --color-blush: #e9c2c9;
+  --color-base: #f0eadc;
+  --color-sand: #efe9e4;
+  --color-mint: #fad2ad;
+  --color-blush: #cfd8c8;
   --color-caramel: #7b523c;
-  --color-ember: #d76c29;
+  --color-ember: #7e93ab;
 
   /* 🖤 Neutral Colors */
-  --color-text: #3f3f3f;
-  --color-text-secondary: #7c7268;
+  --color-text: #7b523c;
+  --color-text-secondary: #7b523c;
   --color-cream-dark: #e8e0d3;
   --white: #ffffff;
   --black: #000000;
@@ -57,3 +57,5 @@
   --text-heading: var(--color-caramel);
   --text-body: var(--color-text);
   --text-muted: var(--color-text-secondary);
+}
+
