@@ -42,7 +42,8 @@
 }
 
 .team-member {
-  background: var(--white);
+  background: var(--accent); /* Updated */
+  border: 1px solid var(--highlight); /* Added border for definition */
   border-radius: var(--radius-lg);
   padding: var(--spacing-md);
   box-shadow: var(--shadow-light);
