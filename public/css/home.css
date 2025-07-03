@@ -48,9 +48,9 @@ body {
   background-color: #f8ebd2;
   border: 4px solid #7b523c;
   border-radius: 16px;
-  padding: 40px;
+  padding: 30px 20px; /* Top/Bottom: 30px, Left/Right: 20px */
   margin: 60px auto;
-  width: calc(100% - 60px); /* Equal 30px left/right */
+  width: calc(100% - 40px); /* Now matches the new left/right padding */
   max-width: 1300px;
   box-sizing: border-box;
 }
