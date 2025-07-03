@@ -10,6 +10,8 @@
   --color-blush: #cfd8c8;       /* CTA hover */
   --color-caramel: #7b523c;     /* Primary text and borders */
   --color-ember: #7e93ab;       /* CTA (Buy Now) */
+  --color-border-light: #d8cfc4;
+
 
   /* 🖤 Neutral Colors */
   --color-text: var(--color-caramel);
