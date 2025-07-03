@@ -10,7 +10,7 @@
 .faq-container {
   max-width: 800px;
   margin: 0 auto;
-  background-color: var(--white);
+  background-color: var(--accent); /* Updated from var(--white) */
   padding: 40px;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-medium);
