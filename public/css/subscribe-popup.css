@@ -15,9 +15,8 @@
   pointer-events: auto;
 }
 
-
 .popup-content {
-  background: var(--accent); /* blush pink */
+  background: var(--accent);
   padding: 40px;
   border-radius: 20px;
   text-align: center;
@@ -28,27 +27,30 @@
 }
 
 .popup-content h2 {
-  font-family: 'NostalgicRemain', sans-serif;
+  font-family: var(--font-heading);
   margin-bottom: 10px;
-  color: var(--neutral-dark);
+  color: var(--text-heading); /* updated */
 }
 
 .popup-content input {
   width: 80%;
   padding: 10px;
   margin: 12px 0;
-  border: 1px solid #aaa;
+  border: 1px solid var(--color-border-light); /* updated */
   border-radius: 8px;
+  font-family: var(--font-body);
 }
 
 .popup-content button {
-  background: var(--neutral-dark); /* deep brown */
-  color: white;
+  background: var(--text-heading); /* was --neutral-dark */
+  color: var(--white);
   border: none;
   padding: 10px 20px;
   margin-top: 10px;
   border-radius: 8px;
   cursor: pointer;
+  font-family: var(--font-body);
+  transition: background 0.3s ease;
 }
 
 .close-btn {
@@ -58,6 +60,6 @@
   background: none;
   border: none;
   font-size: 1.6rem;
-  color: #333;
+  color: var(--text-heading); /* updated from #333 */
   cursor: pointer;
 }
