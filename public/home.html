@@ -7,7 +7,7 @@
 
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="css/variables.css" />
-  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/global.css" /> 
   <link rel="stylesheet" href="css/helpers.css" />
   <link rel="stylesheet" href="css/header.css" />
   <link rel="stylesheet" href="css/footer.css" />
@@ -19,24 +19,25 @@
 </head>
 
 <body>
+  <div class="page-wrapper">
 
-  <!-- Header -->
-  <div id="header-container"></div>
+    <!-- Header -->
+    <div id="header-container"></div>
 
-  <!-- Intro Section -->
-  <section class="intro-banner">
-    <img src="images/mountain.png" alt="Mountain Banner" class="mountain-img" />
-    <img src="images/logo-square.png" alt="Paws and Peaks Logo" class="intro-logo" />
-  </section>
+    <!-- Intro Section -->
+    <section class="intro-banner">
+      <img src="images/mountain.png" alt="Mountain Banner" class="mountain-img" />
+      <img src="images/logo-square.png" alt="Paws and Peaks Logo" class="intro-logo" />
+    </section>
 
-  <!-- Load Shared Layout -->
+    <!-- Footer -->
+    <div id="footer-container"></div>
+  </div>
+
+  <!-- Layout loader -->
   <script type="module">
     import { loadSharedLayout } from "./js/layout.js";
     loadSharedLayout();
   </script>
-
-    <!-- Footer -->
-  <div id="footer-container"></div>
-  
 </body>
 </html>
