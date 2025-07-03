@@ -52,7 +52,8 @@ section {
 }
 
 .card {
-  background-color: var(--white);
+  background-color: var(--accent); /* Creamy container background */
+  border: 1px solid var(--highlight); /* Subtle outline */
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-light);
   padding: var(--spacing-md);
@@ -91,10 +92,12 @@ textarea {
   font-family: var(--font-body);
   padding: var(--spacing-sm);
   border-radius: var(--radius-sm);
-  border: 1px solid var(--color-text-secondary);
+  border: 1px solid var(--text-muted);
   font-size: 1rem;
   width: 100%;
   margin-bottom: var(--spacing-md);
+  color: var(--text-body);
+  background-color: var(--white);
 }
 
 /* Utility Classes */
