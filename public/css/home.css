@@ -21,14 +21,22 @@ body {
 }
 
 .intro-banner {
-  background: url('/images/mountain.png') no-repeat center center / cover;
+  background-image: url('/images/mountain.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  width: 100vw;
   height: 100vh;
-  width: 100%;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   position: relative;
+  overflow: hidden;
 }
+
 
 
 /* ========== Hero Section ========== */
