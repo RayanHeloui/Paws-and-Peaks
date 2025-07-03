@@ -46,10 +46,14 @@ body {
 /* Hero Frame - Align correctly */
 .hero-frame {
   background-color: #f8ebd2;
-  padding: 40px 0;
-  width: 100%;
-  box-sizing: border-box;
+  border: 4px solid #7b523c;
+  border-radius: 16px;
+  padding: 40px 20px;
+  margin: 40px auto;
+  max-width: 1200px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
+
 
 .hero {
   max-width: 1200px;
