@@ -23,12 +23,12 @@ body {
 /* Updated Intro Banner */
 .intro-banner {
   position: relative;
-  height: 100px; /* Changed from 150px to 100px */
+  height: 160px; /* Increased from 100px to 160px */
   width: 100%;
   overflow: hidden;
   padding: 0;
   margin: 0;
-  background-color: #f0eadc; /* Page background match */
+  background-color: var(--main-bg); /* your light tan background */
 }
 
 .mountain-img {
@@ -41,6 +41,7 @@ body {
   object-fit: contain;
   display: block;
 }
+
 
 /* Hero Frame - Align correctly */
 .hero-frame {
