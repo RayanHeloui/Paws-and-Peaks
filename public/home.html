@@ -3,174 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hero Animation</title>
+  <title>Paws and Peaks</title>
 
-  <!-- 🧾 Styles -->
+  <!-- Styles -->
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/global.css" />
-  <link rel="stylesheet" href="css/helpers.css" />
-  <link rel="stylesheet" href="css/header.css" />
-  <link rel="stylesheet" href="css/footer.css" />
   <link rel="stylesheet" href="css/home.css" />
-  <link rel="stylesheet" href="css/subscribe-popup.css" />
 
-  <!-- 🌟 Icons (Font Awesome) -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
 
-  <!-- Subscribe Popup -->
-  <div id="subscribe-container"></div>
-
   <!-- Header -->
   <div id="header-container"></div>
 
-<!-- Intro Banner Section -->
-<section class="intro-banner">
-  <img src="images/mountain.png" alt="Mountain Banner" class="mountain-img" />
-  <div class="intro-text">
-    <h1>THEIR ADVENTURE,</h1>
-  </div>
-</section>
-
-<!-- Hero Section -->
-<section class="hero-section">
-  <div class="hero-frame">
-    <section class="hero">
-      <div class="hero-images">
-        <img src="images/first-aid-kit.png" class="hero-img img-left" alt="First Aid Kit">
-        <img src="images/camping-kit.png" class="hero-img img-center" alt="Camping Kit">
-        <img src="images/pro-adventurer.png" class="hero-img img-right" alt="Pro Adventurer Kit">
-        <div class="hero-slogan">
-          <h2>
-            <span class="slogan-word" id="word1">Preparedness</span>
-            <span class="slogan-word" id="word2">is no longer optional,</span>
-            <span class="slogan-word" id="word3">it's part of</span>
-            <span class="slogan-word" id="word4">responsible pet ownership</span>
-          </h2>
-        </div>
-      </div>
-    </section>
-  </div>
-</section>
-
-
-  <!-- Product Sections -->
-  <section class="product-section">
-    <div class="product-block first-aid-kit">
-      <div class="product-header">
-        <h2 class="product-title">First Aid Kit</h2>
-        <p class="product-subtitle">Everything you need for trail-side emergencies.</p>
-      </div>
-      <div class="product-content">
-        <div class="product-image">
-          <img src="images/first-aid-photo.png" alt="First Aid Kit">
-        </div>
-        <div class="product-details">
-          <p>A compact, reliable kit to treat minor pet injuries on-the-go.</p>
-          <div class="product-actions">
-            <a href="html/store.html" class="btn buy-now">Buy Now</a>
-            <a href="html/first-aid-learn.html" class="btn learn-more">Learn More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="product-section">
-    <div class="product-block camping-kit">
-      <div class="product-header">
-        <h2 class="product-title">Camping Kit</h2>
-        <p class="product-subtitle">Your pet's ultimate adventure companion.</p>
-      </div>
-      <div class="product-content">
-        <div class="product-image">
-          <img src="images/camping-kit-photo.png" alt="Camping Kit">
-        </div>
-        <div class="product-details">
-          <p>All the gear your pet needs to sleep and play under the stars.</p>
-          <div class="product-actions">
-            <a href="html/store.html" class="btn buy-now">Buy Now</a>
-            <a href="html/camping-kit-learn.html" class="btn learn-more">Learn More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="product-section">
-    <div class="product-block pro-kit">
-      <div class="product-header">
-        <h2 class="product-title">Pro Kit</h2>
-        <p class="product-subtitle">For serious adventurers and their best friends.</p>
-      </div>
-      <div class="product-content">
-        <div class="product-image">
-          <img src="images/pro-adventurer-photo.png" alt="Pro Kit">
-        </div>
-        <div class="product-details">
-          <p>A top-tier kit with everything to handle the wild — and wagging tails.</p>
-          <div class="product-actions">
-            <a href="html/store.html" class="btn buy-now">Buy Now</a>
-            <a href="html/pro-kit-learn.html" class="btn learn-more">Learn More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Mission Statement -->
-  <section class="mission">
-    <h2>Our Mission</h2>
-    <p>
-      At Paws and Peaks, our mission is to equip adventurous pets and their people with the safety,
-      confidence, and style to explore the outdoors together. Every product is thoughtfully crafted to make your journey unforgettable.
-    </p>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="testimonials">
-    <h2>What Our Customers Say</h2>
-    <div class="testimonial-slider">
-      <div class="testimonial-track">
-        <div class="testimonial-card"><i class="fas fa-dog"></i><p>"Paws and Peaks saved our trip!"</p><span>– Emily</span></div>
-        <div class="testimonial-card"><i class="fas fa-dog"></i><p>"Camping with confidence now!"</p><span>– Zoe</span></div>
-        <div class="testimonial-card"><i class="fas fa-dog"></i><p>"Stylish, practical, and pup-approved."</p><span>– Raj</span></div>
-        <div class="testimonial-card"><i class="fas fa-dog"></i><p>"The Pro Kit is the real deal."</p><span>– Michael</span></div>
-        <div class="testimonial-card"><i class="fas fa-dog"></i><p>"My dog’s first aid kit is better than mine 😂"</p><span>– Chris</span></div>
-        <div class="testimonial-card"><i class="fas fa-dog"></i><p>"Beautiful design and smart packaging."</p><span>– Lena</span></div>
-      </div>
-    </div>
+  <!-- Intro Section -->
+  <section class="intro-section">
+    <img src="images/square-logo.png" alt="Square Logo" class="intro-logo" />
+    <img src="images/mountain.png" alt="Mountain Banner" class="mountain-img" />
   </section>
 
   <!-- Footer -->
   <div id="footer-container"></div>
 
-  <!-- Scripts -->
+  <!-- Shared Layout Loader -->
   <script type="module">
     import { loadSharedLayout } from "/js/layout.js";
     loadSharedLayout();
-  </script>
-
-  <script src="/js/home.js"></script>
-
-  <!-- Firebase SDK -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-    import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
-    const firebaseConfig = {
-      apiKey: "YOUR_API_KEY",
-      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-      projectId: "YOUR_PROJECT_ID",
-      storageBucket: "YOUR_PROJECT_ID.appspot.com",
-      messagingSenderId: "XXXXXXXXXXXX",
-      appId: "YOUR_APP_ID"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
   </script>
 </body>
 </html>
