@@ -21,17 +21,19 @@ body {
 }
 
 .intro-banner {
+  position: relative;
   height: 150px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  width: 100%;
+  overflow: hidden;
   padding: 0;
   margin: 0;
-  background-color: var(--main-bg);
-  overflow: hidden;
 }
 
 .mountain-img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   height: auto;
   display: block;
