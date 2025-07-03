@@ -40,6 +40,12 @@ body {
   display: block;
 }
 
+.hero-frame {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
 
 /* ========== Hero Section ========== */
 .hero {
