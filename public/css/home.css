@@ -48,12 +48,13 @@ body {
   background-color: #f8ebd2;
   border: 4px solid #7b523c;
   border-radius: 16px;
-  padding: 30px 20px; /* Top/Bottom: 30px, Left/Right: 20px */
+  padding: 30px 10px; /* smaller side padding */
   margin: 60px auto;
-  width: calc(100% - 40px); /* Now matches the new left/right padding */
-  max-width: 1300px;
+  width: calc(100% - 20px); /* closer to screen edge */
+  max-width: 1400px; /* optional cap for ultra-wide screens */
   box-sizing: border-box;
 }
+
 
 .hero {
   max-width: 1200px;
