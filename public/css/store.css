@@ -22,7 +22,7 @@
 }
 
 .product-card {
-  background-color: var(--white);
+  background-color: var(--accent); /* Updated from white */
   border: 3px solid var(--highlight);
   border-radius: var(--radius-lg);
   padding: var(--spacing-md);
@@ -82,7 +82,7 @@
   right: -100%;
   width: 300px;
   height: 100vh;
-  background: var(--white);
+  background: var(--accent); /* Updated from white */
   box-shadow: var(--shadow-medium);
   padding: var(--spacing-md);
   transition: right 0.3s ease;
