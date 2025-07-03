@@ -22,20 +22,22 @@ body {
 
 .intro-banner {
   width: 100%;
-  padding: var(--spacing-md) 0;
-  background-color: var(--main-bg);
+  height: auto;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end; /* 🔥 Align image to bottom */
+  background-color: var(--main-bg);
   overflow: hidden;
+  margin: 0;
 }
 
 .mountain-img {
   width: 100%;
-  max-width: 1600px;
   height: auto;
   object-fit: contain;
+  display: block;
 }
+
 
 /* ========== Hero Section ========== */
 .hero {
