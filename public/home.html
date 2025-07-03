@@ -5,12 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Paws and Peaks</title>
 
-  <!-- Styles -->
+  <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/helpers.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/footer.css" />
   <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/subscribe-popup.css" />
 
-  <!-- Font Awesome -->
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
@@ -20,18 +24,19 @@
   <div id="header-container"></div>
 
   <!-- Intro Section -->
-  <section class="intro-section">
-    <img src="images/square-logo.png" alt="Square Logo" class="intro-logo" />
+  <section class="intro-banner">
     <img src="images/mountain.png" alt="Mountain Banner" class="mountain-img" />
+    <img src="images/logo-square.png" alt="Paws and Peaks Logo" class="intro-logo" />
   </section>
 
   <!-- Footer -->
   <div id="footer-container"></div>
 
-  <!-- Shared Layout Loader -->
+  <!-- Load Shared Layout -->
   <script type="module">
-    import { loadSharedLayout } from "/js/layout.js";
+    import { loadSharedLayout } from "./js/layout.js";
     loadSharedLayout();
   </script>
+
 </body>
 </html>
