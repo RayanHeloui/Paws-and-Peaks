@@ -20,13 +20,15 @@ body {
   src: url('../fonts/NostalgicRemain-Regular.ttf') format('truetype');
 }
 
+/* Updated Intro Banner */
 .intro-banner {
   position: relative;
-  height: 150px;
+  height: 100px; /* Changed from 150px to 100px */
   width: 100%;
   overflow: hidden;
   padding: 0;
   margin: 0;
+  background-color: #f0eadc; /* Page background match */
 }
 
 .mountain-img {
@@ -34,24 +36,27 @@ body {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
-  height: auto;
+  height: 100%;
+  width: auto;
+  object-fit: contain;
   display: block;
 }
 
+/* Hero Frame - Align correctly */
 .hero-frame {
-  background-color: var(--highlight);
+  background-color: #f8ebd2;
+  padding: 40px 0;
   width: 100%;
-  margin: 0;
-  padding: 0;
+  box-sizing: border-box;
 }
 
 .hero {
-  width: 100%;
-  padding: 0;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
   box-sizing: border-box;
 }
+
 
 .hero-images {
   position: sticky;
