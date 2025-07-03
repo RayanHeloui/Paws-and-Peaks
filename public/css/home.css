@@ -44,7 +44,7 @@ body {
 .intro-logo {
   position: absolute;
   top: 40px;
-  left: 40px;
+  left: 0;
    padding-left: 1vw; /* Adds space from left edge */
   width: 900px;
   height: auto;
