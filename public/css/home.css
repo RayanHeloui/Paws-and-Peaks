@@ -68,7 +68,8 @@ body {
 
 .hero-frame {
   position: sticky;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
   height: 600px;
   background-color: #f8ebd2;
   border: 2px solid #7b523c;
@@ -79,6 +80,7 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  z-index: 2;
 }
 
 .hero {
