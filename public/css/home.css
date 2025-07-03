@@ -48,14 +48,12 @@ body {
   background-color: #f8ebd2;
   border: 4px solid #7b523c;
   border-radius: 16px;
-  padding: 30px 6px; /* even less side padding */
+  padding: 30px 24px;       /* moderate side padding */
   margin: 60px auto;
-  width: calc(100% - 12px); /* nearly full width */
-  max-width: 100%; /* remove fixed max cap */
+  width: calc(100% - 48px); /* matches padding */
+  max-width: 1200px;        /* graceful max limit */
   box-sizing: border-box;
 }
-
-
 
 .hero {
   max-width: 1200px;
