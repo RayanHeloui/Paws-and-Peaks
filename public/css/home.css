@@ -24,7 +24,7 @@ body {
 
 .intro-banner {
   position: relative;
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   background-color: var(--main-bg);
   overflow: hidden;
