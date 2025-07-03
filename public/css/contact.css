@@ -60,7 +60,7 @@
 .contact-form textarea {
   padding: var(--spacing-sm);
   border-radius: var(--radius-sm);
-  border: 1px solid var(--text-muted);
+  border: 1px solid var(--color-border-light); /* Updated */
   font-size: 1rem;
   font-family: var(--font-body);
 }
